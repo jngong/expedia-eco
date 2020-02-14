@@ -37,29 +37,44 @@ As a team, we decided to not split responsibilities front-end vs. back-end. We w
 
 ## Endpoints
 
-`GET /api/cities`
-returns a list of city names
-`GET /api/cities/:city/hotels`
-returns a list of hotels in the specified city
-`GET /api/hotels/:hotel`
-returns details about the specified hotel
-`GET /api/hotels/:hotel/rooms`
-returns a list of rooms in the specified hotel
-`GET /api/hotels/:hotel/rooms/:room`
-returns details about the specified hotel room
+- `GET /api/cities`
 
-`POST /api/hotels`
-add a new hotel
-`POST /api/hotels/:hotel/rooms`
-add a new room to an existing hotel (post-MVP)
+* returns a list of city names
 
-`PUT /api/hotels/:hotel`
-update hotel info
-`PUT /api/hotels/:hotel/rooms/:room`
-update hotel room info (post-MVP)
+- `GET /api/cities/:city/hotels`
 
-`DELETE /api/hotels/:hotel`
-remove a hotel from the DB
+* returns a list of hotels in the specified city
+
+- `GET /api/hotels/:hotel`
+
+* returns details about the specified hotel
+
+- `GET /api/hotels/:hotel/rooms`
+
+* returns a list of rooms in the specified hotel
+
+- `GET /api/hotels/:hotel/rooms/:room`
+
+* returns details about the specified hotel room
+
+- `POST /api/hotels`
+
+* add a new hotel
+
+- `POST /api/hotels/:hotel/rooms`
+
+* add a new room to an existing hotel (post-MVP)
+
+- `PUT /api/hotels/:hotel`
+
+* update hotel info
+
+- `PUT /api/hotels/:hotel/rooms/:room`
+
+* update hotel room info (post-MVP)
+
+-`DELETE /api/hotels/:hotel`
+\*remove a hotel from the DB
 
 ## Sample JSON from `GET /api/hotels/:hotel`
 
@@ -138,23 +153,25 @@ Ro -
 ## Additional Libraries
 
 #Front-End
-[React](https://reactjs.org/) to build our front-end
-[React Router Dom](https://www.npmjs.com/package/react-router-dom) to create our routes on the front-end
-[Axios](https://github.com/axios/axios) to get data from our api on our backend server and render data on the front-end
+
+- [React](https://reactjs.org/) to build our front-end
+- [React Router Dom](https://www.npmjs.com/package/react-router-dom) to create our routes on the front-end
+- [Axios](https://github.com/axios/axios) to get data from our api on our backend server and render data on the front-end
 
 #Back-End
-[Postgres](https://www.postgresql.org/) to create our database
-[Express](https://expressjs.com/) to build our server
-[Morgan](https://github.com/expressjs/morgan) to make logs more readable
-[Body Parser](https://github.com/expressjs/body-parser) to parse html into json for CRUD functionality
-[Nodemon](https://www.npmjs.com/package/nodemon) as a dev-dependency to continuously run our development server
-[Sequelize-CLI](https://sequelize-guides.netlify.com/) to help us create our database
+
+- [Postgres](https://www.postgresql.org/) to create our database
+- [Express](https://expressjs.com/) to build our server
+- [Morgan](https://github.com/expressjs/morgan) to make logs more readable
+- [Body Parser](https://github.com/expressjs/body-parser) to parse html into json for CRUD functionality
+- [Nodemon](https://www.npmjs.com/package/nodemon) as a dev-dependency to continuously run our development server
+- [Sequelize-CLI](https://sequelize-guides.netlify.com/) to help us create our database
 
 ## Expected Issues
 
-Coding certain components may be more complex than anticipated - teamwork! Divide and conquer!
-Expedia is a large and fairly complex site - adjust MVP, discuss leaving off extra functionality with UX
-One of us may get caught up in a less important function or stuck on a complex one - regular check-ins throughout the day
+- Coding certain components may be more complex than anticipated - teamwork! Divide and conquer!
+- Expedia is a large and fairly complex site - adjust MVP, discuss leaving off extra functionality with UX
+- One of us may get caught up in a less important function or stuck on a complex one - regular check-ins throughout the day
 
 ## Issues and Resolutions
 
