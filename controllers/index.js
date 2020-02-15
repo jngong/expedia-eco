@@ -26,16 +26,54 @@ const getAllHotelsByCity = async (req, res) => {
         if (hotels) {
             return res.status(200).json({hotels: hotels})
         }
-        return res.status(404).send('There are no hotels with that city id.')        
+        return res.status(404).send('There are no hotels with that city ID.')        
     } catch (error) {
         return res.status(500).send(error.message)   
     }
 }
 
+// GET request for a single hotel by hotel id. Will refer to the Hotel model
+// Route: GET /api/hotels/:hotel_id
+
+const getHotelDetails = async (req, res) => {
+    try {
+        const {hotel_id} = req.params
+        const hotel = await findOne({
+            where: {
+                id: hotel_id
+            }
+        })
+        if (hotel) {
+            return res.status(200).json({hotel: hotel})
+        }
+        return res.status(404).send('There is no hotel with that ID.')
+    } catch (error) {
+        return res.status(500).send(error.message)  
+    }
+}
+
+// GET request for all rooms within a hotel. Refer to the "Room" model and match on "hotel_id" foreign key. Need to check that the names all match.
+// Route: GET /api/hotels/:hotel_id/rooms
+
+const getAllRoomsByHotel = async (req, res) => {
+    try {
+        const {hotel_id} = req.params
+        const rooms = await Room.findAll({
+            where: {
+                hotel_id: hotel_id
+            }
+        })
+        if (rooms) {
+            return res.status(200).json({rooms})
+        }
+        return res.status(404).send('There are no rooms in this hotel.')
+
+    } catch (error) {
+        return res.status(500).send(error.message)
+    }
+}
+
 /* 
-getAllHotelsByCity
-getHotelDetails
-getAllRoomsByHotel
 getRoomDetails
 createHotel
 updateHotel
@@ -48,6 +86,9 @@ updateRoomInHotel
  */
 
 module.exports = {
-    getAllCities
+    getAllCities,
+    getAllHotelsByCity,
+    getHotelDetails,
+    getAllRoomsByHotel
 
 }
