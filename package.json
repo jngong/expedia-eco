@@ -1,0 +1,25 @@
+{
+  "name": "expedia-db",
+  "version": "1.0.0",
+  "description": "![Flying Four](https://res.cloudinary.com/db0kbxvhr/image/upload/c_scale,w_532/v1581716915/flying-four_sa1li3.jpg)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://git.generalassemb.ly/jtlan/flying-four.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "morgan": "^1.9.1",
+    "nodemon": "^2.0.2",
+    "pg": "^7.18.1",
+    "sequelize": "^5.21.4",
+    "sequelize-cli": "^5.5.1"
+  }
+}
