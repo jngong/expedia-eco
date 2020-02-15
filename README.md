@@ -37,35 +37,35 @@ As a team, we decided to not split responsibilities front-end vs. back-end. We w
 
 ## Endpoints
 
-- `GET /api/cities`
+- `GET /api/cities`  
   returns a list of city names
 
-- `GET /api/cities/:city/hotels`
+- `GET /api/cities/:city/hotels`  
   returns a list of hotels in the specified city
 
-- `GET /api/hotels/:hotel`
+- `GET /api/hotels/:hotel`  
   returns details about the specified hotel
 
-- `GET /api/hotels/:hotel/rooms`
+- `GET /api/hotels/:hotel/rooms`  
   returns a list of rooms in the specified hotel
 
-- `GET /api/hotels/:hotel/rooms/:room`
+- `GET /api/hotels/:hotel/rooms/:room`  
   returns details about the specified hotel room
 
-- `POST /api/hotels`
+- `POST /api/hotels`  
   add a new hotel
 
-- `POST /api/hotels/:hotel/rooms`
+- `POST /api/hotels/:hotel/rooms`  
   add a new room to an existing hotel (post-MVP)
 
-- `PUT /api/hotels/:hotel`
+- `PUT /api/hotels/:hotel`  
   update hotel info
 
-- `PUT /api/hotels/:hotel/rooms/:room`
+- `PUT /api/hotels/:hotel/rooms/:room`  
   update hotel room info (post-MVP)
 
--`DELETE /api/hotels/:hotel`
-remove a hotel from the DB
+- `DELETE /api/hotels/:hotel`  
+  remove a hotel from the DB
 
 ## Sample JSON from `GET /api/hotels/:hotel`
 
