@@ -21,8 +21,8 @@ module.exports = (sequelize, DataTypes) => {
     })
 
     Hotels.belongsTo(models.Cities, {
-      foreignKey: 'city_id',
-      onDelete: 'CASCADE'
+      foreignKey: 'city_id'
+      // onDelete: 'CASCADE'
     })
   };
   return Hotels;
