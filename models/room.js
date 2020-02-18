@@ -3,7 +3,7 @@ module.exports = (sequelize, DataTypes) => {
   const Rooms = sequelize.define(
     "Rooms",
     {
-      hotel_id: DataTypes.INTEGER,
+      hotelId: DataTypes.INTEGER,
       type: DataTypes.STRING,
       list_price: DataTypes.CHAR,
       current_price: DataTypes.CHAR,
@@ -16,8 +16,7 @@ module.exports = (sequelize, DataTypes) => {
   Rooms.associate = function(models) {
     // associations can be defined here
     Rooms.belongsTo(models.Hotels, {
-      foreignKey: "hotel_id",
-      onDelete: "CASCADE"
+      foreignKey: "hotelId"
     });
   };
   return Rooms;
