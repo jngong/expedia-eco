@@ -15,8 +15,6 @@ router.get("/hotels/:hotelId", controllers.getHotelDetails);
 router.get("/hotels/:hotelId/rooms", controllers.getAllRoomsByHotel);
 // ROOM DETAILS
 router.get("/hotels/:hotelId/rooms/:room_id", controllers.getRoomDetails);
-// // ALL ROOMS
-// router.get("/rooms", controllers.getAllRooms);
 
 /* ---------- POST ---------- */
 // NEW HOTEL
