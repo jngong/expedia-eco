@@ -101,6 +101,8 @@ As a team, we decided to not split responsibilities front-end vs. back-end. We w
 
 [Component Hierarchy on Whimsical](https://whimsical.com/GekeXdAdXyDUdWo7NWzE7B)
 
+![Component Hierarchy](https://res.cloudinary.com/db0kbxvhr/image/upload/c_scale,h_600/v1581881153/component-hierarchy-expedia_ssospk.png)
+
 ## Components
 
 | Component          | Description                                                                                                                     |
@@ -121,8 +123,6 @@ As a team, we decided to not split responsibilities front-end vs. back-end. We w
 
 ## Timeframes
 
-Ro -
-
 | Component          | Estimated Time | Actual Time |
 | ------------------ | :------------: | :---------: |
 | Layout             |      3hrs      |    0hrs     |
@@ -139,18 +139,17 @@ Ro -
 | Admin (Create)     |      3hrs      |    0hrs     |
 | Admin Form         |      3hrs      |    0hrs     |
 | Backend Setup      |      5hrs      |   4x3 hrs   |
-
 | Total | 37hrs | 0hrs |
 
 ## Additional Libraries
 
-#Front-End
+**Front-End**
 
 - [React](https://reactjs.org/) to build our front-end
 - [React Router Dom](https://www.npmjs.com/package/react-router-dom) to create our routes on the front-end
 - [Axios](https://github.com/axios/axios) to get data from our api on our backend server and render data on the front-end
 
-#Back-End
+**Back-End**
 
 - [Postgres](https://www.postgresql.org/) to create our database
 - [Express](https://expressjs.com/) to build our server
