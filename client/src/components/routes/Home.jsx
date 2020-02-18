@@ -3,7 +3,7 @@ import SearchOptionsNav from '../home-subcomponents/SearchOptionsNav'
 import SearchVacationPackagesNav from '../home-subcomponents/SearchVacationPackagesNav'
 import SearchForm from '../home-subcomponents/SearchForm'
 
-const Home = () => {
+const Home = (props) => {
 
     return(
         <div>
