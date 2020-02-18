@@ -12,7 +12,8 @@ const Home = (props) => {
             <SearchVacationPackagesNav />
             <SearchForm 
                 tripSearch={props.tripSearch} 
-                handleChange={props.handleChange} 
+                handleTextChange={props.handleTextChange}
+                handleCheckChange={props.handleCheckChange} 
                 handleSubmit={props.handleSubmit}
             />
             <p>Book together and SAVE!</p>

@@ -7,35 +7,40 @@ const SearchForm = (props) => {
                 <input
                     type="text"
                     placeholder="Leaving From"
-                    // value={props.tripSearch.departCity}
-                    name="departCity" 
+                    value={props.tripSearch.departCity}
+                    name="departCity"
+                    onChange={props.handleTextChange} 
                 />
                 <br/>
                 <input 
                     type="text"
                     placeholder="Going To"
-                    // value={props.tripSearch.destCity}
+                    value={props.tripSearch.destCity}
                     name="destCity"
+                    onChange={props.handleTextChange} 
                 />
                 <br/>
                 <input 
                     type="text"
                     placeholder="Departing"
-                    // value={props.tripSearch.departDate}
+                    value={props.tripSearch.departDate}
                     name="departDate"
+                    onChange={props.handleTextChange} 
                 />
                 <input 
                     type="text"
                     placeholder="Returning"
-                    // value={props.tripSearch.returnDate}
+                    value={props.tripSearch.returnDate}
                     name="returnDate"
+                    onChange={props.handleTextChange} 
                 />
                 <br/>
                 <input 
                     type="text"
                     placeholder="Travelers"
-                    // value={props.tripSearch.travelers}
+                    value={props.tripSearch.travelers}
                     name="travelers"
+                    onChange={props.handleTextChange} 
                 />
                 <br/>
 
@@ -44,6 +49,7 @@ const SearchForm = (props) => {
                         type="checkbox"
                         checked={props.tripSearch.hotelCheckbox}
                         name="hotelCheckbox"
+                        onChange={props.handleCheckChange} 
                     />
                     I only need a hotel for part of my stay
                 </label>
@@ -55,6 +61,7 @@ const SearchForm = (props) => {
                         type="checkbox"
                         checked={props.tripSearch.ecoFriendlyCheckbox}
                         name="ecoFriendlyCheckbox"
+                        onChange={props.handleCheckChange} 
                     />
                     I want to see eco-friendly options only
                     </label>
