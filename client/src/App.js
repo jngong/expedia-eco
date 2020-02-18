@@ -18,13 +18,27 @@ class App extends Component {
         ecoFriendlyCheckbox: true
       }
     }
+    this.handleChange = this.handleChange.bind(this)
+    
   }
+
+  //Set up handleChange function to capture data from form input fields
+
+  handleChange = () => {
+
+  }
+
+  handleSubmit = () => {
+
+  }
+
+  //Set up handleSubmit function to 
 
   render() {
     return (
       <div className="App">
         <p>This is App.js</p>
-        <Home tripSearch={this.state.tripSearch} />
+        <Home tripSearch={this.state.tripSearch} handleChange={this.handleChange} handleSubmit={this.handleSubmit}/>
       </div>
     );
   }

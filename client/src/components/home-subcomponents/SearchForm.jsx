@@ -38,26 +38,26 @@ const SearchForm = (props) => {
                     name="travelers"
                 />
                 <br/>
-                <input 
-                    type="checkbox"
-                    value={props.tripSearch.hotelCheckbox}
-                    name="hotelCheckbox"
-                />
 
                 <label>
+                    <input 
+                        type="checkbox"
+                        checked={props.tripSearch.hotelCheckbox}
+                        name="hotelCheckbox"
+                    />
                     I only need a hotel for part of my stay
                 </label>
+
                 <br/>
 
-                <input 
-                    type="checkbox"
-                    value={props.tripSearch.ecoFriendlyCheckbox}
-                    name="ecoFriendlyCheckbox"
-                />
-
                 <label>
+                    <input 
+                        type="checkbox"
+                        checked={props.tripSearch.ecoFriendlyCheckbox}
+                        name="ecoFriendlyCheckbox"
+                    />
                     I want to see eco-friendly options only
-                </label>
+                    </label>
                 <br/>
 
                 <button>
