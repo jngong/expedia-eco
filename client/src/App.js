@@ -29,7 +29,7 @@ class App extends Component {
   }
 
    //Set up handleChange function to capture data from form input fields
-       //For checkboxes, need to set state for tripSearch.[name] to checked.
+      //For checkboxes, need to set state for tripSearch.[name] to checked.
       //For all other values, need to set state for tripSearch.[name] to value.
 
   handleTextChange = event => {
@@ -41,11 +41,6 @@ class App extends Component {
       }
     }))
     console.log(name, value);
-    // const updatedField = { [event.target.name]: event.target.value }
-    // const updatedSearch = Object.assign(this.state.tripSearch, updatedField)
-    //   this.setState({ tripSearch: updatedSearch })
-    //   console.log(updatedField)
-    //   console.log(updatedSearch)
   }
 
   handleCheckChange = (event) => {
@@ -71,9 +66,11 @@ class App extends Component {
 
     return (
       <React.Fragment>
+        {/* Corey changed the Home route to not pass down other props as that was causing the page to re-render, losing focus on the search input fields. */}
         <Route exact path='/'>
           <Home tripSearch={this.state.tripSearch} handleTextChange={this.handleTextChange} handleCheckChange={this.handleCheckChange} handleSubmit={this.handleSubmit} />
         </Route>
+
         <Route exact path='/hotels' component={HotelList} />
         <Route exact path='/hotels/:hotel_id' component={Hotel} />
         <Route exact path='/hotels/:hotel_id/confirmation' component={Confirmation} />
