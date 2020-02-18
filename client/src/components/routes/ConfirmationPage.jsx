@@ -7,6 +7,7 @@ export default class ConfirmationPage extends Component {
 
     render() {
         return (
+            
             <div>
                 
                 <h2 id="confirmation-page-header">Review and Book</h2>
