@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
 import './App.css';
-import Home from './components/routes/Home';
+import { Route } from 'react-router-dom';
+
+import Home from './components/routes/Home'
+import HotelList from './components/routes/HotelList'
+import Hotel from './components/routes/Hotel'
+import Confirmation from './components/routes/Confirmation'
 
 class App extends Component {
 
@@ -17,13 +22,10 @@ class App extends Component {
         hotelCheckbox: false,
         ecoFriendlyCheckbox: true
       }
-    }
-    this.handleChange = this.handleChange.bind(this)
-    
+  }
   }
 
-  //Set up handleChange function to capture data from form input fields
-
+   //Set up handleChange function to capture data from form input fields
   handleChange = () => {
 
   }
@@ -32,16 +34,19 @@ class App extends Component {
 
   }
 
-  //Set up handleSubmit function to 
 
   render() {
+
     return (
-      <div className="App">
-        <p>This is App.js</p>
-        <Home tripSearch={this.state.tripSearch} handleChange={this.handleChange} handleSubmit={this.handleSubmit}/>
-      </div>
+      <React.Fragment>
+        <Route exact path='/' component={props => <Home {...props} tripSearch={this.state.tripSearch}/> } />
+        <Route exact path='/hotels' component={HotelList} />
+        <Route exact path='/hotels/:hotel_id' component={Hotel} />
+        <Route exact path='/hotels/:hotel_id/confirmation' component={Confirmation} />
+      </React.Fragment>
     );
   }
+
 }
 
-export default App;
+export default App
