@@ -1,15 +1,27 @@
 import React from 'react'
+import '../../Home.css'
 
 const SearchForm = (props) => {
+
+    const handleInputChange = (e) => {
+        props.handleTextChange(e)
+    }
+
+    const handleCheckboxChange = (e) => {
+        props.handleCheckChange(e)
+    }
+
+
     return(
         <div className="search-form">
-            <form>
+            <form onSubmit={props.handleSubmit}>
                 <input
                     type="text"
                     placeholder="Leaving From"
+                    autoComplete="off"
                     value={props.tripSearch.departCity}
                     name="departCity"
-                    onChange={props.handleTextChange} 
+                    onChange={handleInputChange} 
                 />
                 <br/>
                 <input 
@@ -17,7 +29,7 @@ const SearchForm = (props) => {
                     placeholder="Going To"
                     value={props.tripSearch.destCity}
                     name="destCity"
-                    onChange={props.handleTextChange} 
+                    onChange={handleInputChange} 
                 />
                 <br/>
                 <input 
@@ -25,14 +37,14 @@ const SearchForm = (props) => {
                     placeholder="Departing"
                     value={props.tripSearch.departDate}
                     name="departDate"
-                    onChange={props.handleTextChange} 
+                    onChange={handleInputChange} 
                 />
                 <input 
                     type="text"
                     placeholder="Returning"
                     value={props.tripSearch.returnDate}
                     name="returnDate"
-                    onChange={props.handleTextChange} 
+                    onChange={handleInputChange} 
                 />
                 <br/>
                 <input 
@@ -40,7 +52,7 @@ const SearchForm = (props) => {
                     placeholder="Travelers"
                     value={props.tripSearch.travelers}
                     name="travelers"
-                    onChange={props.handleTextChange} 
+                    onChange={handleInputChange} 
                 />
                 <br/>
 
@@ -49,7 +61,7 @@ const SearchForm = (props) => {
                         type="checkbox"
                         checked={props.tripSearch.hotelCheckbox}
                         name="hotelCheckbox"
-                        onChange={props.handleCheckChange} 
+                        onChange={handleCheckboxChange} 
                     />
                     I only need a hotel for part of my stay
                 </label>
@@ -61,7 +73,7 @@ const SearchForm = (props) => {
                         type="checkbox"
                         checked={props.tripSearch.ecoFriendlyCheckbox}
                         name="ecoFriendlyCheckbox"
-                        onChange={props.handleCheckChange} 
+                        onChange={handleCheckboxChange} 
                     />
                     I want to see eco-friendly options only
                     </label>

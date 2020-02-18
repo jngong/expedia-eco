@@ -33,23 +33,37 @@ class App extends Component {
       //For all other values, need to set state for tripSearch.[name] to value.
 
   handleTextChange = event => {
-    const updatedField = { [event.target.name]: event.target.value }
-    const updatedSearch = Object.assign(this.state.tripSearch, updatedField)
-    this.setState({ tripSearch: updatedSearch })
-    console.log(updatedField)
-    console.log(updatedSearch)
+    const {value, name} = event.target;
+    this.setState(prevState => ({
+      tripSearch: {
+        ...prevState.tripSearch,
+        [name]: value
+      }
+    }))
+    console.log(name, value);
+    // const updatedField = { [event.target.name]: event.target.value }
+    // const updatedSearch = Object.assign(this.state.tripSearch, updatedField)
+    //   this.setState({ tripSearch: updatedSearch })
+    //   console.log(updatedField)
+    //   console.log(updatedSearch)
   }
 
   handleCheckChange = (event) => {
-    const updatedField = { [event.target.name]: event.target.checked }
-    const updatedSearch = Object.assign(this.state.tripSearch, updatedField)
-    this.setState({ tripSearch: updatedSearch })
+    const checked = event.target.checked
+    const name = event.target.name
+    this.setState(prevState => ({
+      tripSearch: {
+        ...prevState.tripSearch,
+        [name]: checked
+      }
+    }))
   }
-
  
   handleSubmit = (event) => {
     event.preventDefault()
-    //When the form is submitted, it needs to do two things. 1: compare the destCity value to our list of cities to set the state of CityId and 2: push to the next page in the user flow (HotelList)
+    //When the form is submitted, it needs to do two things. 
+    // 1: compare the destCity value to our list of cities to set the state of CityId and 
+    // 2: push to the next route in the user flow (HotelList)
       this.props.history.push(`/hotels`)
   }
 
@@ -57,7 +71,9 @@ class App extends Component {
 
     return (
       <React.Fragment>
-        <Route exact path='/' component={props => <Home {...props} tripSearch={this.state.tripSearch} handleTextChange={this.handleTextChange} handleCheckChange={this.handleCheckChange} handleSubmit={this.handleSubmit} /> } />
+        <Route exact path='/'>
+          <Home tripSearch={this.state.tripSearch} handleTextChange={this.handleTextChange} handleCheckChange={this.handleCheckChange} handleSubmit={this.handleSubmit} />
+        </Route>
         <Route exact path='/hotels' component={HotelList} />
         <Route exact path='/hotels/:hotel_id' component={Hotel} />
         <Route exact path='/hotels/:hotel_id/confirmation' component={Confirmation} />
