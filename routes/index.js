@@ -24,7 +24,7 @@ router.post("/hotels", controllers.createHotel);
 
 /* ---------- PUT ---------- */
 // UPDATE HOTEL
-router.put("/hotels/:hotelId/rooms", controllers.updateHotel);
+router.put("/hotels/:hotelId", controllers.updateHotel);
 
 /* ---------- DELETE ---------- */
 // DELETE HOTEL

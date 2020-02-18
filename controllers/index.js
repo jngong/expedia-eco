@@ -1,9 +1,9 @@
-const { Cities, Hotels, Rooms } = require("../models");
+const { City, Hotel, Room } = require("../models");
 
 // GET request for cities. Refer to "City" model. Should I join the Hotels model? Route: GET /api/cities
 const getAllCities = async (req, res) => {
   try {
-    const cities = await Citie.findAll();
+    const cities = await City.findAll();
     return res.status(200).json({ cities });
   } catch (error) {
     return res.status(500).send(error.message);
@@ -115,10 +115,12 @@ const updateHotel = async (req, res) => {
   try {
     const { hotelId } = req.params;
     const updated = await Hotel.update(req.body, {
-      where: { id: hotelId }
+      where: { id: parseInt(hotelId) }
     });
     if (updated) {
-      const updatedHotel = await Hotel.findOne({ where: { id: hotelId } });
+      const updatedHotel = await Hotel.findOne({
+        where: { id: parseInt(hotelId) }
+      });
       return res.status(200).json({ hotel: updatedHotel });
     }
     throw new Error(`Hotel with id ${hotelId} was not found.`);
@@ -133,7 +135,8 @@ const updateHotel = async (req, res) => {
 const deleteHotel = async (req, res) => {
   try {
     const { hotelId } = req.params;
-    console.log(parseInt(hotelId));
+    console.log("hotel ID", parseInt(hotelId));
+    console.log("params", req);
     const deleted = await Hotel.destroy({
       where: { id: parseInt(hotelId) }
     });

@@ -1,7 +1,7 @@
 "use strict";
 module.exports = (sequelize, DataTypes) => {
-  const Hotels = sequelize.define(
-    "Hotels",
+  const Hotel = sequelize.define(
+    "Hotel",
     {
       address: DataTypes.STRING,
       name: DataTypes.STRING,
@@ -17,17 +17,17 @@ module.exports = (sequelize, DataTypes) => {
     },
     {}
   );
-  Hotels.associate = function(models) {
+  Hotel.associate = function(models) {
     // associations can be defined here
-    Hotels.hasMany(models.Rooms, {
+    Hotel.hasMany(models.Room, {
       foreignKey: "hotelId",
       onDelete: "CASCADE"
     });
 
-    Hotels.belongsTo(models.Cities, {
+    Hotel.belongsTo(models.City, {
       foreignKey: "cityId",
       onDelete: "CASCADE"
     });
   };
-  return Hotels;
+  return Hotel;
 };

@@ -1,7 +1,7 @@
 "use strict";
 module.exports = (sequelize, DataTypes) => {
-  const Rooms = sequelize.define(
-    "Rooms",
+  const Room = sequelize.define(
+    "Room",
     {
       hotelId: DataTypes.INTEGER,
       type: DataTypes.STRING,
@@ -13,11 +13,11 @@ module.exports = (sequelize, DataTypes) => {
     },
     {}
   );
-  Rooms.associate = function(models) {
+  Room.associate = function(models) {
     // associations can be defined here
-    Rooms.belongsTo(models.Hotels, {
+    Room.belongsTo(models.Hotel, {
       foreignKey: "hotelId"
     });
   };
-  return Rooms;
+  return Room;
 };

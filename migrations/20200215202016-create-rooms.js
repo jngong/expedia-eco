@@ -10,6 +10,7 @@ module.exports = {
       },
       hotelId: {
         type: Sequelize.INTEGER,
+        onDelete: "CASCADE",
         references: {
           model: "Hotels",
           key: "id",

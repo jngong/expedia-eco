@@ -3,10 +3,10 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.bulkInsert(
-      "Hotel",
+      "Hotels",
       [
         {
-          id: 1,
+          // id: 1,
           address: "4441 Collins Avenue, Miami Beach, FL 33140",
           name: "Fontainebleau",
           rating: 4,
@@ -24,7 +24,7 @@ module.exports = {
         },
 
         {
-          id: 2,
+          // id: 2,
           address: "1567 Broadway, New York, NY 10036",
           name: "W New York",
           rating: 5,
@@ -43,7 +43,7 @@ module.exports = {
         },
 
         {
-          id: 3,
+          // id: 3,
           address: "900 W Olympic Blvd, Los Angeles, CA 90015",
           name: "The Ritz-Carlton, Los Angeles",
           rating: 4,
@@ -62,7 +62,7 @@ module.exports = {
         },
 
         {
-          id: 4,
+          // id: 4,
           address: "4441 Collins Avenue, Miami Beach, LA 33140",
           name: "Fontainebleau",
           rating: 4,
@@ -80,7 +80,7 @@ module.exports = {
         },
 
         {
-          id: 5,
+          // id: 5,
           address: "1002 10th Avenue, New York, NY 10036",
           name: "Holiday Inn",
           rating: 5,
@@ -103,6 +103,6 @@ module.exports = {
   },
 
   down: (queryInterface, Sequelize) => {
-    return queryInterface.bulkDelete("Hotel", null, {});
+    return queryInterface.bulkDelete("Hotels", null, {});
   }
 };

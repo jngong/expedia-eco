@@ -1,18 +1,18 @@
 "use strict";
 module.exports = (sequelize, DataTypes) => {
-  const Cities = sequelize.define(
-    "Cities",
+  const City = sequelize.define(
+    "City",
     {
       name: DataTypes.STRING
     },
     {}
   );
-  Cities.associate = function(models) {
+  City.associate = function(models) {
     // associations can be defined here
-    Cities.hasMany(models.Hotels, {
+    City.hasMany(models.Hotel, {
       foreignKey: "cityId",
       onDelete: "CASCADE"
     });
   };
-  return Cities;
+  return City;
 };
