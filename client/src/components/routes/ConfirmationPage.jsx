@@ -10,6 +10,7 @@ export default class ConfirmationPage extends Component {
             <div>
                 
                 <h2 id="confirmation-page-header">Review and Book</h2>
+                
                 <div className="flight-hotel-car-confirmation-detail">
                     <h5>Roundtrip Flight</h5>
                     <h6>Newark (EWR) to San Francisco (SFO)</h6>
@@ -17,7 +18,11 @@ export default class ConfirmationPage extends Component {
                     <p>4 tickets: 2 adults, 2 children</p>
                 </div>
 
-                <div>HOTEL INFO HERE</div>
+                <div className="flight-hotel-car-confirmation-detail">
+                    <h5>Dummy Data (HOTEL NAME)</h5>
+                    <h6>Dummy Data (CITY, STATE)</h6>
+                    <p>Tue, Jun 2 - Mon, Jun 8</p>
+                </div>
 
                 <div className="flight-hotel-car-confirmation-detail">
                     <h5>Economy</h5>
@@ -26,30 +31,28 @@ export default class ConfirmationPage extends Component {
                 </div>
 
                 <div id="confirmation-page-summary">
-                    <p>
-                        <span className="left-text-confirmation-page">Starting price</span>
-                        <span className="right-text-confirmation-page">$3,216.00</span>
-                    </p>
-                    <p>
-                        <span className="left-text-confirmation-page">Bundled savings</span>
-                        <span className="right-text-confirmation-page">-$602.42</span>
-                    </p>
-                    <p>
-                        <span className="left-text-confirmation-page">Total due today</span>
-                        <span className="right-text-confirmation-page">$2,613.58</span>
-                    </p>
-                    <p>
-                        <span className="left-text-confirmation-page">Due at hotel</span>
-                        <span className="right-text-confirmation-page">$122.22</span>
-                    </p>
-                    <p>
-                        <span className="left-text-confirmation-page">Trip Total:  </span>
-                        <span className="right-text-confirmation-page">$2,735.80</span>
+                    
+                    <p className="left-text">
+
+                        <span id="left-text-line-1">Starting price</span>
+                        <span id="left-text-line-2">Bundled savings</span>
+                        <span id="left-text-line-3">Total due today</span>
+                        <span id="left-text-line-4">Due at hotel</span>
+                        <span id="left-text-line-5">Trip Total:  </span>
 
                     </p>
-                    <p>
-                        <span className="right-text-confirmation-page">(Average per person $683.95)</span>
+                    
+                    <p className="right-text">
+
+                        <span id="right-text-line-1">-$602.42</span>
+                        <span id="right-text-line-2">$3,216.00</span>
+                        <span id="right-text-line-3">$2,613.58</span>
+                        <span id="right-text-line-4">$122.22</span>
+                        <span id="right-text-line-5">$2,735.80</span>
+                        <span id="right-text-line-6">(Average per person $683.95)</span>
+
                     </p>
+
                 </div>
 
                 <footer id="confimation-page-footer">Rates are quoted in US Dollar.
