@@ -10,7 +10,7 @@ module.exports = {
           address: "4441 Collins Avenue, Miami Beach, FL 33140",
           name: "Fontainebleau",
           rating: 4,
-          img_url: "",
+          img_url: "../../images/",
           eco_friendly: false,
           description:
             "Situated on oceanfront Collins Avenue in the heart of Millionaire's Row, Fontainebleau Miami Beach is one of the most historically and architecturally significant hotels on Miami Beach, Florida.",
@@ -28,7 +28,7 @@ module.exports = {
           address: "1567 Broadway, New York, NY 10036",
           name: "W New York",
           rating: 5,
-          img_url: "",
+          img_url: "../../images/",
           eco_friendly: true,
           description:
             "W New York Times Square is located in New York City's Times Square. This hotel is a short walk from Broadway theaters of Theater District. It features an on-site restaurant.",
@@ -47,7 +47,7 @@ module.exports = {
           address: "900 W Olympic Blvd, Los Angeles, CA 90015",
           name: "The Ritz-Carlton, Los Angeles",
           rating: 4,
-          img_url: "",
+          img_url: "../../images/",
           eco_friendly: false,
           description:
             "Within the L.A. LIVE entertainment complex, this posh hotel is a 5-minute walk from the Staples Center, home of the Lakers and Clippers, and 1.4 miles from The Walt Disney Concert Hall.",
@@ -63,10 +63,10 @@ module.exports = {
 
         {
           // id: 4,
-          address: "4441 Collins Avenue, Miami Beach, LA 33140",
+          address: "4441 Rodeo Drive, Los Angeles, CA 33140",
           name: "Fontainebleau",
           rating: 4,
-          img_url: "",
+          img_url: "../../images/",
           eco_friendly: false,
           description:
             "Situated on oceanfront Collins Avenue in the heart of Millionaire's Row, Fontainebleau Miami Beach is one of the most historically and architecturally significant hotels on Miami Beach, Florida.",
@@ -84,7 +84,7 @@ module.exports = {
           address: "1002 10th Avenue, New York, NY 10036",
           name: "Holiday Inn",
           rating: 5,
-          img_url: "",
+          img_url: "../../images/",
           eco_friendly: true,
           description:
             "W New York Times Square is located in New York City's Times Square. This hotel is a short walk from Broadway theaters of Theater District. It features an on-site restaurant.",
