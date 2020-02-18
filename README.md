@@ -37,37 +37,37 @@ As a team, we decided to not split responsibilities front-end vs. back-end. We w
 
 ## Endpoints
 
-- `GET /api/cities`  
+- `GET /cities`  
   returns a list of city names
 
-- `GET /api/cities/:city/hotels`  
+- `GET /cities/:city/hotels`  
   returns a list of hotels in the specified city
 
-- `GET /api/hotels/:hotel`  
+- `GET /hotels/:hotel`  
   returns details about the specified hotel
 
-- `GET /api/hotels/:hotel/rooms`  
+- `GET /hotels/:hotel/rooms`  
   returns a list of rooms in the specified hotel
 
-- `GET /api/hotels/:hotel/rooms/:room`  
+- `GET /hotels/:hotel/rooms/:room`  
   returns details about the specified hotel room
 
-- `POST /api/hotels`  
+- `POST /hotels`  
   add a new hotel
 
-- `POST /api/hotels/:hotel/rooms`  
+- `POST /hotels/:hotel/rooms`  
   add a new room to an existing hotel (post-MVP)
 
-- `PUT /api/hotels/:hotel`  
+- `PUT /hotels/:hotel`  
   update hotel info
 
-- `PUT /api/hotels/:hotel/rooms/:room`  
+- `PUT /hotels/:hotel/rooms/:room`  
   update hotel room info (post-MVP)
 
-- `DELETE /api/hotels/:hotel`  
+- `DELETE /hotels/:hotel`  
   remove a hotel from the DB
 
-## Sample JSON from `GET /api/hotels/:hotel`
+## Sample JSON from `GET /hotels/:hotel`
 
 ```
 [
@@ -138,6 +138,7 @@ As a team, we decided to not split responsibilities front-end vs. back-end. We w
 | Admin (Edit)       |      3hrs      |    0hrs     |
 | Admin (Create)     |      3hrs      |    0hrs     |
 | Admin Form         |      3hrs      |    0hrs     |
+| Backend Setup      |      5hrs      |   4x3 hrs   |
 | Total | 37hrs | 0hrs |
 
 ## Additional Libraries
@@ -184,4 +185,6 @@ function reverse(string) {
 
 ## Change Log
 
-Update as necessary with any changes or directional adjustments made throughout the project week
+**18. Feb**
+
+- changed root directory from `"/api"` to `"/"` per Steve's suggestion
