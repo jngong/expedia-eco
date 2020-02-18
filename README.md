@@ -139,7 +139,8 @@ As a team, we decided to not split responsibilities front-end vs. back-end. We w
 | Admin (Create)     |      3hrs      |    0hrs     |
 | Admin Form         |      3hrs      |    0hrs     |
 | Backend Setup      |      5hrs      |   4x3 hrs   |
-| Total | 37hrs | 0hrs |
+| Backend debugging  |      n/a       |    4hrs     |
+| Total              |     37hrs      |    0hrs     |
 
 ## Additional Libraries
 

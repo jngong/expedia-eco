@@ -5,19 +5,19 @@ class HotelButton extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: "",
-      city: "",
-      rating: 0,
-      eco: false,
-      listPrice: "",
-      currentPrice: ""
+      name: "Holiday Inn",
+      city: "Los Angeles",
+      rating: 3.5,
+      eco: true,
+      listPrice: "$300/night",
+      currentPrice: "$250/night"
     };
   }
 
   ratingComment = rating => {
     return parseFloat(rating) >= 4
       ? "Very good!"
-      : 4 > parseFloat(rating) >= 3.5
+      : 4 > parseFloat(rating) && parseFloat(rating) >= 3.5
       ? "Good!"
       : "";
   };
@@ -27,34 +27,33 @@ class HotelButton extends Component {
   };
 
   handleEco = () => {
-    return; //this.state.eco ===true?"🌲 Eco-friendly":""
+    return this.state.eco === true ? "🌲 Eco-friendly" : "";
   };
 
   render() {
     const { ratingComment, reviewCount, handleEco } = this;
+    const { name, city, rating, eco, listPrice, currentPrice } = this.state;
     return (
       <React.Fragment>
         <Link to="[HOTEL SLUG]">
           <div className="hotel-info">
             <img src="[../../images/HOTEL PIC]" />
             <div className="hotel-info-text">
-              <h3>{hotelName}</h3>
-              <p>{cityId}</p>
+              <h3>{name}</h3>
+              <p>{city}</p>
               <p>
-                {rating}/5 {ratingComment} ({reviewCount} reviews)
+                {rating}/5 {ratingComment(rating)} ({reviewCount()} reviews)
               </p>
             </div>
           </div>
           <div className="room-info">
             <div className="room-features">
               <p>✔️ Free cancellation</p>
-              <p>{handleEco}</p>
+              <p>{handleEco()}</p>
             </div>
             <div className="room-price">
-              <span className="room-price-list">{this.state.listPrice}</span>{" "}
-              <span className="room-price-current">
-                {this.state.currentPrice}
-              </span>
+              <span className="room-price-list">{listPrice}</span>{" "}
+              <span className="room-price-current">{currentPrice}</span>
               <p>Per person includes flight + hotel + car</p>
             </div>
           </div>

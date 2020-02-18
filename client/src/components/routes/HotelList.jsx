@@ -1,15 +1,26 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
+import HotelButton from "./HotelButton";
 
 class HotelList extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      destCity: "",
-      departDate: "",
-      returnDate: "",
-      travelers: 0,
-      hotels: []
+      destCity: "Los Angeles",
+      departDate: "06/02/2020",
+      returnDate: "06/09/2020",
+      travelers: 2,
+      hotels: [
+        {
+          name: "Holiday Inn",
+          city: "Los Angeles",
+          rating: 3,
+          eco: true,
+          listPrice: "$300/night",
+          currentPrice: "$250/night"
+        }
+      ]
     };
   }
 
@@ -39,15 +50,16 @@ class HotelList extends Component {
         <Link to="/">Questions? 866-404-5719 📞</Link>
         <ul>
           {hotels.map(hotel => {
-            <HotelButton
-              key={hotel.index}
-              name={hotel.name}
-              city={hotel.city}
-              rating={hotel.rating}
-              eco={hotel.eco}
-              listPrice={hotel.listPrice}
-              currentPrice={hotel.currentPrice}
-            />;
+            return (
+              <HotelButton
+                name={hotel.name}
+                city={hotel.city}
+                rating={hotel.rating}
+                eco={hotel.eco}
+                listPrice={hotel.listPrice}
+                currentPrice={hotel.currentPrice}
+              />
+            );
           })}
         </ul>
       </React.Fragment>

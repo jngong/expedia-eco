@@ -1,6 +1,7 @@
-import React from 'react';
-import './App.css';
-import ConfirmationPage from './components/routes/ConfirmationPage';
+import React from "react";
+import "./App.css";
+import ConfirmationPage from "./components/routes/ConfirmationPage";
+import HotelList from "./components/routes/HotelList";
 
 function App() {
   return (
