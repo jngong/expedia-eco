@@ -13,7 +13,9 @@ class App extends Component {
         destCity: 'Los Angeles',
         departDate: '06/02/2020',
         returnDate: '06/09/2020',
-        travelers: 2
+        travelers: 2,
+        hotelCheckbox: false,
+        ecoFriendlyCheckbox: true
       }
     }
   }

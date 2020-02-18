@@ -10,7 +10,7 @@ const Home = (props) => {
             <h1>Placeholder for LogoNav component</h1>
             <SearchOptionsNav />
             <SearchVacationPackagesNav />
-            <SearchForm />
+            <SearchForm tripSearch={props.tripSearch} />
             <p>Book together and SAVE!</p>
         </div>
     )
