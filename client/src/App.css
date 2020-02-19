@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -26,15 +26,24 @@
 
 .App-link {
   color: #61dafb;
-}
+} */
 
 .nav-icons {
   display: flex;
+  align-items: center;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  padding: 20px;
+  background-color: #ffd000;
+  justify-content: space-between;
 }
 
 .fas {
-  display: flex;
-  
+  padding: 0 10px;
+  font-size: larger;
 }
 
 @keyframes App-logo-spin {

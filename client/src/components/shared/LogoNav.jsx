@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import { Navbar } from 'react-bootstrap'
+import Logo from '../../images/expedia-logo.png'
+
 
 class LogoNav extends Component {
     constructor(props) {
@@ -10,20 +12,20 @@ class LogoNav extends Component {
     render() {
         
         return(
-            <Navbar bg='warning' variant='dark' >
-                <Navbar.Brand>
+            <div className='navbar'>
+                <div className='logo'>
                     <img 
-                    src={require('/Users/harley/Desktop/Sei-Blizzard/Unit3/p3/flying-four/client/src/images/expedia-logo.png')}
-                    alt='Expedia'
-                    width='100'
-                    height='30'  />
-                </Navbar.Brand>
+                        src={Logo}
+                        alt='Expedia'
+                        width='140'
+                        height='40'  />
+                </div>        
                 <div className='nav-icons'>
                     <i class="fas fa-heart"></i>
                     <i class="fas fa-user"></i>
                     <i class="fas fa-bars"></i>
                 </div>
-            </Navbar>
+            </div>
         )
     }
 }
