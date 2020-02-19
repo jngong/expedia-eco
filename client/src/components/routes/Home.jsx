@@ -106,7 +106,6 @@ class Home extends React.Component {
 
     return (
       <div className="home">
-        <h1>Placeholder for LogoNav component</h1>
         <SearchOptionsNav />
         <SearchVacationPackagesNav />
         <SearchForm

@@ -1,8 +1,41 @@
 .home {
     background-color: black;
-    color: white
+    color: white; 
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.search-options-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 10px 0 10px;
+    border-bottom: 1px solid #979797;
+    height: 48px
+}
+
+.search-options-nav-item {
+    width: 50px;
+    background-color: black;
+    color: white;
+    padding-bottom: 10px;
+    border: none;
+    outline: none
+}
+
+.bundle {
+    width: 100px
+}
+
+.search-options-nav-item img {
+    width: 14px;
+    margin: 0 3px;
+}
+
+.search-options-nav-item:hover, .search-options-nav-item:active {
+    border-bottom: 3px solid #005ebf;
 }
 
 .search-vacay-nav {
-    margin-bottom: 20px;
+    margin-bottom: 20px
 }
