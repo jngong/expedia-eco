@@ -31,6 +31,7 @@
 .nav-icons {
   display: flex;
   align-items: center;
+  color: #003262;
 }
 
 .navbar {
