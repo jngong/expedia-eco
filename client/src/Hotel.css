@@ -7,6 +7,10 @@
 /** TripDetails Styles **/
 /* ************************************* */
 
+.hotel-added-components {
+    border: 3px solid #003060;
+    border-radius: 1px;
+}
 .trip-details {
     color: #616161;
 }
@@ -74,5 +78,13 @@
     color: white;
     text-align: center;
     object-fit: contain;
-    outline: none
+    outline: none;
+    margin-bottom: 5px 
+}
+
+.show-all-rooms {
+    color: #005ebf;
+    font-size: 10px;
+    padding: 10px 15px;
+    border-top: 3px solid #003060
 }

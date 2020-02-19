@@ -71,6 +71,9 @@ class RoomButton extends Component {
         return (
             <div>
                 {renderRooms}
+                <div className="show-all-rooms">
+                    Show all rooms & rates
+                </div>
             </div>
         )
     }
