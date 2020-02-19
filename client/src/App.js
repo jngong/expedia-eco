@@ -1,6 +1,8 @@
 import React from 'react';
 import './App.css';
 import { Route } from 'react-router-dom';
+
+import LogoNav from './components/shared/LogoNav'
 import Home from './components/routes/Home'
 import HotelList from './components/routes/HotelList'
 import Hotel from './components/routes/Hotel'
@@ -11,13 +13,14 @@ import Admin from './components/routes/Admin';
 
 const App = () => {
   return (
-    <React.Fragment>
+    <div className="App">
+      <LogoNav />
       <Route exact path='/' component={Home} />
       <Route exact path='/hotels' component={HotelList} />
       <Route exact path='/hotels/:hotel_id' component={Hotel} />
       <Route exact path='/hotels/:hotel_id/confirmation' component={ConfirmationPage} />
       <Route exact path='/admin' component={Admin} />
-    </React.Fragment>
+    </div>
   );
 }
 
