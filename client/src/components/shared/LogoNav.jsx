@@ -1,12 +1,8 @@
 import React, { Component } from 'react'
-import { Navbar } from 'react-bootstrap'
 import Logo from '../../images/expedia-logo.png'
 
 
 class LogoNav extends Component {
-    constructor(props) {
-        super(props)
-    }
 
     
     render() {
@@ -21,9 +17,9 @@ class LogoNav extends Component {
                         height='40'  />
                 </div>        
                 <div className='nav-icons'>
-                    <i class="fas fa-heart"></i>
-                    <i class="fas fa-user"></i>
-                    <i class="fas fa-bars"></i>
+                    <i className="fas fa-heart"></i>
+                    <i className="fas fa-user"></i>
+                    <i className="fas fa-bars"></i>
                 </div>
             </div>
         )
