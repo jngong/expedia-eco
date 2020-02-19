@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-
-
+import RoomButton from '../hotel-subcomponents/RoomButton';
+import TripDetails from '../hotel-subcomponents/TripDetails';
 
 export default class Hotel extends Component {
 
@@ -54,7 +54,8 @@ export default class Hotel extends Component {
                 and wireless internet access is complimentary.</p>
 
                 <p>See more</p>
-
+                <TripDetails />
+                <RoomButton />
             </div>
         )
     }

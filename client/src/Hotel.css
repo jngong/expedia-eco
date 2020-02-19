@@ -1,6 +1,37 @@
+/* ************************************* */
+/** Hotel Styles **/
+/* ************************************* */
+
 
 /* ************************************* */
-/** Room Button Styles **/
+/** TripDetails Styles **/
+/* ************************************* */
+
+.trip-details {
+    color: #616161;
+}
+
+.trip-details-header {
+    background-color: #003060;
+    color: white;
+    font-size: 17px;
+    padding: 11px 15px;
+    font-weight: bold
+}
+
+.trip-details-subheader {
+    background-color: #ededed;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 8px 15px
+}
+
+.trip-details-main {
+    padding: 18px 15px;
+}
+
+/* ************************************* */
+/** RoomButton Styles **/
 /* ************************************* */
 
 /* .room-button {
