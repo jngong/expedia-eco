@@ -76,12 +76,14 @@ class HotelList extends Component {
             return (
               <HotelButton
                 key={i}
-                name={hotel.name}
-                city={hotel.city}
-                rating={hotel.rating}
-                eco={hotel.eco}
-                listPrice={hotel.listPrice}
-                currentPrice={hotel.currentPrice}
+                hotel_id={hotel.id}
+                // name={hotel.name}
+                // city={this.state.destCity}
+                // rating={hotel.rating}
+                // eco={hotel.eco_friendly}
+                // description={hotel.description}
+                // listPrice={hotel.listPrice}
+                // currentPrice={hotel.currentPrice}
               />
             );
           })}

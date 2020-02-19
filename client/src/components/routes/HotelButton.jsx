@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 class HotelButton extends Component {
   constructor(props) {
@@ -13,6 +14,8 @@ class HotelButton extends Component {
       currentPrice: "$250/night"
     };
   }
+
+  // axios.get('/hotels/${this.props.hotel_id})
 
   // ADDS COMMENTS IF THE HOTEL HAS A GOOD RATING
   ratingComment = rating => {
@@ -44,6 +47,7 @@ class HotelButton extends Component {
     // DESTRUCTURING VARIABLES
     const { ratingComment, reviewCount, randomThumbnail, handleEco } = this;
     const { name, city, rating, eco, listPrice, currentPrice } = this.state;
+    console.log("button props", this.props);
 
     return (
       <React.Fragment>
