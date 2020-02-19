@@ -125,21 +125,22 @@ As a team, we decided to not split responsibilities front-end vs. back-end. We w
 
 | Component          | Estimated Time | Actual Time |
 | ------------------ | :------------: | :---------: |
-| Layout             |      3hrs      |    0hrs     |
-| ExpediaLogo        |      2hrs      |    0hrs     |
-| Hotel Button       |      2hrs      |    0hrs     |
+| Layout             |      3hrs      |   2.5hrs    |
+| ExpediaLogo        |      2hrs      |   2.5hrs    |
+| Hotel Button       |      2hrs      |    1hrs     |
 | Room Button        |      2hrs      |    0hrs     |
 | SEARCHNAV Vacation |      3hrs      |    0hrs     |
-| Hotel              |      4hrs      |    0hrs     |
-| Hotel List         |      4hrs      |    0hrs     |
-| Search Form        |      3hrs      |    0hrs     |
-| Confirmation       |      2hrs      |    0hrs     |
+| Hotel              |      4hrs      |    2hrs     |
+| Hotel List         |      4hrs      |   3.5hrs    |
+| Search Form        |      3hrs      |    5hrs     |
+| Confirmation       |      2hrs      |    4hrs     |
 | App                |      3hrs      |    0hrs     |
 | Admin (Edit)       |      3hrs      |    0hrs     |
 | Admin (Create)     |      3hrs      |    0hrs     |
 | Admin Form         |      3hrs      |    0hrs     |
-| Backend Setup      |      5hrs      |   4x3 hrs   |
+| Backend Setup      |      5hrs      |   4x3hrs    |
 | Backend debugging  |      n/a       |    4hrs     |
+| React Router       |      n/a       |    3hrs     |
 | Total              |     37hrs      |    0hrs     |
 
 ## Additional Libraries

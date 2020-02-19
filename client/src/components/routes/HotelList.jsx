@@ -24,8 +24,11 @@ class HotelList extends Component {
     };
   }
 
+  // axios call with search terms from state on componentDidMount
+
   render() {
     const { hotels } = this.state;
+
     return (
       <React.Fragment>
         <img src="[hotel icon]" />

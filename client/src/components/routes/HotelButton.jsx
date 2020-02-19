@@ -14,6 +14,7 @@ class HotelButton extends Component {
     };
   }
 
+  // ADDS COMMENTS IF THE HOTEL HAS A GOOD RATING
   ratingComment = rating => {
     return parseFloat(rating) >= 4
       ? "Very good!"
@@ -22,17 +23,21 @@ class HotelButton extends Component {
       : "";
   };
 
+  // GENERATES A RANDOM NUMBER TO ACT AS A COUNT OF REVIEWS
   reviewCount = () => {
     return Math.floor(Math.random() * 10000) + 1000;
   };
 
+  // RENDERS THE "ECO-FRIENDLY" MESSAGE IF THE HOTEL OBJECT HAS eco_friendly:true
   handleEco = () => {
     return this.state.eco === true ? "🌲 Eco-friendly" : "";
   };
 
   render() {
+    // DESTRUCTURING VARIABLES
     const { ratingComment, reviewCount, handleEco } = this;
     const { name, city, rating, eco, listPrice, currentPrice } = this.state;
+
     return (
       <React.Fragment>
         <Link to="[HOTEL SLUG]">
