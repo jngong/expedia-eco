@@ -29,20 +29,17 @@ class HotelList extends Component {
       const res = await axios.get(
         `http://localhost:3001/cities/${this.props.location.state.cityId}/hotels`
       );
-      // console.log("res", res.data);
       this.setState({ hotels: res.data.hotels });
-      // console.log("newstate", this.state);
     } catch (error) {
       return console.log(error);
     }
   };
   componentDidMount = () => {
-    // console.log("props", this.props);
-    // console.log("state", this.state);
-    // console.log("cityId", this.props.location.state.cityId);
+    console.log("props", this.props);
     this.getSearchResults();
   };
 
+  /* ---------- RENDER ---------- */
   render() {
     const { hotels } = this.state;
 
@@ -120,7 +117,7 @@ class HotelList extends Component {
             return (
               <HotelButton
                 key={i}
-                id={hotel.id}
+                id={this.props.location.state.cityId}
                 destCity={this.state.destCity}
               />
             );
