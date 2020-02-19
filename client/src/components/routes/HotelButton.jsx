@@ -1,17 +1,30 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 class HotelButton extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: "Holiday Inn",
-      city: "Los Angeles",
-      rating: 3.5,
-      eco: true,
-      listPrice: "$300/night",
-      currentPrice: "$250/night"
+      //
     };
+  }
+
+  getHotelData = async () => {
+    const res = await axios.get(
+      `http://localhost:3001/hotels/${this.props.id}`
+    );
+    // console.log("axios", res.data);
+    this.setState({ ...res.data.hotel, destCity: this.props.destCity });
+    console.log("hotelstate", this.state);
+    const resRoom = await axios.get(
+      `http://localhost:3001/hotels/${this.props.id}/rooms`
+    );
+    console.log("resRoom", resRoom.data);
+  };
+
+  componentDidMount() {
+    this.getHotelData();
   }
 
   // ADDS COMMENTS IF THE HOTEL HAS A GOOD RATING
@@ -37,24 +50,27 @@ class HotelButton extends Component {
 
   // RENDERS THE "ECO-FRIENDLY" MESSAGE IF THE HOTEL OBJECT HAS eco_friendly:true
   handleEco = () => {
-    return this.state.eco === true ? "🌲 Eco-friendly" : "";
+    return this.state.eco_friendly === true ? "🌲 Eco-friendly" : "";
   };
 
   render() {
     // DESTRUCTURING VARIABLES
     const { ratingComment, reviewCount, randomThumbnail, handleEco } = this;
-    const { name, city, rating, eco, listPrice, currentPrice } = this.state;
+    const { id, name, destCity, rating, listPrice, currentPrice } = this.state;
 
     return (
       <React.Fragment>
-        <Link to="/hotels/:hotel_id">
+        <Link to={`/hotels/${id}`}>
+          {/* pass axios data to Hotel details component */}
           <div className="hotel-info">
             <img
               src={require("../../images/icons-assets/hotel-thumb-2@2x.png")}
+              className="thumbnail"
+              alt="hotel picture"
             />
             <div className="hotel-info-text">
               <h3>{name}</h3>
-              <p>{city}</p>
+              <p>{destCity}</p>
               <p>
                 {rating}/5 {ratingComment(rating)} ({reviewCount()} reviews)
               </p>
