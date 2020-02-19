@@ -29,11 +29,11 @@ class HotelButton extends Component {
   };
 
   // PICKS A DIFFERENT THUMBNAIL IMAGE FOR EACH ENTRY
-  randomThumbnail = () => {
-    const num = Math.floor(Math.random() * 4) + 1;
-		// return `../../images/icons-assets/hotel-thumb-${num}@2x.png`;
-		return num
-  };
+  // randomThumbnail = () => {
+  //   const num = Math.floor(Math.random() * 4) + 1;
+  // 	// return `../../images/icons-assets/hotel-thumb-${num}@2x.png`;
+  // 	return num
+  // };
 
   // RENDERS THE "ECO-FRIENDLY" MESSAGE IF THE HOTEL OBJECT HAS eco_friendly:true
   handleEco = () => {
@@ -49,7 +49,9 @@ class HotelButton extends Component {
       <React.Fragment>
         <Link to="/hotels/:hotel_id">
           <div className="hotel-info">
-            <img src={require(`../../images/icons-assets/hotel-thumb)} />
+            <img
+              src={require("../../images/icons-assets/hotel-thumb-2@2x.png")}
+            />
             <div className="hotel-info-text">
               <h3>{name}</h3>
               <p>{city}</p>
