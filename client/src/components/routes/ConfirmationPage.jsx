@@ -55,6 +55,7 @@ export const ConfirmationPage = (props) => {
             <footer id="confimation-page-footer">Rates are quoted in US Dollar.
             All taxes or fees collected by the hotel will be settled in the local
                 currency.</footer>
+            
 
         </div>
     )
