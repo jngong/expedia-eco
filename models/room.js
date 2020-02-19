@@ -1,9 +1,9 @@
 "use strict";
 module.exports = (sequelize, DataTypes) => {
-  const Rooms = sequelize.define(
-    "Rooms",
+  const Room = sequelize.define(
+    "Room",
     {
-      hotel_id: DataTypes.INTEGER,
+      hotelId: DataTypes.INTEGER,
       type: DataTypes.STRING,
       list_price: DataTypes.CHAR,
       current_price: DataTypes.CHAR,
@@ -13,12 +13,11 @@ module.exports = (sequelize, DataTypes) => {
     },
     {}
   );
-  Rooms.associate = function(models) {
+  Room.associate = function(models) {
     // associations can be defined here
-    Rooms.belongsTo(models.Hotels, {
-      foreignKey: "hotel_id",
-      onDelete: "CASCADE"
+    Room.belongsTo(models.Hotel, {
+      foreignKey: "hotelId"
     });
   };
-  return Rooms;
+  return Room;
 };

@@ -8,13 +8,13 @@ router.get("/", (req, res) => res.send("This is root!"));
 // CITY NAMES
 router.get("/cities", controllers.getAllCities);
 // HOTELS IN A CITY
-router.get("/cities/:city_id/hotels", controllers.getAllHotelsByCity);
+router.get("/cities/:cityId/hotels", controllers.getAllHotelsByCity);
 // HOTEL DETAILS
-router.get("/hotels/:hotel_id", controllers.getHotelDetails);
+router.get("/hotels/:hotelId", controllers.getHotelDetails);
 // ROOMS IN A HOTEL
-router.get("/hotels/:hotel_id/rooms", controllers.getAllRoomsByHotel);
+router.get("/hotels/:hotelId/rooms", controllers.getAllRoomsByHotel);
 // ROOM DETAILS
-router.get("/hotels/:hotel_id/rooms/:room_id", controllers.getRoomDetails);
+router.get("/hotels/:hotelId/rooms/:room_id", controllers.getRoomDetails);
 
 /* ---------- POST ---------- */
 // NEW HOTEL
@@ -26,6 +26,6 @@ router.put("/hotels/:hotel_id", controllers.updateHotel);
 
 /* ---------- DELETE ---------- */
 // DELETE HOTEL
-router.delete("/hotels/:hotel_id", controllers.deleteHotel);
+router.delete("/hotels/:hotelId", controllers.deleteHotel);
 
 module.exports = router;
