@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import axios from 'axios'
+import '../../Hotel.css'
 
 class RoomButton extends Component {
 
@@ -26,16 +27,18 @@ class RoomButton extends Component {
 
         const {rooms} = this.state
 
-        const renderRooms = rooms.map(room => {
+        const filterRooms = rooms.filter(room => room.availability === true)
+
+        const renderRooms = filterRooms.map(room => {
             return(
-                <div className="room-button">
+                <div className="room-button" key={room.id}>
                     <div className='room-button-header'>
-                        <p>Unreal Deal</p>
+                        <p className="bold">Unreal Deal</p>
                         <p>Book this and save 20% on your flight</p>
                     </div>
                     <div className="room-details-container">
                     <div className="room-details-left">
-                        <p>Parlor Room with 1 Bed</p>
+                        <p>{room.type}</p>
                         <p>1 Twin Bed</p>
                         <p>Room sleeps 1 guest</p>
                         <p className="free-wifi">Free Wifi</p>
@@ -43,7 +46,7 @@ class RoomButton extends Component {
                     </div>
                     <div className="room-details-right">
                         <p className="red">Only 1 room left at</p>
-                        <p>$100.00</p>
+                        <p>{room.current_price}</p>
                         <p>per night</p>
                         <p>Free cancellation</p>
                         <p>until Sun, May 31</p>
