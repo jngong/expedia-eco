@@ -16,11 +16,11 @@ class Home extends React.Component {
         super(props)
         this.state = {
             tripSearch: {
-                departCity: 'Miami',
-                destCity: 'Los Angeles',
-                departDate: '06/02/2020',
-                returnDate: '06/09/2020',
-                travelers: 2,
+                departCity: '',
+                destCity: '',
+                departDate: '',
+                returnDate: '',
+                travelers: '',
                 hotelCheckbox: false,
                 ecoFriendlyCheckbox: true
             },
@@ -69,41 +69,34 @@ class Home extends React.Component {
         }))
     }
 
-    //This method is called by the handleSubmit method when the search button is clicked. It will filter through the list of cities and match on name. If name doesn't match, then it will alert an error. When it matches with a city, it will set the state of cityId to be passed down to the next componenet (HotelList).
-    checkCity = () => {
+    // This method is called when the search form is submitted. It will filter through the list of cities and match on name. If name doesn't match, then it will alert an error. When it matches with a city, it will set the state of cityId and set the state of redirect to true so that it can be used in a conditional statement to prompt a Redirect to the HotelList component which will pass state down.
+    handleSubmit =  (event) => {
+        event.preventDefault()
 
         const cityMatch = this.state.cities.filter(city => city.name.toLowerCase() === this.state.tripSearch.destCity.toLowerCase() )
-
         console.log(cityMatch)
         
-        if (cityMatch) {
+        if (cityMatch.length !== 0) {
             this.setState({
                 cityId: cityMatch[0].id,
                 redirect: true
             })
-        }
-
-    }
-
-    //When the form is submitted, it needs to do two things. 
-    // 1: compare the destCity value to our list of cities to set the state of CityId and 
-    // 2: push to the next route in the user flow (HotelList)
-
-    handleSubmit = async (event) => {
-        event.preventDefault()
-        this.checkCity()
-
-        // this.props.history.push('/hotels') 
-
-        if (this.state.cityId){
-            return (<Redirect to={{pathname: '/hotels', tripSearch: this.state.tripSearch, cityId: this.state.cityId}} />)
         } else {
-            alert('Please enter a valid city.')
+            alert('Please enter a valid city')
         }
 
     }
 
     render() {
+        const {redirect} = this.state
+
+        if (redirect) {
+            return <Redirect to={{
+                pathname: '/hotels', 
+                state: {tripSearch: this.state.tripSearch, cityId: this.state.cityId}
+            }} />
+        }
+
         return (
             <div className="home" >
                 <h1>Placeholder for LogoNav component</h1>
