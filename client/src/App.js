@@ -1,4 +1,5 @@
 import React from 'react';
+import Hotel from './components/routes/Hotel'
 import './App.css';
 
 
