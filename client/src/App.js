@@ -1,5 +1,4 @@
 import React from 'react';
-import Hotel from './components/routes/Hotel'
 import './App.css';
 import { Route } from 'react-router-dom';
 
@@ -15,7 +14,6 @@ const App = () => {
   return (
     <div className="App">
       <LogoNav />
-      <p>This is App.js</p>
       <Route exact path='/' component={Home} />
       <Route exact path='/hotels' component={HotelList} />
       <Route exact path='/hotels/:hotel_id' component={Hotel} />
