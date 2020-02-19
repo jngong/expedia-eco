@@ -30,6 +30,18 @@ module.exports = {
         },
 
         {
+          hotelId: 2,
+          type: "King-Suite",
+          list_price: "$600.00",
+          current_price: "$500.00",
+          availability: false,
+          beds: "1 King-Sized Bed",
+          sleeps: 2,
+          createdAt: new Date(),
+          updatedAt: new Date()
+        },
+
+        {
           hotelId: 3,
           type: "King-Suite",
           list_price: "$300.00",
