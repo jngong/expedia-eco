@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 import HotelButton from "./HotelButton";
 
 class HotelList extends Component {
@@ -7,18 +8,16 @@ class HotelList extends Component {
     super(props);
 
     this.state = {
-      destCity: "Los Angeles",
-      departDate: "06/02/2020",
-      returnDate: "06/09/2020",
-      travelers: 2,
+      ...this.props.location.state.tripSearch,
+      cityId: this.props.location.state.cityId,
       hotels: [
         {
-          name: "Holiday Inn",
-          city: "Los Angeles",
-          rating: 3,
+          name: "",
+          city: "",
+          rating: 0,
           eco: true,
-          listPrice: "$300/night",
-          currentPrice: "$250/night"
+          listPrice: "",
+          currentPrice: ""
         }
       ]
     };
@@ -27,9 +26,19 @@ class HotelList extends Component {
   // axios call with search terms from state on componentDidMount
   getSearchResults = () => {
     try {
+      const res = axios.get(
+        `http://localhost:3001/cities/${this.props.state.cityID}/hotels`
+      );
+      console.log("res", res);
     } catch (error) {
-      return;
+      return console.log(error);
     }
+  };
+  componentDidMount = () => {
+    console.log("props", this.props);
+    console.log("state", this.state);
+    console.log("cityId", this.props.location.state.cityId);
+    this.getSearchResults();
   };
 
   render() {
@@ -48,11 +57,14 @@ class HotelList extends Component {
         <form>
           <input
             type="text"
-            value={`${this.state.destCity} (${this.state.hotels.length} properties)`}
+            placeholder={`${this.state.destCity} (${this.state.hotels.length} properties)`}
           />
-          <input type="date" value={this.state.departDate} /> -{" "}
-          <input type="date" value={this.state.returnDate} />
-          <input type="text" value={`${this.state.travelers} travelers`} />
+          <input type="text" placeholder={this.state.departDate} /> -{" "}
+          <input type="text" placeholder={this.state.returnDate} />
+          <input
+            type="text"
+            placeholder={`${this.state.travelers} travelers`}
+          />
         </form>
         <button>Sort &amp; Filter</button>
         <button>Map</button>
@@ -61,6 +73,7 @@ class HotelList extends Component {
           {hotels.map(hotel => {
             return (
               <HotelButton
+                key={hotel.listPrice}
                 name={hotel.name}
                 city={hotel.city}
                 rating={hotel.rating}
