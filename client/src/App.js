@@ -15,7 +15,7 @@ const App = () => {
       <Route exact path='/' component={Home} />
       <Route exact path='/hotels' component={HotelList} />
       <Route exact path='/hotels/:hotel_id' component={Hotel} />
-      <Route exact path='/hotels/:hotel_id/confirmation' component={Confirmation} />
+      <Route exact path='/hotels/:hotel_id/confirmation' component={ConfirmationPage} />
     </React.Fragment>
   );
 }
