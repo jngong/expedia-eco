@@ -24,12 +24,14 @@ class HotelList extends Component {
   }
 
   // axios call with search terms from state on componentDidMount
-  getSearchResults = () => {
+  getSearchResults = async () => {
     try {
-      const res = axios.get(
-        `http://localhost:3001/cities/${this.props.state.cityID}/hotels`
+      const res = await axios.get(
+        `http://localhost:3001/cities/${this.props.location.state.cityId}/hotels`
       );
-      console.log("res", res);
+      console.log("res", res.data);
+      this.setState({ hotels: res.data.hotels });
+      console.log("newstate", this.state);
     } catch (error) {
       return console.log(error);
     }
@@ -70,10 +72,10 @@ class HotelList extends Component {
         <button>Map</button>
         <Link to="/">Questions? 866-404-5719 📞</Link>
         <ul>
-          {hotels.map(hotel => {
+          {hotels.map((hotel, i) => {
             return (
               <HotelButton
-                key={hotel.listPrice}
+                key={i}
                 name={hotel.name}
                 city={hotel.city}
                 rating={hotel.rating}
