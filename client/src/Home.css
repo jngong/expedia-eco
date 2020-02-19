@@ -2,8 +2,12 @@
     background-color: black;
     color: white; 
     max-width: 1000px;
-    margin: 0 auto;
+    margin: 0 auto
 }
+
+/* ********************************** */
+/** SearchOptionNav Styles **/
+/* ********************************** */
 
 .search-options-nav {
     display: flex;
@@ -36,6 +40,33 @@
     border-bottom: 3px solid #005ebf;
 }
 
+/* ********************************** */
+/** SearchVacationPackagesNav Styles **/
+/* ********************************** */
+
+.vacay-packages-header {
+    font-size: 15px;
+    margin: 20px 10px 10px 10px
+}
+
 .search-vacay-nav {
-    margin-bottom: 20px
+    display: flex;
+    flex-flow: row wrap;
+    margin: 10px 10px 20px 10px
+}
+
+.search-vacay-nav-item {
+    background-color: #626262;
+    border-radius: 5px;
+    height: 30px;
+    border: 1px solid #626262;
+    font-size: 10px; 
+    color: white;
+    padding: 0 10px;
+    margin: 10px 10px 0 0;
+    outline: none
+}
+
+.search-vacay-nav-item:hover, .search-vacay-nav-item:active {
+    background-color: #005ebf;
 }
