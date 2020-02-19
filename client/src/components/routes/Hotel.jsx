@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-
-
+import RoomButton from '../hotel-subcomponents/RoomButton';
+import TripDetails from '../hotel-subcomponents/TripDetails';
 
 export default class Hotel extends Component {
 
@@ -28,8 +28,6 @@ export default class Hotel extends Component {
         return (
             <div>
 
-                <h1>EXPEDIA LOGO AND BANNER RIGHT HERE (Pulled from LogoNav component)</h1>
-
                 <div id="hotel-component-banner">
                     <p>See all hotels (Link)</p>
                     <p id="expedia-phone-number">1-877-387-1531</p>
@@ -54,7 +52,10 @@ export default class Hotel extends Component {
                 and wireless internet access is complimentary.</p>
 
                 <p>See more</p>
-
+                <div className="hotel-added-components">
+                    <TripDetails />
+                    <RoomButton />
+                </div>
             </div>
         )
     }
