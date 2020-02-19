@@ -53,7 +53,6 @@ class Home extends React.Component {
         [name]: value
       }
     }));
-    console.log(name, value);
   };
 
   //This method is passed down to the SearchForm component. It is called via an onChange on each checkbox input field to capture the user input and update state.
