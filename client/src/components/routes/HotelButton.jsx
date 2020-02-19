@@ -11,7 +11,7 @@ class HotelButton extends Component {
   }
 
   /* --------- API CALLS ---------- */
-  // FETCH HOTEL INFO FROM /cities/:cityId/hotels ENDPOINT AND SET IT INTO STATE
+  // fetch hotel info from  /cities/:cityId/hotels endpoint and set it into state
   getHotelData = async () => {
     try {
       const res = await axios.get(
@@ -25,7 +25,7 @@ class HotelButton extends Component {
     }
   };
 
-  // FETCH AN ARRAY OF HOTEL ROOM INFO FROM /hotels/:hotelId/rooms ENDPOINT AND SET IT INTO STATE
+  // fetch an array of hotel room info from /hotels/:hotelId/rooms endpoint and set it into state
   getRoomData = async () => {
     try {
       const resRoom = await axios.get(
@@ -38,21 +38,18 @@ class HotelButton extends Component {
     }
   };
 
-  // PULL PRICE INFO FROM ZEROTH INDEX IN ROOM ARRAY TO USE IN HOTEL BUTTON
+  // pull prices from zeroth index in room array to use in hotel button
   getRoomPrices = async () => {
     await this.getRoomData;
-    // console.log("getRoomPrices", this.state.rooms[0]);
     this.setState({
       sample_list_price: this.state.rooms[0].list_price,
       sample_current_price: this.state.rooms[0].current_price
     });
     console.log("room prices retrieved");
-    // return this.state.rooms[0];
   };
 
-  // RUN ALL ABOVE GET COMMANDS WHEN COMPONENT LOADS
+  // run all above get commands when component loads
   componentDidMount = async () => {
-    // console.log("buttonprops", this.props);
     await this.getHotelData();
     await this.getRoomData();
     await this.getRoomPrices();
@@ -75,11 +72,11 @@ class HotelButton extends Component {
   };
 
   // PICKS A DIFFERENT THUMBNAIL IMAGE FOR EACH ENTRY
-  // randomThumbnail = () => {
-  //   const num = Math.floor(Math.random() * 4) + 1;
-  // 	// return `../../images/icons-assets/hotel-thumb-${num}@2x.png`;
-  // 	return num
-  // };
+  randomThumbnail = () => {
+    const num = Math.floor(Math.random() * 4) + 1;
+    // return `require('../../images/icons-assets/hotel-thumb-${num}@2x.png')`;
+    return num;
+  };
 
   // RENDERS THE "ECO-FRIENDLY" MESSAGE IF THE HOTEL OBJECT HAS eco_friendly:true
   handleEco = () => {
@@ -111,14 +108,21 @@ class HotelButton extends Component {
     } = this.state;
 
     return (
-      <React.Fragment>
-        <Link to={`/hotels/${id}`}>
-          {/* pass axios data to Hotel details component */}
+      <li>
+        {/* pass axios data to Hotel details component */}
+        <Link
+          to={{
+            pathname: `/hotels/${id}`,
+            state: {
+              ...this.state
+            }
+          }}
+        >
           <div className="hotel-info">
             <img
-              src={require("../../images/icons-assets/hotel-thumb-2@2x.png")}
+              src={require(`../../images/icons-assets/hotel-thumb-${this.randomThumbnail()}@2x.png`)}
               className="thumbnail"
-              alt="hotel picture"
+              alt="hotel thumb"
             />
             <div className="hotel-info-text">
               <h3>{name}</h3>
@@ -133,7 +137,7 @@ class HotelButton extends Component {
               <p>
                 <img
                   src={require("../../images/icons-assets/check@2x.png")}
-                  class="icon"
+                  className="icon"
                   alt="check"
                 />
                 Free cancellation
@@ -147,7 +151,7 @@ class HotelButton extends Component {
             </div>
           </div>
         </Link>
-      </React.Fragment>
+      </li>
     );
   }
 }
