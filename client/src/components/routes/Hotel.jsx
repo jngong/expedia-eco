@@ -40,7 +40,7 @@ export default class Hotel extends Component {
                 <div id="hotel-main-content">
                     <p>{this.state.Hotel.name} Rating: {this.state.Hotel.rating}</p>
                     <p>{this.state.Hotel.address}</p>
-                    <img src={require("../../images/hotel_room_image.jpg")} />
+                    <img src={require("../../images/hotel_room_image.jpg")} alt="hotel" />
                     {/* Need to add the scroll arrows icons */}
                     <p>Very Good! {this.state.Hotel.rating}</p>
                     <p>View all 1,769 Expedia Verified Reviews</p>
