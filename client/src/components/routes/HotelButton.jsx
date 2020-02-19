@@ -28,6 +28,13 @@ class HotelButton extends Component {
     return Math.floor(Math.random() * 10000) + 1000;
   };
 
+  // PICKS A DIFFERENT THUMBNAIL IMAGE FOR EACH ENTRY
+  randomThumbnail = () => {
+    const num = Math.floor(Math.random() * 4) + 1;
+		// return `../../images/icons-assets/hotel-thumb-${num}@2x.png`;
+		return num
+  };
+
   // RENDERS THE "ECO-FRIENDLY" MESSAGE IF THE HOTEL OBJECT HAS eco_friendly:true
   handleEco = () => {
     return this.state.eco === true ? "🌲 Eco-friendly" : "";
@@ -35,14 +42,14 @@ class HotelButton extends Component {
 
   render() {
     // DESTRUCTURING VARIABLES
-    const { ratingComment, reviewCount, handleEco } = this;
+    const { ratingComment, reviewCount, randomThumbnail, handleEco } = this;
     const { name, city, rating, eco, listPrice, currentPrice } = this.state;
 
     return (
       <React.Fragment>
-        <Link to="[HOTEL SLUG]">
+        <Link to="/hotels/:hotel_id">
           <div className="hotel-info">
-            <img src="[../../images/HOTEL PIC]" />
+            <img src={require(`../../images/icons-assets/hotel-thumb)} />
             <div className="hotel-info-text">
               <h3>{name}</h3>
               <p>{city}</p>
