@@ -9,7 +9,17 @@ class AdminDelete extends Component {
         super(props)
 
         this.state = {
+            hotel: {},
             isDeleted: false
+        }
+    }
+
+    async componentDidMount() {
+        try {
+            const response = await Axios(`http://localhost:3001/hotels/${this.props.match.params.hotel_id}`);
+            this.setState({ hotel: response.data.hotel })
+        } catch(error) {
+            console.error(error);
         }
     }
     
@@ -32,9 +42,7 @@ class AdminDelete extends Component {
         }
         return(
             <div>
-                <AdminForm 
-                    handleSubmit={this.handleDelete}
-                />
+                <button onClick={this.handleDelete}>DELETE</button>
             </div>
         )
     }
