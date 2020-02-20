@@ -7,84 +7,95 @@
 /** TripDetails Styles **/
 /* ************************************* */
 
+.trip-details-header,
+.trip-details-subheader,
+.trip-details-main {
+    padding: .5rem
+}
+
 .hotel-added-components {
-    border: 3px solid #003060;
+    border: 3px solid var(--expedia-blue);
     border-radius: 1px;
 }
 .trip-details {
-    color: #616161;
+    color: var(--subtext-color);
 }
 
 .trip-details-header {
-    background-color: #003060;
+    background-color: var(--expedia-blue);
     color: white;
     font-size: 17px;
-    padding: 11px 15px;
+    /* padding: 11px 15px; */
     font-weight: bold
 }
 
 .trip-details-subheader {
-    background-color: #ededed;
+    background-color: var(--very-light-pink);
     font-size: 12px;
     font-weight: bold;
-    padding: 8px 15px
-}
-
-.trip-details-main {
-    padding: 18px 15px;
+    /* padding: 8px 15px */
 }
 
 /* ************************************* */
 /** RoomButton Styles **/
 /* ************************************* */
 
-/* .room-button {
-    display: flex;
-    flex-direction: column;
-    align-items: right
-} */
+.room-button {
+    position: relative
+}
+
+.room-button-header,
+.room-details-container {
+    padding: .5rem
+}
 
 .room-button-header {
-    background-color: #007500;
+    background-color: var(--eco-green);
     color: white;
-    padding: 3px
+    /* padding: 3px */
 }
 
 .bold {
     font-weight: bold;
 }
 
-.room-button-header p {
+.room-button-header p, .room-button-header h3 {
     margin: 0;
-    margin-bottom: 3px
+    margin-bottom: 3px;
+    color: white
+}
+
+h3 {
+    font-size: .9rem;
 }
 
 .room-details-container {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center
+    align-items: center;
+    padding-bottom: 40px;
 }
 
 .room-select-button {
-    background-color: #005ebf;
-    width: 60px;
+    background-color: var(--amenities-icon-text);
+    width: 65px;
     height: 30px;
-    border-radius: 3px;
-    box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.5);
     font-family: Arial;
     font-size: 13px;
     font-weight: bold;
     color: white;
     text-align: center;
-    object-fit: contain;
     outline: none;
-    margin-bottom: 5px 
+    margin: .5rem; 
+    position: absolute;
+    bottom: 0;
+    right: .5rem
 }
 
 .show-all-rooms {
-    color: #005ebf;
+    color: var(--amenities-icon-text);
     font-size: 10px;
     padding: 10px 15px;
-    border-top: 3px solid #003060
+    border-top: 3px solid var(--expedia-blue)
 }
