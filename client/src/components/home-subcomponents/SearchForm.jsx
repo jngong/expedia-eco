@@ -4,8 +4,6 @@ import CalendarIcon from "../../images/icons-assets/calendar@3x.png"
 import UserIcon from "../../images/icons-assets/users@3x.png"
 import XIcon from "../../images/icons-assets/x.png"
 
-import '../../Home.css'
-
 const SearchForm = (props) => {
 
     const handleInputChange = (e) => {
