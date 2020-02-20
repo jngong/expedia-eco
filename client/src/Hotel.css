@@ -1,6 +1,41 @@
+/* ************************************* */
+/** Hotel Styles **/
+/* ************************************* */
+
 
 /* ************************************* */
-/** Room Button Styles **/
+/** TripDetails Styles **/
+/* ************************************* */
+
+.hotel-added-components {
+    border: 3px solid #003060;
+    border-radius: 1px;
+}
+.trip-details {
+    color: #616161;
+}
+
+.trip-details-header {
+    background-color: #003060;
+    color: white;
+    font-size: 17px;
+    padding: 11px 15px;
+    font-weight: bold
+}
+
+.trip-details-subheader {
+    background-color: #ededed;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 8px 15px
+}
+
+.trip-details-main {
+    padding: 18px 15px;
+}
+
+/* ************************************* */
+/** RoomButton Styles **/
 /* ************************************* */
 
 /* .room-button {
@@ -43,5 +78,13 @@
     color: white;
     text-align: center;
     object-fit: contain;
-    outline: none
+    outline: none;
+    margin-bottom: 5px 
+}
+
+.show-all-rooms {
+    color: #005ebf;
+    font-size: 10px;
+    padding: 10px 15px;
+    border-top: 3px solid #003060
 }
