@@ -1,8 +1,199 @@
+* {
+    box-sizing: border-box;
+}
 .home {
     background-color: black;
-    color: white
+    color: white; 
+    margin: 0 auto
+}
+
+/* ********************************** */
+/** SearchOptionNav Styles **/
+/* ********************************** */
+
+.search-options-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 10px 0 10px;
+    border-bottom: 1px solid #979797; /*var(--formfield-icons)*/
+    height: 55px
+}
+
+.search-options-nav-item {
+    width: 50px;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    padding-bottom: 10px;
+    border: none;
+    outline: none
+}
+
+.bundle {
+    width: 105px
+}
+
+.search-options-nav-item img {
+    width: 14px;
+    margin: 0 3px;
+}
+
+.search-options-nav-item:hover, .search-options-nav-item:active {
+    border-bottom: 3px solid #005ebf;
+}
+
+/* ********************************** */
+/** SearchVacationPackagesNav Styles **/
+/* ********************************** */
+
+.vacay-packages-header {
+    font-size: 15px;
+    margin: 20px 10px 10px 10px
 }
 
 .search-vacay-nav {
-    margin-bottom: 20px;
+    display: flex;
+    flex-flow: row wrap;
+    margin: 10px
+}
+
+.search-vacay-nav-item {
+    background-color: #626262; /* var(--brownish-grey-three) */
+    border-radius: 5px;
+    height: 30px;
+    border: 1px solid #626262;  /* var(--brownish-grey-three) */
+    font-size: 10px; 
+    color: white;
+    padding: 0 15px;
+    margin: 10px 10px 0 0;
+    outline: none
+}
+
+.search-vacay-nav-item:hover, .search-vacay-nav-item:active {
+    background-color: #005ebf;
+}
+
+/* ********************************** */
+/** SearchForm Styles **/
+/* ********************************** */
+
+.search-form {
+    margin: 10px   
+}
+
+.input-label {
+    font-size: 8px;
+    font-weight: bold;
+    color: #626262; /* var(--brownish-grey-three) */
+    position: relative;
+    top: 14px;
+    left: 30px;
+    z-index: 1
+}
+
+.input-icon {
+    position: relative;
+    top: 36px;
+    left: 8px;
+    color: #626262;
+}
+
+.map {
+    width: 11px;
+    height: 14px;
+}
+
+.calendar {
+    width: 17px;
+    height: 17px;
+    top: 40px;
+}
+
+.user {
+    width: 12px;
+    height: 12px;
+}
+
+.x-icon {
+    position: relative;
+    top: 36px;
+    left: 320px;
+    color: #626262;
+    object-fit: contain;
+    width: 12px;
+    height: 12px;
+}
+
+input[type = text] {
+    width: 100%;
+    height: 36px;
+    border-radius: 5px;
+    border: solid 1px #979797; /*var(--formfield-icons)*/
+    padding-left: 30px;
+    padding-bottom: 0;
+    font-size: 12px;
+}
+
+.half-width-label {
+    width: 48%;
+}
+
+.dates {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+input[type = checkbox] {
+    height: 16px;
+    width: 16px;
+    border-radius: 2px;
+    border: solid 1px #979797; /*var(--formfield-icons)*/
+    background-color: white;
+    margin-right: 4px
+}
+
+.checkbox-label {
+    font-size: 10px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    margin-top: 10px
+}
+
+.searchButton {
+    width: 100%;
+    height: 36px;
+    border-radius: 5px;
+    background-color: #ffd000; /* var(--expedia-yellow) */
+    box-shadow: 0 2px 4px 0 #6f6363;
+    border: 1px solid;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* ********************************** */
+/* * Bottom of Home Page * */
+/* ********************************** */
+.form-message {
+    font-size: 13px;
+    font-weight: bold;
+    padding: 15px 10px;
+}
+
+.homepage-ads {
+    background-color: #ededed; /* var(--very-light-pink) */
+    color: #003262; /* var(--expedia-blue) */
+    font-size: 12px;
+    padding: 20px;
+}
+
+.homepage-ads p {
+    margin-bottom: 15px;
+    padding: 0 15px 0 40px;
+}
+
+.bold {
+    font-weight: bold;
 }
