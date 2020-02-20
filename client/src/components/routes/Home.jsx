@@ -106,7 +106,6 @@ class Home extends React.Component {
 
     return (
       <div className="home">
-        <h1>Placeholder for LogoNav component</h1>
         <SearchOptionsNav />
         <SearchVacationPackagesNav />
         <SearchForm
@@ -115,7 +114,15 @@ class Home extends React.Component {
           handleCheckChange={this.handleCheckChange}
           handleSubmit={this.handleSubmit}
         />
-        <p>Book together and SAVE!</p>
+        <p className="form-message">Book together and SAVE!</p>
+        <div className="homepage-ads">
+          <p>
+            Search over <span className="bold">a million flights, hotels, packages</span> and more
+          </p>
+          <p>
+            <span className="bold">No Expedia cancellation fee</span> to change or cancel almost any hotel reservation
+          </p>
+        </div>
       </div>
     );
   }
