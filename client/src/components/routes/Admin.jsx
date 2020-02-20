@@ -17,7 +17,8 @@ class Admin extends Component {
                 wifi: false,
                 business: false,
                 laundry: false,
-                smoke_free: false
+                smoke_free: false,
+                cityId: ''
             },
             createdHotel: null
         }
@@ -51,7 +52,7 @@ class Admin extends Component {
         axios({
             url: 'http://localhost:3001/hotels',
             method: 'POST',
-            data: { hotel: this.state.hotel }
+            data: this.state.hotel
         })
         .then(res => this.setState({ createdHotel: res.data.hotel }))
         .catch(console.error)
@@ -59,14 +60,15 @@ class Admin extends Component {
 
     render() {
         if (this.state.createdHotel) {
-            return <Redirect to={`http://localhost:3001/hotels/${this.state.createdHotel.id}`} />
+            console.log(this.state.createdHotel)
+            return <Redirect to={`/`} />
         }
-        console.log(this.state.data)
+        
         return(
                 <AdminForm 
                     hotel={this.state.hotel}
                     handleChange={this.handleChange}
-                    handleSubmit={this.handleSubmit}
+                    handleSubmit={this.submitHotel}
                     handleCheckboxChange={this.handleCheckboxChange}
 
 

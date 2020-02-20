@@ -69,7 +69,7 @@ class AdminForm extends Component {
                         onChange={this.props.handleCheckboxChange}
                         />
                         
-                        <label for='eco_friendly'>Eco-friendly</label>
+                        <label>Eco-friendly</label>
                         <input 
                         type='checkbox' 
                         name='business'
@@ -103,6 +103,14 @@ class AdminForm extends Component {
                         <label>Smoke-free</label>
                         
                     </label>
+                    <br/>
+                    <label>CityId</label>
+                    <input 
+                    type='text'
+                    name='cityId'
+                    onChange={this.props.handleChange}
+                    value={this.props.hotel.cityId}
+                    />
                     <br/>
                     <input type='submit' onSubmit={this.props.submitHotel} />
                 </form>
