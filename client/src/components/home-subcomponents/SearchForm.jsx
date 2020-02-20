@@ -24,7 +24,6 @@ const SearchForm = (props) => {
                     <img src={XIcon} alt="x" className="x-icon"></img>
                     <div className="input-label">Leaving From</div>
                     <input
-                        // className="full-width"
                         type="text"
                         autoComplete="off"
                         value={props.tripSearch.departCity}
@@ -38,7 +37,6 @@ const SearchForm = (props) => {
                     <img src={XIcon} alt="x" className="x-icon"></img>
                     <div className="input-label">Going To</div>
                     <input
-                        // className="full-width"
                         type="text"
                         value={props.tripSearch.destCity}
                         name="destCity"
