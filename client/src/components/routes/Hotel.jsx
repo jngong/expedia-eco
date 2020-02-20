@@ -17,6 +17,14 @@ export default class Hotel extends Component {
    
   }
 
+  renderIcon(key, img) {
+    // console.log(key, img)
+    return (
+      key === true ? <img src=
+        {require(`../../images/icons-assets/${img}`)} alt={`${img}`} className="icon" /> : ""
+    )
+  }
+
   render() {
     console.log("props", this.props);
     return (
@@ -41,12 +49,17 @@ export default class Hotel extends Component {
 
         <div>
           <p>(Conditional rendering of the icons HERE.)</p>
+          {this.renderIcon(this.state.wifi, "bed.png")}
+          {this.renderIcon(this.state.wifi, "bed.png")}
+          {this.renderIcon(this.state.wifi, "bed.png")}
+          {this.renderIcon(this.state.wifi, "bed.png")}
+          {this.renderIcon(this.state.wifi, "bed.png")}
+          {this.renderIcon(this.state.wifi, "bed.png")}
+
+
         </div>
 
-        <p>
-          The hotel offers a coffee shop/cafe. A computer station is located on
-          site and wireless internet access is complimentary.
-        </p>
+        <p>{this.state.description}</p>
 
         <p>See more</p>
         <div className="hotel-added-components">
