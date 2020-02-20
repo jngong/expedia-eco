@@ -98,19 +98,20 @@
 } */
 
 .input-label {
+    display: inline-block;
     font-size: .5rem;
     font-weight: bold;
     color: var(--subtext-color);
     position: relative;
     top: 14px;
-    left: 30px;
+    left: 8px;
     z-index: 1
 }
 
 .input-icon {
     position: relative;
-    top: 36px;
-    left: 8px;
+    top: 25px;
+    left: 9px;
     /* color: var(--subtext-color); */
 }
 
@@ -120,9 +121,9 @@
 }
 
 .calendar {
-    width: 17px;
-    height: 17px;
-    top: 40px;
+    width: 15px;
+    height: 15px;
+    top: 30px;
 }
 
 .user {
@@ -132,7 +133,7 @@
 
 .x-icon {
     position: relative;
-    top: 36px;
+    top: 30px;
     left: 320px;
     /* color: var(--subtext-color); */
     object-fit: contain;
@@ -152,6 +153,14 @@ input[type = text] {
 
 .half-width-label {
     width: 48%;
+}
+
+.half-width-label > .input-label {
+    left: 15px;
+}
+
+.travelers-field > .input-label {
+    left: 18px
 }
 
 .dates {
