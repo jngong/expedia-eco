@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import '../../css/AdminEdit.css'
+import "../../css/AdminEdit.css";
 import AdminForm from '../shared/AdminForm'
 import Axios from 'axios'
 import { Redirect } from 'react-router-dom'
@@ -82,7 +82,7 @@ class AdminEdit extends Component {
         return(
             <div>
                 <div>
-                    <h1>Update your hotel!</h1>
+                    <h1 className='adminform'>Update your hotel!</h1>
                     <AdminForm 
                         hotel={this.state.hotel}
                         handleChange={this.handleChange}
