@@ -63,22 +63,22 @@ class RoomButton extends Component {
 
                     <div className='room-button-header'>
                         <h3>Unreal Deal</h3>
-                        <p>Book this and save 20% on your flight</p>
+                        <p>Book this and <span className="bold">save 20% on your flight</span></p>
                     </div>
 
                     <div className="room-details-container">
                         <div className="room-details-left">
-                            <p>{room.type}</p>
-                            <p>{room.beds}</p>
-                            <p>Room sleeps {room.sleeps} guests</p>
-                            <p className="free-wifi">Free Wifi</p>
-                            <p className="show-info-link">Show room information</p>
+                            <p className="bold room-type">{room.type}</p>
+                            <p className="bold room-beds">{room.beds}</p>
+                            <p className="bold room-beds">Room sleeps {room.sleeps} guests</p>
+                            <p className="free-wifi green">Free Wifi</p>
+                            <a href="#" className="show-info-link">Show room information</a>
                         </div>
                         <div className="room-details-right">
                             <p className="red">Only 1 room left at</p>
-                            <p>{room.current_price}</p>
+                            <p className="room-price bold">{room.current_price}</p>
                             <p>per night</p>
-                            <p>Free cancellation</p>
+                            <p className="green bold free-cancel">Free cancellation</p>
                             <p>until Sun, May 31</p>
                         </div>
                     </div>
