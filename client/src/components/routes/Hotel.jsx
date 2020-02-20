@@ -50,12 +50,11 @@ export default class Hotel extends Component {
         </div>
 
         <div>
-          <p>(Conditional rendering of the icons HERE.)</p>
-          {this.renderIcon(this.state.wifi, "bed.png")}
-          {this.renderIcon(this.state.business, "business.png")}
-          {this.renderIcon(this.state.laundry, "laundry.png")}
-          {this.renderIcon(this.state.smoke_free, "smoke-free.png")}
-          {this.renderIcon(this.state.eco_friendly, "eco.png")}
+          {this.renderIcon(this.state.wifi, "wifi@2x.png")}
+          {this.renderIcon(this.state.business, "business@2x.png")}
+          {this.renderIcon(this.state.laundry, "laundry@2x.png")}
+          {this.renderIcon(this.state.smoke_free, "smoke-free@2x.png")}
+          {this.renderIcon(this.state.eco_friendly, "eco@2x.png")}
           <img src={require('../../images/icons-assets/more.png')} alt='more.png' className='icon'/>
         </div>
 

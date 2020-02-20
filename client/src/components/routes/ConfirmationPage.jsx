@@ -1,30 +1,78 @@
 import React from "react";
+import "../../css/ConfirmationPage.css";
+import LogoNav from "../shared/LogoNav";
+
 
 const ConfirmationPage = props => {
   console.log("What do I get?", props)
 
   return (
     <div>
-      <h2 id="confirmation-page-header">Review and Book</h2>
 
-      <div className="review-and-book-detail">
-        <h5>Roundtrip Flight</h5>
-        <h6>Newark (EWR) to San Francisco (SFO)</h6>
-        <p>Tue, Jun 2 - Tue, Jun 9</p>
-        <p>4 tickets: 2 adults, 2 children</p>
+      <div>
+        <p id="confirmation-page-header">Review and Book</p>
       </div>
 
-      <div className="review-and-book-detail">
-        <h5>{props.location.state.component_props.name}</h5>
-        <h6>{props.location.state.component_props.address}</h6>
-        <p>Tue, Jun 2 - Mon, Jun 8</p>
+
+
+      <img className="Line-Copy-3" src={require('../../images/icons-assets/line-copy-3.png')} alt='line-copy-3.png' />
+
+      
+
+      <div>
+        <span>
+          <img className='icon-image' src={require('../../images/icons-assets/airplane-icon@2x.png')} alt='airplane-icon@2x.png' />
+        </span>
+
+        <span className="review-and-book-detail">Roundtrip Flight
+          <span><img className='icon-image' src={require('../../images/icons-assets/secondClassPO@2x.png')} alt='secondClassPO@2x.png' />
+          </span>
+        </span>
+
+        <p className="bold-black-print">Newark (EWR) to San Francisco (SFO)</p>
+        <p className="black-text">Tue, Jun 2 - Tue, Jun 9</p>
+        <p className="black-text">4 tickets: 2 adults, 2 children</p>
       </div>
 
-      <div className="review-and-book-detail">
-        <h5>Economy</h5>
-        <h6>San Francisco, CA (SFO Airport)</h6>
-        <p>Tue, Jun 2 - Mon, Jun 8</p>
+      
+      <img className="Line-Copy-3" src={require('../../images/icons-assets/line-copy-3.png')} alt='line-copy-3.png' />
+
+      
+      <div>
+        <span>
+          <img className='icon-image' src={require('../../images/icons-assets/hotel-icon@2x.png')} alt='hotel-icon@2x.png' />
+        </span>
+
+        <span className="review-and-book-detail">{props.location.state.component_props.name}
+          <span><img className='icon-image' src={require('../../images/icons-assets/secondClassPO@2x.png')} alt='secondClassPO@2x.png' />
+          </span>
+        </span>
+
+        <p className="bold-black-print">{props.location.state.component_props.address}</p>
+        <p className="black-text">Tue, Jun 2 - Mon, Jun 8</p>
       </div>
+
+      
+      <img className="Line-Copy-3" src={require('../../images/icons-assets/line-copy-3.png')} alt='line-copy-3.png' />
+
+
+      <div>
+        <span>
+          <img className='icon-image' src={require('../../images/icons-assets/car-icon@2x.png')} alt='car-icon@2x.png' />
+        </span>
+
+        <span className="review-and-book-detail">Economy
+          <span><img className='icon-image' src={require('../../images/icons-assets/secondClassPO@2x.png')} alt='secondClassPO@2x.png' />
+          </span>
+        </span>
+
+        <p className="bold-black-print">San Francisco, CA (SFO Airport)</p>
+        <p className="black-text">Tue, Jun 2 - Mon, Jun 8</p>
+      </div>
+
+      
+      <img className="Line-Copy-3" src={require('../../images/icons-assets/line-copy-3.png')} alt='line-copy-3.png' />
+
 
       <div id="review-and-book-summary">
         <p className="left-text">

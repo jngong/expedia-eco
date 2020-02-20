@@ -84,7 +84,7 @@ class HotelButton extends Component {
       <span className="green">
         <img
           src={require("../../images/icons-assets/eco-tree@2x.png")}
-          class="tiny-icon"
+          className="tiny-icon"
           alt="eco-friendly"
         />
         Eco-friendly
