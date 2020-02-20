@@ -12,8 +12,8 @@ const LogoNav = () => {
                 <img
                     src={Logo}
                     alt='Expedia'
-                    width='140'
-                    height='40' />
+                    width='109'
+                    height='31' />
                 </Link>
             </div>
             <div className='nav-icons'>

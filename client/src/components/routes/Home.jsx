@@ -1,6 +1,7 @@
 import React from "react";
 import { Redirect } from "react-router-dom";
 import axios from "axios";
+import apiUrl from '../../apiConfig'
 
 import SearchOptionsNav from "../home-subcomponents/SearchOptionsNav";
 import SearchVacationPackagesNav from "../home-subcomponents/SearchVacationPackagesNav";
@@ -34,7 +35,7 @@ class Home extends React.Component {
   // Axios call to our back-end API to pull in all cities in our database so that we can compare the 'destCity' typed to the cities[].name property for match.
   async componentDidMount() {
     try {
-      const response = await axios(`http://localhost:3001/cities`);
+      const response = await axios(`${apiUrl}/cities`);
       this.setState({
         cities: response.data.cities
       });
