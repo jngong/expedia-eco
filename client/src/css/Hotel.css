@@ -55,18 +55,11 @@
     /* padding: 3px */
 }
 
-.bold {
-    font-weight: bold;
-}
-
 .room-button-header p, .room-button-header h3 {
     margin: 0;
     margin-bottom: 3px;
-    color: white
-}
-
-h3 {
-    font-size: .9rem;
+    color: white;
+    font-size: .8rem
 }
 
 .room-details-container {
@@ -74,7 +67,49 @@ h3 {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding-bottom: 40px;
+    padding-bottom: 45px;
+}
+
+.room-details-left > p, 
+.room-details-right > p {
+    margin: 3px 0;
+}
+
+.room-details-right > p {
+    text-align: right;
+}
+
+p.room-type {
+    font-size: .9rem;
+    margin-bottom: 5px;
+}
+
+p.free-wifi {
+    margin: 8px 0;
+}
+
+.wifi {
+    width: 11px;
+    height: 10px
+}
+
+p.room-price {
+    font-size: 1.5rem;
+    margin-bottom: 0;
+}
+
+p.free-cancel {
+    margin-top: 1rem
+}
+
+.check {
+    width: 10px;
+    height: 10px
+}
+
+.dropdown {
+    width: 7px;
+    height: 7px
 }
 
 .room-select-button {
@@ -90,7 +125,7 @@ h3 {
     margin: .5rem; 
     position: absolute;
     bottom: 0;
-    right: .5rem
+    right: 0
 }
 
 .show-all-rooms {
@@ -98,4 +133,24 @@ h3 {
     font-size: 10px;
     padding: 10px 15px;
     border-top: 3px solid var(--expedia-blue)
+}
+
+a {
+    color: var(--amenities-icon-text)
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.green {
+    color: var(--eco-green)
+}
+
+.red {
+    color: var(--red)
+}
+
+.blue {
+    color: var(--amenities-icon-text)
 }
