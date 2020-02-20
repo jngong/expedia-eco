@@ -9,6 +9,8 @@ router.get("/", (req, res) => res.send("This is root!"));
 router.get("/cities", controllers.getAllCities);
 // HOTELS IN A CITY
 router.get("/cities/:cityId/hotels", controllers.getAllHotelsByCity);
+// ALL HOTELS
+router.get("/hotels", controllers.getAllHotels)
 // HOTEL DETAILS
 router.get("/hotels/:hotelId", controllers.getHotelDetails);
 // ROOMS IN A HOTEL
@@ -22,7 +24,7 @@ router.post("/hotels", controllers.createHotel);
 
 /* ---------- PUT ---------- */
 // UPDATE HOTEL
-router.put("/hotels/:hotel_id", controllers.updateHotel);
+router.put("/hotels/:hotelId", controllers.updateHotel);
 
 /* ---------- DELETE ---------- */
 // DELETE HOTEL
