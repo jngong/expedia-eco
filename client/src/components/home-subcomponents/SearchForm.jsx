@@ -2,6 +2,7 @@ import React from 'react'
 import MapPin from "../../images/icons-assets/map-pin@3x.png"
 import CalendarIcon from "../../images/icons-assets/calendar@3x.png"
 import UserIcon from "../../images/icons-assets/users@3x.png"
+import XIcon from "../../images/icons-assets/x.png"
 
 import '../../Home.css'
 
@@ -22,6 +23,7 @@ const SearchForm = (props) => {
 
                 <label>
                     <img src={MapPin} alt="map pin" className="input-icon map"></img>
+                    <img src={XIcon} alt="x" className="x-icon"></img>
                     <div className="input-label">Leaving From</div>
                     <input
                         // className="full-width"
@@ -35,6 +37,7 @@ const SearchForm = (props) => {
 
                 <label>
                     <img src={MapPin} alt="map pin" className="input-icon map"></img>
+                    <img src={XIcon} alt="x" className="x-icon"></img>
                     <div className="input-label">Going To</div>
                     <input
                         // className="full-width"

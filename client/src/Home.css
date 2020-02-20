@@ -24,13 +24,14 @@
     width: 50px;
     background-color: black;
     color: white;
+    font-weight: bold;
     padding-bottom: 10px;
     border: none;
     outline: none
 }
 
 .bundle {
-    width: 100px
+    width: 105px
 }
 
 .search-options-nav-item img {
@@ -87,31 +88,41 @@
     color: #626262; /* var(--brownish-grey-three) */
     position: relative;
     top: 14px;
-    left: 25px;
+    left: 30px;
     z-index: 1
 }
 
 .input-icon {
     position: relative;
     top: 36px;
-    left: 6px;
+    left: 8px;
     color: #626262;
-    object-fit: contain;
 }
 
 .map {
-    width: 12px;
+    width: 11px;
     height: 14px;
 }
 
 .calendar {
-    width: 15px;
-    height: 15px;
+    width: 17px;
+    height: 17px;
+    top: 40px;
 }
 
 .user {
-    width: 11px;
-    height: 10px;
+    width: 12px;
+    height: 12px;
+}
+
+.x-icon {
+    position: relative;
+    top: 36px;
+    left: 320px;
+    color: #626262;
+    object-fit: contain;
+    width: 12px;
+    height: 12px;
 }
 
 input[type = text] {
@@ -119,7 +130,7 @@ input[type = text] {
     height: 36px;
     border-radius: 5px;
     border: solid 1px #979797; /*var(--formfield-icons)*/
-    padding-left: 25px;
+    padding-left: 30px;
     padding-bottom: 0;
     font-size: 12px;
 }
