@@ -1,7 +1,9 @@
+* {
+    box-sizing: border-box;
+}
 .home {
     background-color: black;
     color: white; 
-    max-width: 1000px;
     margin: 0 auto
 }
 
@@ -14,8 +16,8 @@
     justify-content: space-between;
     align-items: center;
     padding: 10px 10px 0 10px;
-    border-bottom: 1px solid #979797;
-    height: 48px
+    border-bottom: 1px solid #979797; /*var(--formfield-icons)*/
+    height: 55px
 }
 
 .search-options-nav-item {
@@ -52,21 +54,74 @@
 .search-vacay-nav {
     display: flex;
     flex-flow: row wrap;
-    margin: 10px 10px 20px 10px
+    margin: 10px
 }
 
 .search-vacay-nav-item {
-    background-color: #626262;
+    background-color: #626262; /* var(--brownish-grey-three) */
     border-radius: 5px;
     height: 30px;
-    border: 1px solid #626262;
+    border: 1px solid #626262;  /* var(--brownish-grey-three) */
     font-size: 10px; 
     color: white;
-    padding: 0 10px;
+    padding: 0 15px;
     margin: 10px 10px 0 0;
     outline: none
 }
 
 .search-vacay-nav-item:hover, .search-vacay-nav-item:active {
     background-color: #005ebf;
+}
+
+/* ********************************** */
+/** SearchForm Styles **/
+/* ********************************** */
+
+.search-form {
+    margin: 10px   
+}
+
+.input-label {
+    font-size: 8px;
+    font-weight: bold;
+    color: #626262; /* var(--brownish-grey-three) */
+    position: relative;
+    top: 15px;
+    left: 25px;
+    z-index: 1
+}
+
+input[type = text] {
+    width: 100%;
+    height: 36px;
+    border-radius: 5px;
+    border: solid 1px #979797; /*var(--formfield-icons)*/
+    padding-left: 25px
+}
+
+.half-width-label {
+    width: 48%;
+}
+
+.dates {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+input[type = checkbox] {
+    height: 16px;
+    width: 16px;
+    border-radius: 2px;
+    border: solid 1px #979797; /*var(--formfield-icons)*/
+    background-color: white;
+    margin-right: 4px
+}
+
+.checkbox-label {
+    font-size: 10px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    margin-top: 10px
 }
