@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import axios from "axios";
 import RoomButton from "../hotel-subcomponents/RoomButton";
 import TripDetails from "../hotel-subcomponents/TripDetails";
 
@@ -8,18 +7,14 @@ export default class Hotel extends Component {
     super(props);
 
     this.state = {
-      Hotel: {}
+
     };
   }
 
-  async componentDidMount() {
-    try {
-      const response = await axios.get("http://localhost:3001/hotels/2");
-      this.setState({ Hotel: response.data.hotel });
-      console.log(response);
-    } catch (error) {
-      console.error(error);
-    }
+  componentDidMount() {
+
+  this.setState({...this.props.location.state})
+   
   }
 
   render() {
@@ -35,12 +30,12 @@ export default class Hotel extends Component {
 
         <div id="hotel-main-content">
           <p>
-            {this.state.Hotel.name} Rating: {this.state.Hotel.rating}
+            {this.state.name} Rating: {this.state.rating}
           </p>
-          <p>{this.state.Hotel.address}</p>
+          <p>{this.state.address}</p>
           <img src={require("../../images/hotel_room_image.jpg")} alt="hotel" />
           {/* Need to add the scroll arrows icons */}
-          <p>Very Good! {this.state.Hotel.rating}</p>
+          <p>Very Good! {this.state.rating}</p>
           <p>View all 1,769 Expedia Verified Reviews</p>
         </div>
 
@@ -56,7 +51,8 @@ export default class Hotel extends Component {
         <p>See more</p>
         <div className="hotel-added-components">
           <TripDetails />
-          <RoomButton />
+          <RoomButton
+            component_props={this.state}/>
         </div>
       </div>
     );
