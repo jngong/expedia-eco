@@ -5,6 +5,7 @@ import Axios from 'axios'
 import { Redirect } from 'react-router-dom'
 
 
+
 class AdminEdit extends Component {
     constructor(props) {
         super(props)
@@ -24,6 +25,15 @@ class AdminEdit extends Component {
                 cityId: ''
             },
             isUpdated: false
+        }
+    }
+
+    async componentDidMount() {
+        try {
+            const response = await Axios(`http://localhost:3001/hotels/${this.props.match.params.hotel_id}`)
+            this.setState({ hotel: response.data.hotel })
+        } catch(error) {
+            console.error(error)
         }
     }
 
@@ -81,7 +91,6 @@ class AdminEdit extends Component {
                     />
                     
                 </div>
-                <button>Delete</button>
             </div>
         )
     }

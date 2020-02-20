@@ -31,6 +31,7 @@ class AdminDelete extends Component {
             method: 'DELETE',
             data: this.state.isDeleted
         })
+        .then(res => alert('Are you sure !'))
         .then(res => this.setState({ isDeleted: true }))
         .catch(console.error)
     }
@@ -42,6 +43,15 @@ class AdminDelete extends Component {
         }
         return(
             <div>
+                <div>
+                    <h1>Delete this hotel</h1>
+                    <h3>Please review the information below and confirm that this is the correct hotel.</h3>
+                    <h4>NAME: {this.state.hotel.name}</h4>
+                    <h4>ADDRESS: {this.state.hotel.address}</h4>
+                    <h4>DESCRIPTION: {this.state.hotel.description}</h4>
+                    <h3>If the information is correct proceed to delete!</h3>
+                    <h3>ALL DELETE'S ARE FINAL</h3>
+                </div>
                 <button onClick={this.handleDelete}>DELETE</button>
             </div>
         )
