@@ -88,6 +88,11 @@ p.free-wifi {
     margin: 8px 0;
 }
 
+.wifi {
+    width: 11px;
+    height: 10px
+}
+
 p.room-price {
     font-size: 1.5rem;
     margin-bottom: 0;
@@ -95,6 +100,16 @@ p.room-price {
 
 p.free-cancel {
     margin-top: 1rem
+}
+
+.check {
+    width: 10px;
+    height: 10px
+}
+
+.dropdown {
+    width: 7px;
+    height: 7px
 }
 
 .room-select-button {
@@ -134,4 +149,8 @@ a {
 
 .red {
     color: var(--red)
+}
+
+.blue {
+    color: var(--amenities-icon-text)
 }

@@ -1,8 +1,12 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-// import '../../Hotel.css'
+import '../../css/Hotel.css'
 
 import { Redirect } from 'react-router-dom';
+
+import Checkmark from '../../images/icons-assets/check@2x.png'
+import Wifi from '../../images/icons-assets/wifi@2x.png'
+import Dropdown from '../../images/icons-assets/secondClassPO@2x.png'
 
 class RoomButton extends Component {
 
@@ -36,10 +40,7 @@ class RoomButton extends Component {
             })
             
         )
-    }
-    //TODO in render: All styling, bring in icons for wifi, drop down, checkmark.
-    //If there is time, then also calculate % price savings.
-        
+    }        
     
     render() {
 
@@ -71,14 +72,23 @@ class RoomButton extends Component {
                             <p className="bold room-type">{room.type}</p>
                             <p className="bold room-beds">{room.beds}</p>
                             <p className="bold room-beds">Room sleeps {room.sleeps} guests</p>
-                            <p className="free-wifi green">Free Wifi</p>
-                            <a href="#" className="show-info-link">Show room information</a>
+                            <p className="free-wifi blue">
+                            <img src={Wifi} alt='wifi' className="wifi" />
+                            &nbsp;Free Wifi
+                            </p>
+                            <a href="#" className="show-info-link">
+                                Show room information&nbsp;
+                                <img src={Dropdown} alt='dropdown' className="dropdown" />
+                            </a>
                         </div>
                         <div className="room-details-right">
                             <p className="red">Only 1 room left at</p>
                             <p className="room-price bold">{room.current_price}</p>
                             <p>per night</p>
-                            <p className="green bold free-cancel">Free cancellation</p>
+                            <p className="green bold free-cancel">
+                                <img src={Checkmark} alt='checkmark' className="check" />
+                                &nbsp;Free cancellation
+                            </p>
                             <p>until Sun, May 31</p>
                         </div>
                     </div>
