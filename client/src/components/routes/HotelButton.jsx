@@ -80,11 +80,11 @@ class HotelButton extends Component {
 
   // RENDERS THE "ECO-FRIENDLY" MESSAGE IF THE HOTEL OBJECT HAS eco_friendly:true
   handleEco = () => {
-    return this.state.eco_friendly === true ? (
-      <span>
+    return this.state.eco_friendly === false ? (
+      <span className="green">
         <img
           src={require("../../images/icons-assets/eco-tree@2x.png")}
-          class="icon"
+          class="tiny-icon"
           alt="eco-friendly"
         />
         Eco-friendly
@@ -134,10 +134,10 @@ class HotelButton extends Component {
           </div>
           <div className="room-info">
             <div className="room-features">
-              <p>
+              <p className="green">
                 <img
                   src={require("../../images/icons-assets/check@2x.png")}
-                  className="icon"
+                  className="tiny-icon"
                   alt="check"
                 />
                 Free cancellation
