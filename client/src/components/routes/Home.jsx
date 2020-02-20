@@ -6,7 +6,7 @@ import SearchOptionsNav from "../home-subcomponents/SearchOptionsNav";
 import SearchVacationPackagesNav from "../home-subcomponents/SearchVacationPackagesNav";
 import SearchForm from "../home-subcomponents/SearchForm";
 
-import "../../Home.css";
+import "../../css/Home.css"
 
 // Change Log: Instead of App being our stateful component, changed Home to be a stateful component to allow it to return a Redirect upon Submit of the Search form.
 
