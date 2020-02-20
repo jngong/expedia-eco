@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-
+import { Redirect } from 'react-router-dom'
 import AdminForm from '../shared/AdminForm'
 
 class Admin extends Component {
@@ -8,28 +8,39 @@ class Admin extends Component {
         super(props)
 
         this.state = {
-            hotel = {
+            hotel: {
                 address: '',
                 name: '',
                 img_url: '',
-                eco_friendly: '',
+                eco_friendly: false,
                 description: '',
-                wifi: '',
-                business: '',
-                laundry: '',
-                smoke_free: ''
+                wifi: false,
+                business: false,
+                laundry: false,
+                smoke_free: false
             },
             createdHotel: null
         }
     }
 
-
     handleChange = e => {
         const { value, name } = e.target;
+        console.log(name, value)
         this.setState(prevState => ({
             hotel: {
                 ...prevState.hotel,
                 [name]: value
+            }
+        }))
+    }
+
+    handleCheckboxChange = e => {
+        const { checked, name } = e.target;
+        console.log(name, checked)
+        this.setState(prevState => ({
+            hotel: {
+                ...prevState.hotel,
+                [name]: checked
             }
         }))
     }
@@ -47,16 +58,21 @@ class Admin extends Component {
     }
 
     render() {
+        if (this.state.createdHotel) {
+            return <Redirect to={`http://localhost:3001/hotels/${this.state.createdHotel.id}`} />
+        }
+        console.log(this.state.data)
         return(
-            <Layout>
                 <AdminForm 
                     hotel={this.state.hotel}
                     handleChange={this.handleChange}
-                    handleSubmit={this.state.handleSubmit}
+                    handleSubmit={this.handleSubmit}
+                    handleCheckboxChange={this.handleCheckboxChange}
 
 
                 />
-            </Layout>
         )
     }
 }
+
+export default Admin

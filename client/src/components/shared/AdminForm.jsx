@@ -9,11 +9,9 @@ class AdminForm extends Component {
 
 
     render() {
-        console.log(this.state);
+        
 
-        if (this.state.createdHotel) {
-            return <Redirect to={`http://localhost:3001/hotels/${this.state.createdHotel.id}`} />
-        }
+        
 
         return(
             <div>
@@ -34,26 +32,7 @@ class AdminForm extends Component {
                         type='text' 
                         name='address'
                         value={this.props.hotel.address}
-                        onChange={this.handleChange} 
-                        />
-                    </label>
-                    <br/>
-                    <label>
-                        Contact information:
-                        <input 
-                        type='tel' 
-                        name='numnber'
-                        value='number'
-                        onChange={this.handleChange} 
-                        />
-                    </label>
-                    <br/>
-                    <label>
-                        Contact Email:
-                        <input 
-                        type='email' 
-                        name='email'
-                        onChange 
+                        onChange={this.props.handleChange} 
                         />
                     </label>
                     <br/>
@@ -63,7 +42,8 @@ class AdminForm extends Component {
                         <input 
                         type='text' 
                         name='img_url'
-                        value='img_url' 
+                        value={this.props.hotel.img_url} 
+                        onChange={this.props.handleChange}
                         />
                     </label>
                     <br/>
@@ -74,7 +54,8 @@ class AdminForm extends Component {
                         name='description' 
                         height='150' 
                         width='580'
-                        value={this.props.hotel.description} 
+                        value={this.props.hotel.description}
+                        onChange={this.props.handleChange} 
                         />
                     </label>
                     <br/>
@@ -83,42 +64,47 @@ class AdminForm extends Component {
                         <br/>
                         <input 
                         type='checkbox' 
-                        name='eco_Friendly'
-                        value={this.props.hotel.eco_friendly} 
+                        name='eco_friendly'
+                        checked={this.props.hotel.eco_friendly} 
+                        onChange={this.props.handleCheckboxChange}
                         />
                         
-                        <label for='eco_Friendly'>Eco-Friendly</label>
+                        <label for='eco_friendly'>Eco-friendly</label>
                         <input 
                         type='checkbox' 
                         name='business'
-                        value={this.props.hotel.business} 
+                        checked={this.props.hotel.business}
+                        onChange={this.props.handleCheckboxChange} 
                         />
 
                         <label>Business</label>
                         <input 
                         type='checkbox' 
                         name='wifi' 
-                        value={this.props.hotel.wifi}
+                        checked={this.props.hotel.wifi}
+                        onChange={this.props.handleCheckboxChange}
                         />
 
                         <label>Wifi</label>
                         <input 
                         type='checkbox' 
                         name='laundry'
-                        value={this.props.hotel.laundry} 
+                        checked={this.props.hotel.laundry}
+                        onChange={this.props.handleCheckboxChange} 
                         />
 
                         <label>Laundry</label>
                         <input 
                         type='checkbox' 
                         name='smoke_free'
-                        value={this.props.hotel.smoke_free} 
+                        checked={this.props.hotel.smoke_free}
+                        onChange={this.props.handleCheckboxChange} 
                         />
                         <label>Smoke-free</label>
                         
                     </label>
                     <br/>
-                    <input type='submit' onSubmit={this.submitHotel} />
+                    <input type='submit' onSubmit={this.props.submitHotel} />
                 </form>
             </div>
         )
