@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import RoomButton from "../hotel-subcomponents/RoomButton";
 import TripDetails from "../hotel-subcomponents/TripDetails";
 import { Link } from "react-router-dom";
+import '../../css/Hotel.css'
 
 export default class Hotel extends Component {
   constructor(props) {

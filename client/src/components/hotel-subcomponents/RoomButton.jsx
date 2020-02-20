@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import '../../Hotel.css'
+// import '../../Hotel.css'
 
 import { Redirect } from 'react-router-dom';
 
