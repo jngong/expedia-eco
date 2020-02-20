@@ -1,5 +1,5 @@
 import React from 'react'
-import '../../Home.css'
+
 import AirplaneIcon from '../../images/icons-assets/airplane-icon@3x.png'
 import HotelIcon from '../../images/icons-assets/hotel-icon@3x.png'
 import CarIcon from '../../images/icons-assets/car-icon@3x.png'
