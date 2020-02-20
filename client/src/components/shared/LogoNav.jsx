@@ -19,7 +19,9 @@ const LogoNav = () => {
             <div className='nav-icons'>
                 <i className="fas fa-heart"></i>
                 <i className="fas fa-user"></i>
-                <i className="fas fa-bars"></i>
+                <Link to='/admin'>
+                    <i className="fas fa-bars"></i>
+                </Link>
             </div>
         </div>
     )
