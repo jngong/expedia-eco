@@ -1,19 +1,62 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 class HotelButton extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: "Holiday Inn",
-      city: "Los Angeles",
-      rating: 3.5,
-      eco: true,
-      listPrice: "$300/night",
-      currentPrice: "$250/night"
+      //
     };
   }
 
+  /* --------- API CALLS ---------- */
+  // fetch hotel info from  /cities/:cityId/hotels endpoint and set it into state
+  getHotelData = async () => {
+    try {
+      const res = await axios.get(
+        `http://localhost:3001/hotels/${this.props.id}`
+      );
+      // console.log("axios", res.data);
+      this.setState({ destCity: this.props.destCity, ...res.data.hotel });
+      console.log("hotel data retrieved");
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  // fetch an array of hotel room info from /hotels/:hotelId/rooms endpoint and set it into state
+  getRoomData = async () => {
+    try {
+      const resRoom = await axios.get(
+        `http://localhost:3001/hotels/${this.props.id}/rooms`
+      );
+      this.setState({ rooms: resRoom.data.rooms });
+      console.log("room data retrieved");
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  // pull prices from zeroth index in room array to use in hotel button
+  getRoomPrices = async () => {
+    await this.getRoomData;
+    this.setState({
+      sample_list_price: this.state.rooms[0].list_price,
+      sample_current_price: this.state.rooms[0].current_price
+    });
+    console.log("room prices retrieved");
+  };
+
+  // run all above get commands when component loads
+  componentDidMount = async () => {
+    await this.getHotelData();
+    await this.getRoomData();
+    await this.getRoomPrices();
+    console.log("HotelButton state", this.state);
+  };
+
+  /* ---------- PARSE DATA BEFORE RENDER ---------- */
   // ADDS COMMENTS IF THE HOTEL HAS A GOOD RATING
   ratingComment = rating => {
     return parseFloat(rating) >= 4
@@ -29,32 +72,61 @@ class HotelButton extends Component {
   };
 
   // PICKS A DIFFERENT THUMBNAIL IMAGE FOR EACH ENTRY
-  // randomThumbnail = () => {
-  //   const num = Math.floor(Math.random() * 4) + 1;
-  // 	// return `../../images/icons-assets/hotel-thumb-${num}@2x.png`;
-  // 	return num
-  // };
+  randomThumbnail = () => {
+    const num = Math.floor(Math.random() * 4) + 1;
+    // return `require('../../images/icons-assets/hotel-thumb-${num}@2x.png')`;
+    return num;
+  };
 
   // RENDERS THE "ECO-FRIENDLY" MESSAGE IF THE HOTEL OBJECT HAS eco_friendly:true
   handleEco = () => {
-    return this.state.eco === true ? "🌲 Eco-friendly" : "";
+    return this.state.eco_friendly === true ? (
+      <span>
+        <img
+          src={require("../../images/icons-assets/eco-tree@2x.png")}
+          class="icon"
+          alt="eco-friendly"
+        />
+        Eco-friendly
+      </span>
+    ) : (
+      ""
+    );
   };
 
+  /* ---------- RENDER ---------- */
   render() {
     // DESTRUCTURING VARIABLES
-    const { ratingComment, reviewCount, randomThumbnail, handleEco } = this;
-    const { name, city, rating, eco, listPrice, currentPrice } = this.state;
+    const { ratingComment, reviewCount, handleEco } = this;
+    const {
+      id,
+      name,
+      destCity,
+      rating,
+      sample_list_price,
+      sample_current_price
+    } = this.state;
 
     return (
-      <React.Fragment>
-        <Link to="/hotels/:hotel_id">
+      <li>
+        {/* pass axios data to Hotel details component */}
+        <Link
+          to={{
+            pathname: `/hotels/${id}`,
+            state: {
+              ...this.state
+            }
+          }}
+        >
           <div className="hotel-info">
             <img
-              src={require("../../images/icons-assets/hotel-thumb-2@2x.png")}
+              src={require(`../../images/icons-assets/hotel-thumb-${this.randomThumbnail()}@2x.png`)}
+              className="thumbnail"
+              alt="hotel thumb"
             />
             <div className="hotel-info-text">
               <h3>{name}</h3>
-              <p>{city}</p>
+              <p>{destCity}</p>
               <p>
                 {rating}/5 {ratingComment(rating)} ({reviewCount()} reviews)
               </p>
@@ -62,17 +134,24 @@ class HotelButton extends Component {
           </div>
           <div className="room-info">
             <div className="room-features">
-              <p>✔️ Free cancellation</p>
+              <p>
+                <img
+                  src={require("../../images/icons-assets/check@2x.png")}
+                  className="icon"
+                  alt="check"
+                />
+                Free cancellation
+              </p>
               <p>{handleEco()}</p>
             </div>
             <div className="room-price">
-              <span className="room-price-list">{listPrice}</span>{" "}
-              <span className="room-price-current">{currentPrice}</span>
+              <span className="room-price-list">{sample_list_price}</span>{" "}
+              <span className="room-price-current">{sample_current_price}</span>
               <p>Per person includes flight + hotel + car</p>
             </div>
           </div>
         </Link>
-      </React.Fragment>
+      </li>
     );
   }
 }
