@@ -1,12 +1,14 @@
 import React, { Component } from 'react'
-import Axios from 'axios'
+import axios from 'axios'
+
+import AdminForm from '../shared/AdminForm'
 
 class Admin extends Component {
     constructor(props) {
         super(props)
 
         this.state = {
-            item: {
+            hotel = {
                 address: '',
                 name: '',
                 img_url: '',
@@ -15,85 +17,46 @@ class Admin extends Component {
                 wifi: '',
                 business: '',
                 laundry: '',
-                smoke_free: '',
+                smoke_free: ''
             },
             createdHotel: null
         }
     }
 
 
-    submitHotel = e => {
-        e.preventDefault()
-        Axios({
-            url:'http://localhost:3000/hotels',
-            method: 'POST',
-            data: { item: this.state.item}
-        })
-        .then(res => this.setState({ createdHotel: res.data.item }))
-        .catch(console.log)
+    handleChange = e => {
+        const { value, name } = e.target;
+        this.setState(prevState => ({
+            hotel: {
+                ...prevState.hotel,
+                [name]: value
+            }
+        }))
     }
 
+    submitHotel = e => {
+        e.preventDefault()
 
+        axios({
+            url: 'http://localhost:3001/hotels',
+            method: 'POST',
+            data: { hotel: this.state.hotel }
+        })
+        .then(res => this.setState({ createdHotel: res.data.hotel }))
+        .catch(console.error)
+    }
 
     render() {
-        console.log(this.state);
         return(
-            <div>
-                <h1>Want to be a part of Expedia</h1>
-                <form>
-                    <label>
-                        Hotel Name: 
-                        <input type='text' name='name' />
-                    </label>
-                    <br/>
-                    <label>
-                        Hotel Address:
-                        <input type='text' name='address' />
-                    </label>
-                    <br/>
-                    <label>
-                        Contact information:
-                        <input type='tel' name='numnber' />
-                    </label>
-                    <br/>
-                    <label>
-                        Contact Email:
-                        <input type='email' name='email' />
-                    </label>
-                    <br/>
-                    <label>
-                        Please upload a picture of your property:
-                        <br/>
-                        <input type='file' name='file' />
-                    </label>
-                    <br/>
-                    <label>
-                        Please provide a small description of the hotel you are trying to post:
-                        <br/>
-                        <textarea name='description' height='150' width='580' />
-                    </label>
-                    <br/>
-                    <label>
-                        Please select your amenities:
-                        <br/>
-                        <input type='checkbox' name='Eco-Friendly' />
-                        <label for='Eco-Friendly'>Eco-Friendly</label>
-                        <input type='checkbox' name='Business' />
-                        <label>Business</label>
-                        <input type='checkbox' name='Wifi' />
-                        <label>Wifi</label>
-                        <input type='checkbox' name='Laundry' />
-                        <label>Laundry</label>
-                        <input type='checkbox' name='Smoke-free' />
-                        <label>Smoke-free</label>
-                        
-                    </label>
-                    <br/>
-                    <input type='submit' />
-                </form>
-            </div>
+            <Layout>
+                <AdminForm 
+                    hotel={this.state.hotel}
+                    handleChange={this.handleChange}
+                    handleSubmit={this.state.handleSubmit}
+
+
+                />
+            </Layout>
         )
     }
 }
-
-export default Admin
