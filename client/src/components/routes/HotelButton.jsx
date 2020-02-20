@@ -144,9 +144,15 @@ class HotelButton extends Component {
               <p>{handleEco()}</p>
             </div>
             <div className="room-price">
-              <span className="room-price-list">{sample_list_price}</span>{" "}
-              <span className="room-price-current">{sample_current_price}</span>
-              <p>Per person includes flight + hotel + car</p>
+              <div className="prices">
+                <span className="room-price-list">{sample_list_price}</span>{" "}
+                <span className="room-price-current">
+                  {sample_current_price}
+                </span>
+              </div>
+              <p className="poop-brown">
+                Per person includes flight + hotel + car
+              </p>
             </div>
           </div>
         </Link>
