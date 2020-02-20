@@ -56,8 +56,8 @@ class Admin extends Component {
             method: 'POST',
             data: this.state.hotel
         })
-        .then(res => this.setState({ createdHotel: res.data.hotel }))
-        .catch(console.error)
+            .then(res => this.setState({ createdHotel: res.data.hotel }))
+            .catch(console.error)
     }
 
     render() {
@@ -65,9 +65,11 @@ class Admin extends Component {
             console.log(this.state.createdHotel)
             return <Redirect to={`/`} />
         }
-        
-        return(
-                <AdminForm 
+
+        return (
+            <div>
+                <h1>Want to be a part of Expedia</h1>
+                <AdminForm
                     hotel={this.state.hotel}
                     handleChange={this.handleChange}
                     handleSubmit={this.submitHotel}
@@ -75,6 +77,7 @@ class Admin extends Component {
 
 
                 />
+            </div>
         )
     }
 }

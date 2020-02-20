@@ -5,7 +5,7 @@ const AdminForm = (props) => {
     console.log(props)
         return(
             <div>
-                <h1>Want to be a part of Expedia</h1>
+                
                 <form onSubmit={props.handleSubmit}>
                     <label>
                         Hotel Name: 
@@ -27,7 +27,7 @@ const AdminForm = (props) => {
                     </label>
                     <br/>
                     <label>
-                        Please upload a picture of your property:
+                        Please enter the URL for your hotel picture:
                         <br/>
                         <input 
                         type='text' 

@@ -72,6 +72,7 @@ class AdminEdit extends Component {
         return(
             <div>
                 <div>
+                    <h1>Update your hotel!</h1>
                     <AdminForm 
                         hotel={this.state.hotel}
                         handleChange={this.handleChange}
