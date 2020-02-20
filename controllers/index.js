@@ -30,8 +30,21 @@ const getAllHotelsByCity = async (req, res) => {
   }
 };
 
+// GET request for all hotels
+// Route: GET /hotels
+
+const getAllHotels = async (req, res) => {
+  try {
+    const hotels = await Hotel.findAll()
+    return res.status(200).json({hotels: hotels})
+  } catch (error) {
+    return res.status(500).send(error.message)
+  }
+}
+
+
 // GET request for a single hotel by hotel id. Will refer to the Hotels model
-// Route: GET /api/hotels/:hotelId
+// Route: GET /hotels/:hotelId
 
 const getHotelDetails = async (req, res) => {
   try {
@@ -158,6 +171,7 @@ updateRoomInHotel
 module.exports = {
   getAllCities,
   getAllHotelsByCity,
+  getAllHotels,
   getHotelDetails,
   getAllRoomsByHotel,
   getRoomDetails,

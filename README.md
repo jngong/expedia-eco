@@ -127,11 +127,11 @@ As a team, we decided to not split responsibilities front-end vs. back-end. We w
 | ------------------ | :------------: | :---------: |
 | Layout             |      3hrs      |   2.5hrs    |
 | ExpediaLogo        |      2hrs      |   2.5hrs    |
-| Hotel Button       |      2hrs      |    1hrs     |
+| Hotel Button       |      2hrs      |    7hrs     |
 | Room Button        |      2hrs      |    0hrs     |
 | SEARCHNAV Vacation |      3hrs      |    0hrs     |
 | Hotel              |      4hrs      |    2hrs     |
-| Hotel List         |      4hrs      |   3.5hrs    |
+| Hotel List         |      4hrs      |   5.5hrs    |
 | Search Form        |      3hrs      |    5hrs     |
 | Confirmation       |      2hrs      |    4hrs     |
 | App                |      3hrs      |    0hrs     |
