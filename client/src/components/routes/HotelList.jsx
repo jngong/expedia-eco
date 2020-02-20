@@ -45,7 +45,7 @@ class HotelList extends Component {
     const { hotels } = this.state;
 
     return (
-      <React.Fragment>
+      <div className="hotel-list">
         <span className="task">
           <img
             src={require("../../images/icons-assets/hotel@2x.png")}
@@ -67,12 +67,12 @@ class HotelList extends Component {
               className="big-icon"
               alt="luggage"
             />{" "}
-            <span className="dest-city">{this.state.destCity}</span> (and
-            vicinity)
+            <span className="dest-city capitalize">{this.state.destCity}</span>
+            <span>&nbsp;(and vicinity)</span>
           </span>
-          <span className="property-count">
+          <p className="property-count">
             ({this.state.hotels.length} properties)
-          </span>
+          </p>
           <span className="travel-dates">
             <img
               src={require("../../images/icons-assets/calendar@2x.png")}
@@ -90,28 +90,30 @@ class HotelList extends Component {
             1 room, {this.state.travelers} adult(s)
           </span>
         </div>
-        <div className="sort-button rounded-corner">
-          <img
-            src={require("../../images/icons-assets/sliders@2x.png")}
-            className="big-icon"
-            alt="sliders"
-          />
-          Sort &amp; Filter
-        </div>
-        <div className="map-button rounded-corner">
-          <img
-            src={require("../../images/icons-assets/map-marker@2x.png")}
-            className="big-icon"
-            alt="map marker"
-          />
-          Map
+        <div className="big-buttons">
+          <div className="sort-button rounded-corner">
+            <img
+              src={require("../../images/icons-assets/sliders@2x.png")}
+              className="big-icon"
+              alt="sliders"
+            />
+            Sort &amp; Filter
+          </div>
+          <div className="map-button rounded-corner">
+            <img
+              src={require("../../images/icons-assets/map-marker@2x.png")}
+              className="big-icon"
+              alt="map marker"
+            />
+            Map
+          </div>
         </div>
         <div className="phone">
           <Link to="/">
-            Questions? 866-404-5719{" "}
+            Questions? 866-404-5719
             <img
               src={require("../../images/icons-assets/telephone@2x.png")}
-              className="icon"
+              className="tiny-icon"
               alt="phone"
             />
           </Link>
@@ -127,7 +129,7 @@ class HotelList extends Component {
             );
           })}
         </ul>
-      </React.Fragment>
+      </div>
     );
   }
 }
