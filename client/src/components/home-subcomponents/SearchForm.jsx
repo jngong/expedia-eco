@@ -1,4 +1,8 @@
 import React from 'react'
+import MapPin from "../../images/icons-assets/map-pin@3x.png"
+import CalendarIcon from "../../images/icons-assets/calendar@3x.png"
+import UserIcon from "../../images/icons-assets/users@3x.png"
+
 import '../../Home.css'
 
 const SearchForm = (props) => {
@@ -17,6 +21,7 @@ const SearchForm = (props) => {
             <form onSubmit={props.handleSubmit}>
 
                 <label>
+                    <img src={MapPin} alt="map pin" className="input-icon map"></img>
                     <div className="input-label">Leaving From</div>
                     <input
                         // className="full-width"
@@ -29,6 +34,7 @@ const SearchForm = (props) => {
                 </label>
 
                 <label>
+                    <img src={MapPin} alt="map pin" className="input-icon map"></img>
                     <div className="input-label">Going To</div>
                     <input
                         // className="full-width"
@@ -42,6 +48,7 @@ const SearchForm = (props) => {
                 <div className="dates">
 
                     <label className="half-width-label">
+                        <img src={CalendarIcon} alt="calendar icon" className="input-icon calendar"></img>
                         <div className="input-label">Departing</div>
                         <input
                             className="half-width"
@@ -52,6 +59,7 @@ const SearchForm = (props) => {
                         />
                     </label>
                     <label className="half-width-label">
+                        <img src={CalendarIcon} alt="calendar icon" className="input-icon calendar"></img>
                         <div className="input-label">Returning</div>
                         <input
                             type="text"
@@ -63,6 +71,7 @@ const SearchForm = (props) => {
                 </div>
 
                 <label>
+                    <img src={UserIcon} alt="user icon" className="input-icon user"></img>
                     <div className="input-label">Travelers</div>
                     <input
                         // className="full-width"
@@ -94,7 +103,7 @@ const SearchForm = (props) => {
                     </label>
                 <br />
 
-                <button>
+                <button className="searchButton">
                     Search
                 </button>
 
