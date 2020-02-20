@@ -26,7 +26,7 @@ const App = () => {
         component={ConfirmationPage}
       />
       <Route exact path='/admin' component={Admin} />
-
+    
     </div>
   );
 };
