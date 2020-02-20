@@ -36,7 +36,7 @@ class HotelList extends Component {
     }
   };
   componentDidMount = () => {
-    console.log("props", this.props);
+    // console.log("props", this.props);
     this.getSearchResults();
   };
 
@@ -121,8 +121,9 @@ class HotelList extends Component {
             return (
               <HotelButton
                 key={i}
-                id={this.props.location.state.cityId}
+                cityId={this.props.location.state.cityId}
                 destCity={this.state.destCity}
+                hotels={this.state.hotels}
               />
             );
           })}

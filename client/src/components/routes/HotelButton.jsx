@@ -14,25 +14,32 @@ class HotelButton extends Component {
   // fetch hotel info from  /cities/:cityId/hotels endpoint and set it into state
   getHotelData = async () => {
     try {
+      console.log("list props", this.props);
       const res = await axios.get(
-        `http://localhost:3001/hotels/${this.props.id}`
+        `http://localhost:3001/cities/${this.props.cityId}/hotels`
       );
-      // console.log("axios", res.data);
-      this.setState({ destCity: this.props.destCity, ...res.data.hotel });
-      console.log("hotel data retrieved");
+      console.log("axios", res.data);
+      this.setState({
+        destCity: this.props.destCity,
+        hotels: res.data.hotels
+      });
+      // this.setState({ destCity: this.props.destCity, ...res.data.hotel });
+      // console.log("hotel data retrieved", this.state);
     } catch (error) {
       console.log(error);
     }
   };
 
   // fetch an array of hotel room info from /hotels/:hotelId/rooms endpoint and set it into state
-  getRoomData = async () => {
+  getRoomData = async hotel => {
+    // this.state.hotels.map(hotel => {
     try {
       const resRoom = await axios.get(
-        `http://localhost:3001/hotels/${this.props.id}/rooms`
+        `http://localhost:3001/hotels/${hotel.id}/rooms`
       );
+      console.log("resRoom", resRoom);
       this.setState({ rooms: resRoom.data.rooms });
-      console.log("room data retrieved");
+      console.log("room data retrieved", this.state);
     } catch (error) {
       console.log(error);
     }
@@ -51,10 +58,12 @@ class HotelButton extends Component {
   // run all above get commands when component loads
   componentDidMount = async () => {
     await this.getHotelData();
-    await this.getRoomData();
-    await this.getRoomPrices();
-    console.log("HotelButton state", this.state);
+    await this.state.hotels.map(hotel => {
+      this.getRoomData(hotel);
+    });
   };
+  // await this.getRoomPrices();
+  // console.log("HotelButton state", this.state);
 
   /* ---------- PARSE DATA BEFORE RENDER ---------- */
   // ADDS COMMENTS IF THE HOTEL HAS A GOOD RATING
