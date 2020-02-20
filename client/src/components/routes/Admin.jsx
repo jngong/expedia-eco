@@ -12,6 +12,7 @@ class Admin extends Component {
                 address: '',
                 name: '',
                 img_url: '',
+                rating: '',
                 eco_friendly: false,
                 description: '',
                 wifi: false,

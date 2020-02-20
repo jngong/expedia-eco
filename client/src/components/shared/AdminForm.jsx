@@ -48,6 +48,17 @@ class AdminForm extends Component {
                     </label>
                     <br/>
                     <label>
+                        Please rate your hotel
+                        <br/>
+                        <input 
+                        type='text'
+                        name='rating'
+                        value={this.props.hotel.rating}
+                        onChange={this.props.handleChange}
+                        />
+                    </label>
+                    <br/>
+                    <label>
                         Please provide a small description of the hotel you are trying to post:
                         <br/>
                         <textarea 
