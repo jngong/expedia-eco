@@ -1,0 +1,33 @@
+.green {
+  color: var(--eco-green);
+}
+
+.search-details {
+  /*grid*/
+
+  background-color: white;
+  border: 1px solid var(--formfield-icons);
+}
+.destination {
+  color: var(--amenities-icon-text);
+  font-weight: bold;
+}
+.dest-city {
+  text-transform: capitalize;
+}
+
+.sort-button,
+.map-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0.5rem;
+  font-size: 1.5em;
+  border: 1px solid var(--formfield-icons);
+}
+.sort-button {
+  padding: 0.3rem 2.5rem;
+}
+.map-button {
+  padding: 0.3rem 1.25rem;
+}

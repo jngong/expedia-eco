@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import "../../App.css";
+import "../../css/HotelList.css";
 import HotelButton from "./HotelButton";
 
 class HotelList extends Component {
@@ -48,7 +50,7 @@ class HotelList extends Component {
         <span className="task">
           <img
             src={require("../../images/icons-assets/hotel@2x.png")}
-            className="icon"
+            className="big-icon"
             alt="hotel"
           />
           1 of 4: Choose your hotel
@@ -63,10 +65,11 @@ class HotelList extends Component {
           <span className="destination">
             <img
               src={require("../../images/icons-assets/luggage@2x.png")}
-              className="icon"
+              className="big-icon"
               alt="luggage"
             />{" "}
-            {this.state.destCity} (and vicinity)
+            <span className="dest-city">{this.state.destCity}</span> (and
+            vicinity)
           </span>
           <span className="property-count">
             ({this.state.hotels.length} properties)
@@ -88,30 +91,32 @@ class HotelList extends Component {
             1 room, {this.state.travelers} adult(s)
           </span>
         </div>
-        <div className="sort-button">
+        <div className="sort-button rounded-corner">
           <img
             src={require("../../images/icons-assets/sliders@2x.png")}
-            className="icon"
+            className="big-icon"
             alt="sliders"
           />
           Sort &amp; Filter
         </div>
-        <div className="map-button">
+        <div className="map-button rounded-corner">
           <img
             src={require("../../images/icons-assets/map-marker@2x.png")}
-            className="icon"
+            className="big-icon"
             alt="map marker"
           />
           Map
         </div>
-        <Link to="/">
-          Questions? 866-404-5719{" "}
-          <img
-            src={require("../../images/icons-assets/telephone@2x.png")}
-            className="icon"
-            alt="phone"
-          />
-        </Link>
+        <div className="phone">
+          <Link to="/">
+            Questions? 866-404-5719{" "}
+            <img
+              src={require("../../images/icons-assets/telephone@2x.png")}
+              className="icon"
+              alt="phone"
+            />
+          </Link>
+        </div>
         <ul>
           {hotels.map((hotel, i) => {
             return (
