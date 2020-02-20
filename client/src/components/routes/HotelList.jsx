@@ -24,7 +24,7 @@ class HotelList extends Component {
     };
   }
 
-  // axios call with search terms from state on componentDidMount
+  // use the cityId passed down from the search form to fetch a list of hotels in the target city from the API
   getSearchResults = async () => {
     try {
       const res = await axios.get(
@@ -35,14 +35,21 @@ class HotelList extends Component {
       return console.log(error);
     }
   };
+
   componentDidMount = () => {
-    console.log("props", this.props);
     this.getSearchResults();
   };
 
   /* ---------- RENDER ---------- */
   render() {
-    const { hotels } = this.state;
+    const {
+      hotels,
+      destCity,
+      departDate,
+      returnDate,
+      travelers,
+      cityId
+    } = this.state;
 
     return (
       <div className="hotel-list">
@@ -54,12 +61,15 @@ class HotelList extends Component {
           />
           1 of 4: Choose your hotel
         </span>
+
         <h2>Start by choosing your hotel</h2>
+
         <p>
           The trip prices shown include Flight + Hotel + Car, taxes and fees,
           but do not include baggage fees or other fees charged directly by the
           airline for the included flight.
         </p>
+
         <div className="search-details">
           <span className="destination">
             <img
@@ -67,19 +77,17 @@ class HotelList extends Component {
               className="big-icon"
               alt="luggage"
             />{" "}
-            <span className="dest-city capitalize">{this.state.destCity}</span>
+            <span className="dest-city capitalize">{destCity}</span>
             <span>&nbsp;(and vicinity)</span>
           </span>
-          <p className="property-count">
-            ({this.state.hotels.length} properties)
-          </p>
+          <p className="property-count">({hotels.length} properties)</p>
           <span className="travel-dates">
             <img
               src={require("../../images/icons-assets/calendar@2x.png")}
               className="icon"
               alt="calendar"
             />
-            {this.state.departDate} - {this.state.returnDate}
+            {departDate} - {returnDate}
           </span>
           <span className="hotel-room">
             <img
@@ -87,9 +95,10 @@ class HotelList extends Component {
               className="icon"
               alt="bed"
             />
-            1 room, {this.state.travelers} adult(s)
+            1 room, {travelers} adult(s)
           </span>
         </div>
+
         <div className="big-buttons">
           <div className="sort-button rounded-corner">
             <img
@@ -108,6 +117,7 @@ class HotelList extends Component {
             Map
           </div>
         </div>
+
         <div className="phone">
           <Link to="/">
             Questions? 866-404-5719
@@ -118,15 +128,10 @@ class HotelList extends Component {
             />
           </Link>
         </div>
+
         <ul>
           {hotels.map((hotel, i) => {
-            return (
-              <HotelButton
-                key={i}
-                id={this.props.location.state.cityId}
-                destCity={this.state.destCity}
-              />
-            );
+            return <HotelButton key={i} id={cityId} destCity={destCity} />;
           })}
         </ul>
       </div>
