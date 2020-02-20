@@ -141,6 +141,7 @@ As a team, we decided to not split responsibilities front-end vs. back-end. We w
 | Backend Setup      |      5hrs      |   4x3hrs    |
 | Backend debugging  |      n/a       |    4hrs     |
 | React Router       |      n/a       |    3hrs     |
+| Stying             |      n/a       |   2.5hrs    |
 | Total              |     37hrs      |    0hrs     |
 
 ## Additional Libraries

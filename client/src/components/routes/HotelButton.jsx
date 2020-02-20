@@ -131,8 +131,6 @@ class HotelButton extends Component {
                 {rating}/5 {ratingComment(rating)} ({reviewCount()} reviews)
               </p>
             </div>
-          </div>
-          <div className="room-info">
             <div className="room-features">
               <p className="green">
                 <img
