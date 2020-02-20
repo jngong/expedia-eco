@@ -7,12 +7,12 @@
   .navbar {
     display: flex;
     flex-direction: row;
-    padding: 20px;
+    padding: .5rem;
     background-color: #ffd000;
     justify-content: space-between;
   }
   
   .fas {
     padding: 0 10px;
-    font-size: larger;
+    font-size: 1.2rem;
   }
