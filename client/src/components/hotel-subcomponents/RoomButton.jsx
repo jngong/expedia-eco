@@ -1,10 +1,8 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import '../../Hotel.css'
+// import '../../Hotel.css'
 
 import { Redirect } from 'react-router-dom';
-
-//! this component needs to be brought into the Hotel component
 
 class RoomButton extends Component {
 
@@ -64,7 +62,7 @@ class RoomButton extends Component {
                 <div className="room-button" key={room.id}>
 
                     <div className='room-button-header'>
-                        <p className="bold">Unreal Deal</p>
+                        <h3>Unreal Deal</h3>
                         <p>Book this and save 20% on your flight</p>
                     </div>
 
