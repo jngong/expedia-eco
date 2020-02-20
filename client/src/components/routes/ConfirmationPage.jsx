@@ -1,30 +1,36 @@
 import React from "react";
+import "../../css/ConfirmationPage.css";
+import LogoNav from "../shared/LogoNav";
+
 
 const ConfirmationPage = props => {
   console.log("What do I get?", props)
 
   return (
     <div>
-      <h2 id="confirmation-page-header">Review and Book</h2>
+      <div>
+        <h2 id="confirmation-page-header">Review and Book</h2>
+      </div>
+      
+      <p className="review-and-book-detail">Roundtrip Flight</p>        
+      <p className="bold-black-print">Newark (EWR) to San Francisco (SFO)</p>
 
-      <div className="review-and-book-detail">
-        <h5>Roundtrip Flight</h5>
-        <h6>Newark (EWR) to San Francisco (SFO)</h6>
-        <p>Tue, Jun 2 - Tue, Jun 9</p>
-        <p>4 tickets: 2 adults, 2 children</p>
+      <p>Tue, Jun 2 - Tue, Jun 9</p>
+      <p>4 tickets: 2 adults, 2 children</p>
+
+      <div>
+        <p className="review-and-book-detail">{props.location.state.component_props.name}</p>
       </div>
 
-      <div className="review-and-book-detail">
-        <h5>{props.location.state.component_props.name}</h5>
-        <h6>{props.location.state.component_props.address}</h6>
-        <p>Tue, Jun 2 - Mon, Jun 8</p>
+      <h6>{props.location.state.component_props.address}</h6>
+      <p>Tue, Jun 2 - Mon, Jun 8</p>
+
+      <div> 
+        <p className="review-and-book-detail">Economy</p>
       </div>
 
-      <div className="review-and-book-detail">
-        <h5>Economy</h5>
-        <h6>San Francisco, CA (SFO Airport)</h6>
-        <p>Tue, Jun 2 - Mon, Jun 8</p>
-      </div>
+      <h6>San Francisco, CA (SFO Airport)</h6>
+      <p>Tue, Jun 2 - Mon, Jun 8</p>
 
       <div id="review-and-book-summary">
         <p className="left-text">
