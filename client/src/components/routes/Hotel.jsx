@@ -1,25 +1,29 @@
 import React, { Component } from "react";
-import axios from "axios";
 import RoomButton from "../hotel-subcomponents/RoomButton";
 import TripDetails from "../hotel-subcomponents/TripDetails";
+import { Link } from "react-router-dom";
 
 export default class Hotel extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      Hotel: {}
+
     };
   }
 
-  async componentDidMount() {
-    try {
-      const response = await axios.get("http://localhost:3001/hotels/2");
-      this.setState({ Hotel: response.data.hotel });
-      console.log(response);
-    } catch (error) {
-      console.error(error);
-    }
+  componentDidMount() {
+
+  this.setState({...this.props.location.state})
+   
+  }
+
+  renderIcon(key, img) {
+    // console.log(key, img)
+    return (
+      key === true ? <img src=
+        {require(`../../images/icons-assets/${img}`)} alt={`${img}`} className="icon" /> : ""
+    )
   }
 
   render() {
@@ -27,7 +31,7 @@ export default class Hotel extends Component {
     return (
       <div>
         <div id="hotel-component-banner">
-          <p>See all hotels (Link)</p>
+          <Link to="/">See all hotels</Link>
           <p id="expedia-phone-number">1-877-387-1531</p>
         </div>
 
@@ -35,28 +39,32 @@ export default class Hotel extends Component {
 
         <div id="hotel-main-content">
           <p>
-            {this.state.Hotel.name} Rating: {this.state.Hotel.rating}
+            {this.state.name} Rating: {this.state.rating}
           </p>
-          <p>{this.state.Hotel.address}</p>
+          <p>{this.state.address}</p>
           <img src={require("../../images/hotel_room_image.jpg")} alt="hotel" />
           {/* Need to add the scroll arrows icons */}
-          <p>Very Good! {this.state.Hotel.rating}</p>
+          <p>Very Good! {this.state.rating}</p>
           <p>View all 1,769 Expedia Verified Reviews</p>
         </div>
 
         <div>
           <p>(Conditional rendering of the icons HERE.)</p>
+          {this.renderIcon(this.state.wifi, "bed.png")}
+          {this.renderIcon(this.state.business, "business.png")}
+          {this.renderIcon(this.state.laundry, "laundry.png")}
+          {this.renderIcon(this.state.smoke_free, "smoke-free.png")}
+          {this.renderIcon(this.state.eco_friendly, "eco.png")}
+          <img src={require('../../images/icons-assets/more.png')} alt='more.png' className='icon'/>
         </div>
 
-        <p>
-          The hotel offers a coffee shop/cafe. A computer station is located on
-          site and wireless internet access is complimentary.
-        </p>
+        <p>{this.state.description}</p>
 
         <p>See more</p>
         <div className="hotel-added-components">
           <TripDetails />
-          <RoomButton />
+          <RoomButton
+            component_props={this.state}/>
         </div>
       </div>
     );

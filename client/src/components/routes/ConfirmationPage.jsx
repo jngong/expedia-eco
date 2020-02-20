@@ -1,6 +1,8 @@
 import React from "react";
 
 const ConfirmationPage = props => {
+  console.log("What do I get?", props)
+
   return (
     <div>
       <h2 id="confirmation-page-header">Review and Book</h2>
@@ -13,8 +15,8 @@ const ConfirmationPage = props => {
       </div>
 
       <div className="review-and-book-detail">
-        <h5>Dummy Data (HOTEL NAME)</h5>
-        <h6>Dummy Data (CITY, STATE)</h6>
+        <h5>{props.location.state.component_props.name}</h5>
+        <h6>{props.location.state.component_props.address}</h6>
         <p>Tue, Jun 2 - Mon, Jun 8</p>
       </div>
 

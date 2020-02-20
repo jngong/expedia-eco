@@ -67,8 +67,8 @@ class HotelList extends Component {
               className="big-icon"
               alt="luggage"
             />{" "}
-            <span className="dest-city capitalize">{this.state.destCity}</span>{" "}
-            (and vicinity)
+            <span className="dest-city">{this.state.destCity}</span> (and
+            vicinity)
           </span>
           <span className="property-count">
             ({this.state.hotels.length} properties)

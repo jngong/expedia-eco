@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import '../../Hotel.css'
 
+import { Redirect } from 'react-router-dom';
+
 //! this component needs to be brought into the Hotel component
 
 class RoomButton extends Component {
@@ -9,7 +11,8 @@ class RoomButton extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            rooms: []
+            rooms: [],
+            redirect: false
         }
     }
 
@@ -24,11 +27,31 @@ class RoomButton extends Component {
             console.error(error)
         }
     }
+  
+    handleRoomSelect = (e) => {
+        console.log(this.state.rooms[0].hotelId, "Room Select")
+        console.log(this.props.component_props, "props")
+        return (
 
+            this.setState({
+                redirect: true
+            })
+            
+        )
+    }
     //TODO in render: All styling, bring in icons for wifi, drop down, checkmark.
     //If there is time, then also calculate % price savings.
-
+        
+    
     render() {
+
+        if (this.state.redirect) {
+            return (
+                <Redirect to={{
+                    pathname: `/hotels/${this.props.component_props.id}/confirmation`,
+                    state: { ...this.props }
+                }}/>)
+        }
 
         const { rooms } = this.state
 
@@ -62,7 +85,7 @@ class RoomButton extends Component {
                         </div>
                     </div>
 
-                    <button className="room-select-button">
+                    <button className="room-select-button" onClick={(e)=>this.handleRoomSelect()}>
                         Select
                     </button>
                 </div>
