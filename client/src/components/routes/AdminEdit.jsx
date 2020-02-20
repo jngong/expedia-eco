@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
-import axios from 'axios'
-import { Redirect } from 'react-router-dom'
+import '../../css/AdminEdit.css'
 import AdminForm from '../shared/AdminForm'
+import Axios from 'axios'
+import { Redirect } from 'react-router-dom'
 
 
-class Admin extends Component {
+class AdminEdit extends Component {
     constructor(props) {
         super(props)
 
@@ -22,7 +23,7 @@ class Admin extends Component {
                 smoke_free: false,
                 cityId: ''
             },
-            createdHotel: null
+            isUpdated: false
         }
     }
 
@@ -37,6 +38,7 @@ class Admin extends Component {
         }))
     }
 
+
     handleCheckboxChange = e => {
         const { checked, name } = e.target;
         console.log(name, checked)
@@ -48,38 +50,42 @@ class Admin extends Component {
         }))
     }
 
-    submitHotel = e => {
+    updateHotel = e => {
         e.preventDefault()
-
-        axios({
-            url: 'http://localhost:3001/hotels',
-            method: 'POST',
+        console.log(e)
+        Axios({
+            url: `http://localhost:3001/hotels/${this.props.match.params.hotel_id}`,
+            method: 'PUT',
             data: this.state.hotel
         })
-            .then(res => this.setState({ createdHotel: res.data.hotel }))
-            .catch(console.error)
+        .then(res => this.setState({ isUpdated: true }))
+        .catch(console.error)
     }
 
     render() {
-        if (this.state.createdHotel) {
-            console.log(this.state.createdHotel)
+        console.log(this.props.match.params.hotel_id)
+        if (this.state.isUpdated) {
+            console.log(this.state.isUpdated)
             return <Redirect to={`/`} />
         }
-
-        return (
+        console.log()
+        return(
             <div>
-                <h1>Want to be a part of Expedia</h1>
-                <AdminForm
-                    hotel={this.state.hotel}
-                    handleChange={this.handleChange}
-                    handleSubmit={this.submitHotel}
-                    handleCheckboxChange={this.handleCheckboxChange}
-
-
-                />
+                <div>
+                    <h1>Update your hotel!</h1>
+                    <AdminForm 
+                        hotel={this.state.hotel}
+                        handleChange={this.handleChange}
+                        handleCheckboxChange={this.handleCheckboxChange}
+                        handleSubmit={this.updateHotel}
+                    />
+                    
+                </div>
+                <button>Delete</button>
             </div>
         )
     }
 }
 
-export default Admin
+
+export default AdminEdit
