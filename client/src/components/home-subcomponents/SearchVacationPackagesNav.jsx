@@ -1,12 +1,11 @@
 import React from 'react'
-import '../../Home.css'
 
 const SearchVacationPackagesNav = () => {
     return (
         <div>
-            <h1 className="vacay-packages-header">
+            <h2 className="vacay-packages-header">
                 Search Vacation Packages
-            </h1>
+            </h2>
             <div className="search-vacay-nav">
                 <button className="search-vacay-nav-item">
                     Flight + Hotel

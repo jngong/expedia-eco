@@ -1,6 +1,7 @@
 * {
-    box-sizing: border-box;
+    box-sizing: border-box
 }
+
 .home {
     background-color: black;
     color: white; 
@@ -11,12 +12,21 @@
 /** SearchOptionNav Styles **/
 /* ********************************** */
 
+.search-options-nav, 
+.vacay-packages-header, 
+.search-vacay-nav,
+.search-form,
+.form-message {
+    padding: .5rem
+}
+
 .search-options-nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 10px 0 10px;
-    border-bottom: 1px solid #979797; /*var(--formfield-icons)*/
+    /* padding: .5rem; */
+    padding-bottom: 0;
+    border-bottom: 1px solid var(--subtext-color);
     height: 55px
 }
 
@@ -27,7 +37,8 @@
     font-weight: bold;
     padding-bottom: 10px;
     border: none;
-    outline: none
+    outline: none;
+    border-radius: 0
 }
 
 .bundle {
@@ -40,7 +51,7 @@
 }
 
 .search-options-nav-item:hover, .search-options-nav-item:active {
-    border-bottom: 3px solid #005ebf;
+    border-bottom: 3px solid var(--amenities-icon-text);
 }
 
 /* ********************************** */
@@ -48,55 +59,55 @@
 /* ********************************** */
 
 .vacay-packages-header {
-    font-size: 15px;
-    margin: 20px 10px 10px 10px
+    color: white;
+    margin: 0;
+    padding-top: 1rem;
+    /* font-size: 15px; */
+    /* margin: 20px 10px 10px 10px */
 }
 
 .search-vacay-nav {
     display: flex;
     flex-flow: row wrap;
-    margin: 10px
+    /* margin: 10px */
 }
 
 .search-vacay-nav-item {
-    background-color: #626262; /* var(--brownish-grey-three) */
-    border-radius: 5px;
+    background-color: var(--subtext-color);
+    /* border-radius: 5px; */
     height: 30px;
-    border: 1px solid #626262;  /* var(--brownish-grey-three) */
+    border: 1px solid var(--subtext-color);
     font-size: 10px; 
     color: white;
     padding: 0 15px;
-    margin: 10px 10px 0 0;
+    margin: .5rem .5rem 0 0;
     outline: none
 }
 
 .search-vacay-nav-item:hover, .search-vacay-nav-item:active {
-    background-color: #005ebf;
+    background-color: var(--amenities-icon-text);
 }
 
 /* ********************************** */
 /** SearchForm Styles **/
 /* ********************************** */
 
-.search-form {
-    margin: 10px   
-}
-
 .input-label {
-    font-size: 8px;
+    display: inline-block;
+    font-size: .5rem;
     font-weight: bold;
-    color: #626262; /* var(--brownish-grey-three) */
+    color: var(--subtext-color);
     position: relative;
     top: 14px;
-    left: 30px;
+    left: 8px;
     z-index: 1
 }
 
 .input-icon {
     position: relative;
-    top: 36px;
-    left: 8px;
-    color: #626262;
+    top: 25px;
+    left: 9px;
+    /* color: var(--subtext-color); */
 }
 
 .map {
@@ -105,9 +116,9 @@
 }
 
 .calendar {
-    width: 17px;
-    height: 17px;
-    top: 40px;
+    width: 15px;
+    height: 15px;
+    top: 30px;
 }
 
 .user {
@@ -117,9 +128,9 @@
 
 .x-icon {
     position: relative;
-    top: 36px;
+    top: 30px;
     left: 320px;
-    color: #626262;
+    /* color: var(--subtext-color); */
     object-fit: contain;
     width: 12px;
     height: 12px;
@@ -129,7 +140,7 @@ input[type = text] {
     width: 100%;
     height: 36px;
     border-radius: 5px;
-    border: solid 1px #979797; /*var(--formfield-icons)*/
+    border: solid 1px var(--formfield-icons);
     padding-left: 30px;
     padding-bottom: 0;
     font-size: 12px;
@@ -137,6 +148,14 @@ input[type = text] {
 
 .half-width-label {
     width: 48%;
+}
+
+.half-width-label > .input-label {
+    left: 15px;
+}
+
+.travelers-field > .input-label {
+    left: 18px
 }
 
 .dates {
@@ -149,7 +168,7 @@ input[type = checkbox] {
     height: 16px;
     width: 16px;
     border-radius: 2px;
-    border: solid 1px #979797; /*var(--formfield-icons)*/
+    border: solid 1px var(--formfield-icons);
     background-color: white;
     margin-right: 4px
 }
@@ -159,15 +178,15 @@ input[type = checkbox] {
     font-weight: bold;
     display: flex;
     align-items: center;
-    margin-top: 10px
+    margin-top: .5rem;
 }
 
 .searchButton {
     width: 100%;
     height: 36px;
-    border-radius: 5px;
-    background-color: #ffd000; /* var(--expedia-yellow) */
-    box-shadow: 0 2px 4px 0 #6f6363;
+    /* border-radius: 5px; */
+    background-color: var(--expedia-yellow);
+    box-shadow: 0 2px 4px 0 var(--subtext-color);
     border: 1px solid;
     font-size: 12px;
     font-weight: bold;
@@ -179,12 +198,12 @@ input[type = checkbox] {
 .form-message {
     font-size: 13px;
     font-weight: bold;
-    padding: 15px 10px;
+    /* padding: 15px 10px; */
 }
 
 .homepage-ads {
-    background-color: #ededed; /* var(--very-light-pink) */
-    color: #003262; /* var(--expedia-blue) */
+    background-color: var(--very-light-pink);
+    color: var(--expedia-blue);
     font-size: 12px;
     padding: 20px;
 }

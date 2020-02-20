@@ -126,9 +126,10 @@ class HotelButton extends Component {
             />
             <div className="hotel-info-text">
               <h3>{name}</h3>
-              <p>{destCity}</p>
+              <p className="capitalize">{destCity}</p>
               <p>
-                {rating}/5 {ratingComment(rating)} ({reviewCount()} reviews)
+                <span className="bold">{rating}/5</span> {ratingComment(rating)}{" "}
+                ({reviewCount()} reviews)
               </p>
             </div>
             <div className="room-features">

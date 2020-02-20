@@ -16,8 +16,9 @@
   color: var(--subtext-color);
   font-family: Arial, sans-serif;
   font-size: 11px;
-  padding: 0.5rem;
+  /* padding: 0.5rem; */
 }
+
 a {
   color: var(--subtext-color);
   text-decoration: none;

@@ -4,8 +4,6 @@ import CalendarIcon from "../../images/icons-assets/calendar@3x.png"
 import UserIcon from "../../images/icons-assets/users@3x.png"
 import XIcon from "../../images/icons-assets/x.png"
 
-import '../../Home.css'
-
 const SearchForm = (props) => {
 
     const handleInputChange = (e) => {
@@ -26,7 +24,6 @@ const SearchForm = (props) => {
                     <img src={XIcon} alt="x" className="x-icon"></img>
                     <div className="input-label">Leaving From</div>
                     <input
-                        // className="full-width"
                         type="text"
                         autoComplete="off"
                         value={props.tripSearch.departCity}
@@ -40,7 +37,6 @@ const SearchForm = (props) => {
                     <img src={XIcon} alt="x" className="x-icon"></img>
                     <div className="input-label">Going To</div>
                     <input
-                        // className="full-width"
                         type="text"
                         value={props.tripSearch.destCity}
                         name="destCity"
@@ -73,7 +69,7 @@ const SearchForm = (props) => {
                     </label>
                 </div>
 
-                <label>
+                <label className="travelers-field">
                     <img src={UserIcon} alt="user icon" className="input-icon user"></img>
                     <div className="input-label">Travelers</div>
                     <input
