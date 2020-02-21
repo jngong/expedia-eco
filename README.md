@@ -123,26 +123,25 @@ As a team, we decided to not split responsibilities front-end vs. back-end. We w
 
 ## Timeframes
 
-| Component          | Estimated Time | Actual Time |
-| ------------------ | :------------: | :---------: |
-| Layout             |      3hrs      |   2.5hrs    |
-| ExpediaLogo        |      2hrs      |   2.5hrs    |
-| Hotel Button       |      2hrs      |    7hrs     |
-| Room Button        |      2hrs      |    0hrs     |
-| SEARCHNAV Vacation |      3hrs      |    0hrs     |
-| Hotel              |      4hrs      |    2hrs     |
-| Hotel List         |      4hrs      |   5.5hrs    |
-| Search Form        |      3hrs      |    5hrs     |
-| Confirmation       |      2hrs      |    4hrs     |
-| App                |      3hrs      |    0hrs     |
-| Admin (Edit)       |      3hrs      |    0hrs     |
-| Admin (Create)     |      3hrs      |    0hrs     |
-| Admin Form         |      3hrs      |    0hrs     |
-| Backend Setup      |      5hrs      |   4x3hrs    |
-| Backend debugging  |      n/a       |    4hrs     |
-| React Router       |      n/a       |    3hrs     |
-| Stying             |      n/a       |   2.5hrs    |
-| Total              |     37hrs      |    0hrs     |
+| Component         | Estimated Time | Actual Time |
+| ----------------- | :------------: | :---------: |
+| Layout            |      3hrs      |   2.5hrs    |
+| ExpediaLogo       |      2hrs      |   2.5hrs    |
+| Hotel Button      |      2hrs      |    7hrs     |
+| Room Button       |      2hrs      |    5hrs     |
+| Hotel             |      4hrs      |    2hrs     |
+| Hotel List        |      4hrs      |   5.5hrs    |
+| Search Form       |      3hrs      |    5hrs     |
+| Confirmation      |      2hrs      |   2x6hrs    |
+| App               |      3hrs      |    0hrs     |
+| Admin (Edit)      |      3hrs      |   2x4hrs    |
+| Admin (Create)    |      3hrs      |   2x4hrs    |
+| Admin Form        |      3hrs      |    4hrs     |
+| Backend Setup     |      5hrs      |   4x3hrs    |
+| Backend debugging |      n/a       |    4hrs     |
+| React Router      |      n/a       |    3hrs     |
+| Styling           |      n/a       |   4x5hrs    |
+| Total             |     37hrs      |  100.5hrs   |
 
 ## Additional Libraries
 
@@ -171,23 +170,84 @@ As a team, we decided to not split responsibilities front-end vs. back-end. We w
 
 Use this section to list of all major issues encountered and their resolutions
 
-#### ISSUES AND RESOLUTIONS EXAMPLE:
+### `PUT` and `DELETE` commands don't work
 
-**ERROR**: app.js:34 Uncaught SyntaxError: Unexpected identifier  
-**RESOLUTION**: Missing comma after first object in sources {} object
+**ISSUE**: PUT and DELETE routes return:
+`update or delete on table "Hotels" violates foreign key constraint "Rooms_hotel_id_fkey" on table "Rooms"`
+
+- related to `CASCADE`?
+  tried commenting out `onDelete: "CASCADE"` for child tables.
+  no change
+- googled "table violates foreign key constraint" and found this on StackOverflow:
+  > You're trying to delete a record that its primary key is functioning as a foreign key in another table, thus you can't delete it.
+  >
+  > In order to delete that record, first, delete the record with the foreign key, and then delete the original that you wanted to delete.
+- teammates suggested hard-coding a delete-all-children helper into the controllers; may consider this later, but it seems like a roundabout approach when we already have the `CASCADE` in the models
+- googled "onDelete not working"
+  tried adding `hooks:true` to `hasMany`/`belongsTo` based on another stackoverflow post
+  still no result.
+- continued poking around stackoverflow, tried [a solution by Huy Nguyen](https://stackoverflow.com/questions/23128816/sequelize-js-ondelete-cascade-is-not-deleting-records-sequelize#comment61882219_23395771); still no result
+- attempted `queryInterface.removeConstraint("Hotels", "Rooms_hotel_id_fkey")` from https://stackoverflow.com/questions/29518786/remove-constraints-in-sequelize-migration
+  no result
+
+**RESOLUTION**: after many attempts, working after renaming files and variables to adjust singular/plural
+
+### search form `handleChange` losing focus
+
+**ISSUE**: `handleChange` method on text inputs is "working" but losing focus every time a key is hit.
+
+Suspect that it has something to do with the component re-rendering after every input type but not sure.
+
+- Tried to change how `setState` was called and it didn't work
+- Tried to add a "`preventDefault`" and it didn't work.
+
+Research Links:
+
+- React Forms Documentation: https://reactjs.org/docs/forms.html
+- Provides a good description of what is happening but not the solution:
+  https://reactkungfu.com/2015/09/react-js-loses-input-focus-on-typing/
+- This says that you can prevent it by NOT defining a component within a render, but I don't think we are doing that: https://labs.chiedo.com/post/always-define-components-outside-react-render-method/
+
+**RESOLUTION**: Changed the way Route was defined for Home component so that other props were not also passed down, so the page stopped re-rendering, allowing us to update state.
+
+### redirect to HotelList on form submit
+
+**ISSUE**: Originally was going to use "props.history.push" to move from Home component to HotelList component. However, could not do that because no props were being sent to Home from App.
+
+**RESOLUTION**: Therefore, had to move state from App to Home and leverage the "Redirect" method in react-router-dom in order to achieve the same result.
+
+Had lots of issues getting this to work because originally I had the conditional in the handleSubmit method instead of the render method by mistake.
+
+Research Links
+https://reacttraining.com/react-router/native/api/Redirect/to-object
+https://blog.bitsrc.io/must-know-concepts-of-react-router-fb9c8cc3c12
 
 ## Code Snippet
 
 Use this section to include a brief code snippet of functionality that you are proud of an a brief description
 
 ```
+
 function reverse(string) {
-	// here is the code to reverse a string of text
+// here is the code to reverse a string of text
 }
+
 ```
 
 ## Change Log
 
+**20. Feb**
+
+- Instead of `App.js` holding state for the search form, moved state to `Home.jsx` to be able to pass state to Hotel List component via the `"/hotels"` route.
+
+**19. Feb**
+
+- Decided not to use a `Layout` component since the only thing it would hold is the `LogoNav` component
+
 **18. Feb**
 
 - changed root directory from `"/api"` to `"/"` per Steve's suggestion
+
+```
+
+```
