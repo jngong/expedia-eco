@@ -3,14 +3,13 @@
 /* ************************************* */
 
 .main-hotel-image {
-    max-width: 280px;
+    max-width: 414px;
 }
 
 .hotel-icons-container {
     display: flex;
     align-items: center;
-    justify-content: 
-
+    
 }
 .more-icon {
     width: 11px;
@@ -20,6 +19,48 @@
     align-items: center;
     justify-content: center;
     margin: 0.3rem;
+}
+
+#hotel-component-banner {
+    border: 1px solid black;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.expedia-phone-number {
+    position: relative;
+    right:0;
+}
+
+.roomChoice {
+    color: black;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.bold {
+    font-weight: bolder;
+    font-size: 15px;
+    margin-left: 5px;
+}
+
+.boldText {
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+.seeMoreText {
+    color: var(--amenities-icon-text);
+}
+
+.formatText {
+    margin-left: 5px;
+}
+
+.linkText {
+    align-self: center;
 }
 
 /* ************************************* */
