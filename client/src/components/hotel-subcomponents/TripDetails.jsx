@@ -10,9 +10,9 @@ const TripDetails = () => {
             <div className="trip-details-main">
                 <p>FLIGHT (1 roundtrip ticket) + HOTEL (7 nights) + CAR, taxes and fees</p>
                 <div className="trip-details-price">
-                    <p>Total: $1,729.13</p>
-                    <p>includes 1 traveler</p>
-                    <p>Excludes daily resort fee of $17.46</p>
+                    <p className="bold trip-price">Total: $1,729.13</p>
+                    <p>(includes 1 traveler)</p>
+                    <p className="bold">Excludes daily resort fee of $17.46</p>
                 </div>
             </div>
             <div className="trip-details-subheader">Room type</div>

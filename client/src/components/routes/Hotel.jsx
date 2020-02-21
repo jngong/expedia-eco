@@ -43,19 +43,19 @@ export default class Hotel extends Component {
             {this.state.name} Rating: {this.state.rating}
           </p>
           <p>{this.state.address}</p>
-          <img src={require("../../images/hotel_room_image.jpg")} alt="hotel" />
+          <img src={require("../../images/hotel_room_image.jpg")} alt="hotel" className="main-hotel-image" />
           {/* Need to add the scroll arrows icons */}
           <p>Very Good! {this.state.rating}</p>
           <p>View all 1,769 Expedia Verified Reviews</p>
         </div>
 
-        <div>
+        <div className="hotel-icons-container">
           {this.renderIcon(this.state.wifi, "wifi@2x.png")}
           {this.renderIcon(this.state.business, "business@2x.png")}
           {this.renderIcon(this.state.laundry, "laundry@2x.png")}
           {this.renderIcon(this.state.smoke_free, "smoke-free@2x.png")}
           {this.renderIcon(this.state.eco_friendly, "eco@2x.png")}
-          <img src={require('../../images/icons-assets/more.png')} alt='more.png' className='icon'/>
+          <img src={require('../../images/icons-assets/more@2x.png')} alt='more.png' className='more-icon'/>
         </div>
 
         <p>{this.state.description}</p>
