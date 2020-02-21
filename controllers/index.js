@@ -36,7 +36,7 @@ const getAllHotelsByCity = async (req, res) => {
 const getAllHotels = async (req, res) => {
   try {
     const hotels = await Hotel.findAll()
-    return res.status(200).json({hotels: hotels})
+    return res.status(200).json({ hotels: hotels })
   } catch (error) {
     return res.status(500).send(error.message)
   }
@@ -161,12 +161,6 @@ const deleteHotel = async (req, res) => {
     return res.status(500).send(error.message);
   }
 };
-
-/* 
-Post-MVP:
-createRoomInHotel
-updateRoomInHotel
- */
 
 module.exports = {
   getAllCities,
