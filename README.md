@@ -190,7 +190,7 @@ Use this section to list of all major issues encountered and their resolutions
 - attempted `queryInterface.removeConstraint("Hotels", "Rooms_hotel_id_fkey")` from https://stackoverflow.com/questions/29518786/remove-constraints-in-sequelize-migration
   no result
 
-**RESOLUTION**: after many attempts, working after renaming files and variables to adjust singular/plural
+## **RESOLUTION**: after many attempts, working after renaming files and variables to adjust singular/plural
 
 ### search form `handleChange` losing focus
 
@@ -201,14 +201,14 @@ Suspect that it has something to do with the component re-rendering after every 
 - Tried to change how `setState` was called and it didn't work
 - Tried to add a "`preventDefault`" and it didn't work.
 
-Research Links:
+**Research Links**:
 
 - React Forms Documentation: https://reactjs.org/docs/forms.html
 - Provides a good description of what is happening but not the solution:
   https://reactkungfu.com/2015/09/react-js-loses-input-focus-on-typing/
 - This says that you can prevent it by NOT defining a component within a render, but I don't think we are doing that: https://labs.chiedo.com/post/always-define-components-outside-react-render-method/
 
-**RESOLUTION**: Changed the way Route was defined for Home component so that other props were not also passed down, so the page stopped re-rendering, allowing us to update state.
+## **RESOLUTION**: Changed the way Route was defined for Home component so that other props were not also passed down, so the page stopped re-rendering, allowing us to update state.
 
 ### redirect to HotelList on form submit
 
@@ -218,9 +218,11 @@ Research Links:
 
 Had lots of issues getting this to work because originally I had the conditional in the handleSubmit method instead of the render method by mistake.
 
-Research Links
+**Research Links**
 https://reacttraining.com/react-router/native/api/Redirect/to-object
 https://blog.bitsrc.io/must-know-concepts-of-react-router-fb9c8cc3c12
+
+---
 
 ## Code Snippet
 
