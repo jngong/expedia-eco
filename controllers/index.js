@@ -100,14 +100,6 @@ const getRoomDetails = async (req, res) => {
   }
 };
 
-// GET ALL ROOMS
-// const getAllRooms = async (req, res) => {
-//   try {
-//   } catch (error) {
-//     return res.status(500).send(error.message);
-//   }
-// };
-
 // POST request for adding a new hotel
 // Route: POST /api/hotels
 
