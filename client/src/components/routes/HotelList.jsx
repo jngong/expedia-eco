@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import "../../css/HotelList.css";
 import HotelButton from "./HotelButton";
+import apiUrl from "../../apiConfig";
 
 class HotelList extends Component {
   constructor(props) {
@@ -28,7 +29,7 @@ class HotelList extends Component {
   getSearchResults = async () => {
     try {
       const res = await axios.get(
-        `http://localhost:3001/cities/${this.props.location.state.cityId}/hotels`
+        `${apiUrl}/cities/${this.props.location.state.cityId}/hotels`
       );
       this.setState({ hotels: res.data.hotels });
     } catch (error) {
