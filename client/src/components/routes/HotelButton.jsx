@@ -7,7 +7,7 @@ class HotelButton extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      //
+      
     };
   }
 
@@ -56,8 +56,8 @@ class HotelButton extends Component {
     return parseFloat(rating) >= 4
       ? "Very good!"
       : 4 > parseFloat(rating) && parseFloat(rating) >= 3.5
-      ? "Good!"
-      : "";
+        ? "Good!"
+        : "";
   };
 
   // generate a random number representing the number of reviews on a hotel
@@ -83,8 +83,8 @@ class HotelButton extends Component {
         Eco-friendly
       </span>
     ) : (
-      ""
-    );
+        ""
+      );
   };
 
   /* ---------- RENDER ---------- */
