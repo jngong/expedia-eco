@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
     },
     {}
   );
-  Room.associate = function(models) {
+  Room.associate = function (models) {
     // associations can be defined here
     Room.belongsTo(models.Hotel, {
       foreignKey: "hotelId"

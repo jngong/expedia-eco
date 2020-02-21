@@ -2,8 +2,7 @@
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.bulkInsert(
-      "Hotels",
+    return queryInterface.bulkInsert("Hotels",
       [
         {
           // id: 1,
@@ -37,7 +36,6 @@ module.exports = {
           laundry: true,
           smoke_free: true,
           cityId: 2,
-
           createdAt: new Date(),
           updatedAt: new Date()
         },
@@ -56,7 +54,6 @@ module.exports = {
           laundry: false,
           smoke_free: false,
           cityId: 3,
-
           createdAt: new Date(),
           updatedAt: new Date()
         },
@@ -93,13 +90,10 @@ module.exports = {
           laundry: true,
           smoke_free: true,
           cityId: 2,
-
           createdAt: new Date(),
           updatedAt: new Date()
         }
-      ],
-      {}
-    );
+      ], {});
   },
 
   down: (queryInterface, Sequelize) => {

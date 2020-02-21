@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import { Redirect } from "react-router-dom";
 import AdminForm from "../shared/AdminForm";
+import apiUrl from "../../apiConfig";
 
 class Admin extends Component {
   constructor(props) {

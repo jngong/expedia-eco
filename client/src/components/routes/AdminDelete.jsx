@@ -1,6 +1,10 @@
 import React from "react";
 import { Component } from "react";
+<<<<<<< HEAD
 import AdminForm from "../shared/AdminForm";
+=======
+import apiUrl from "../../apiConfig";
+>>>>>>> 9495319de2310550d0b6b195d5b751be51228380
 import Axios from "axios";
 import { Redirect } from "react-router-dom";
 
@@ -17,7 +21,7 @@ class AdminDelete extends Component {
   async componentDidMount() {
     try {
       const response = await Axios(
-        `http://localhost:3001/hotels/${this.props.match.params.hotel_id}`
+        `${apiUrl}/hotels/${this.props.match.params.hotel_id}`
       );
       this.setState({ hotel: response.data.hotel });
     } catch (error) {
@@ -29,7 +33,7 @@ class AdminDelete extends Component {
     e.preventDefault();
 
     Axios({
-      url: `http://localhost:3001/hotels/${this.props.match.params.hotel_id}`,
+      url: `${apiUrl}/hotels/${this.props.match.params.hotel_id}`,
       method: "DELETE",
       data: this.state.isDeleted
     })
