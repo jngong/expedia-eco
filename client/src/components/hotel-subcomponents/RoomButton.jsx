@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import apiUrl from "../../apiConfig";
 import '../../css/Hotel.css'
 
 import { Redirect } from 'react-router-dom';
@@ -20,7 +21,7 @@ class RoomButton extends Component {
 
     async componentDidMount() {
         try {
-            const response = await axios(`http://localhost:3001/hotels/3/rooms`)
+            const response = await axios(`${apiUrl}/hotels/3/rooms`)
             this.setState({
                 rooms: response.data.rooms
             })
@@ -28,17 +29,17 @@ class RoomButton extends Component {
             console.error(error)
         }
     }
-  
+
     handleRoomSelect = (e) => {
         return (
 
             this.setState({
                 redirect: true
             })
-            
+
         )
-    }        
-    
+    }
+
     render() {
 
         if (this.state.redirect) {
@@ -46,7 +47,7 @@ class RoomButton extends Component {
                 <Redirect to={{
                     pathname: `/hotels/${this.props.component_props.id}/confirmation`,
                     state: { ...this.props }
-                }}/>)
+                }} />)
         }
 
         const { rooms } = this.state
@@ -70,8 +71,8 @@ class RoomButton extends Component {
                             <p className="bold room-beds">{room.beds}</p>
                             <p className="bold room-beds">Room sleeps {room.sleeps} guests</p>
                             <p className="free-wifi blue">
-                            <img src={Wifi} alt='wifi' className="wifi" />
-                            &nbsp;Free Wifi
+                                <img src={Wifi} alt='wifi' className="wifi" />
+                                &nbsp;Free Wifi
                             </p>
                             <a href="#" className="show-info-link">
                                 Show room information&nbsp;
@@ -90,7 +91,7 @@ class RoomButton extends Component {
                         </div>
                     </div>
 
-                    <button className="room-select-button" onClick={(e)=>this.handleRoomSelect()}>
+                    <button className="room-select-button" onClick={(e) => this.handleRoomSelect()}>
                         Select
                     </button>
                 </div>
