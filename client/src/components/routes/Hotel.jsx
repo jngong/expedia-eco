@@ -32,21 +32,27 @@ export default class Hotel extends Component {
     return (
       <div>
         <div id="hotel-component-banner">
-          <Link to="/">See all hotels</Link>
-          <p id="expedia-phone-number">1-877-387-1531</p>
+          <Link className='formatText linkText' to="/">&lt; See all hotels </Link>
+          <p className="expedia-phone-number">1-877-387-1531</p>
         </div>
 
-        <div> (Icon Image Here) 2 of 4: Choose your room </div>
+        <div className='roomChoice'> <img src={require('../../images/icons-assets/hotel-bed@2x.png')} className='big-icon' /> 2 of 4: Choose your room </div>
 
         <div id="hotel-main-content">
-          <p>
-            {this.state.name} Rating: {this.state.rating}
+          <h1 className='formatText'>
+            {this.state.name} 
+          </h1>
+          <p className='boldText'>Rating: 
+            <img src={require("../../images/star.png")} />
+            <img src={require("../../images/star.png")} />
+            <img src={require("../../images/star.png")} />
+            <img src={require("../../images/star.png")} />
           </p>
-          <p>{this.state.address}</p>
+          <p className='boldText'>{this.state.address}</p>
           <img src={require("../../images/hotel_room_image.jpg")} alt="hotel" className="main-hotel-image" />
           {/* Need to add the scroll arrows icons */}
-          <p>Very Good! {this.state.rating}</p>
-          <p>View all 1,769 Expedia Verified Reviews</p>
+          <p className='bold'>Very Good! {this.state.rating}</p>
+          <p className='boldText seeMoreText'>View all 1,769 Expedia Verified Reviews</p>
         </div>
 
         <div className="hotel-icons-container">
@@ -58,9 +64,9 @@ export default class Hotel extends Component {
           <img src={require('../../images/icons-assets/more@2x.png')} alt='more.png' className='more-icon'/>
         </div>
 
-        <p>{this.state.description}</p>
+        <p className='formatText'>{this.state.description}</p>
 
-        <p>See more</p>
+        <p className='seeMoreText formatText'>See more</p>
         <div className="hotel-added-components">
           <TripDetails />
           <RoomButton
