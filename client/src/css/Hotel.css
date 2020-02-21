@@ -2,11 +2,34 @@
 /** Hotel Styles **/
 /* ************************************* */
 
+.main-hotel-image {
+    max-width: 280px;
+}
+
+.hotel-icons-container {
+    display: flex;
+    align-items: center;
+    justify-content: 
+
+}
+.more-icon {
+    width: 11px;
+    height: 3px;
+    display: inline-flex;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: center;
+    margin: 0.3rem;
+}
 
 /* ************************************* */
 /** TripDetails Styles **/
 /* ************************************* */
 
+.trip-details-main, 
+.room-details-container {
+    background-color: white;
+}
 .trip-details-header,
 .trip-details-subheader,
 .trip-details-main {
@@ -17,6 +40,7 @@
     border: 3px solid var(--expedia-blue);
     border-radius: 1px;
 }
+
 .trip-details {
     color: var(--subtext-color);
 }
@@ -34,6 +58,22 @@
     font-size: 12px;
     font-weight: bold;
     /* padding: 8px 15px */
+}
+
+.trip-details-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 140px;
+    padding-bottom: 17px;
+}
+.trip-details-price > p {
+    text-align: right;
+    margin: 5px 0
+}
+
+.trip-price {
+    font-size: 15px;
 }
 
 /* ************************************* */
@@ -66,7 +106,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     padding-bottom: 45px;
 }
 
