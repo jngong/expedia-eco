@@ -1,10 +1,6 @@
 import React from "react";
 import { Component } from "react";
-<<<<<<< HEAD
-import AdminForm from "../shared/AdminForm";
-=======
 import apiUrl from "../../apiConfig";
->>>>>>> 9495319de2310550d0b6b195d5b751be51228380
 import Axios from "axios";
 import { Redirect } from "react-router-dom";
 
