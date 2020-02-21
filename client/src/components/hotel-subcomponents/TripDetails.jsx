@@ -1,7 +1,7 @@
 import React from 'react'
 
 const TripDetails = () => {
-    return(
+    return (
         <div className="trip-details">
             <div className="trip-details-header">
                 Choose your room
