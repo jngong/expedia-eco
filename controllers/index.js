@@ -36,7 +36,7 @@ const getAllHotelsByCity = async (req, res) => {
 const getAllHotels = async (req, res) => {
   try {
     const hotels = await Hotel.findAll()
-    return res.status(200).json({hotels: hotels})
+    return res.status(200).json({ hotels: hotels })
   } catch (error) {
     return res.status(500).send(error.message)
   }
@@ -100,14 +100,6 @@ const getRoomDetails = async (req, res) => {
   }
 };
 
-// GET ALL ROOMS
-// const getAllRooms = async (req, res) => {
-//   try {
-//   } catch (error) {
-//     return res.status(500).send(error.message);
-//   }
-// };
-
 // POST request for adding a new hotel
 // Route: POST /api/hotels
 
@@ -116,7 +108,6 @@ const createHotel = async (req, res) => {
     const hotel = await Hotel.create(req.body);
     return res.status(201).json({ hotel });
   } catch (error) {
-    console.log(error);
     return res.status(500).send(error.message);
   }
 };
@@ -148,8 +139,6 @@ const updateHotel = async (req, res) => {
 const deleteHotel = async (req, res) => {
   try {
     const { hotelId } = req.params;
-    console.log("hotel ID", parseInt(hotelId));
-    console.log("params", req);
     const deleted = await Hotel.destroy({
       where: { id: parseInt(hotelId) }
     });
@@ -161,12 +150,6 @@ const deleteHotel = async (req, res) => {
     return res.status(500).send(error.message);
   }
 };
-
-/* 
-Post-MVP:
-createRoomInHotel
-updateRoomInHotel
- */
 
 module.exports = {
   getAllCities,
