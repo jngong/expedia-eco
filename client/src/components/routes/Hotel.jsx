@@ -15,8 +15,8 @@ export default class Hotel extends Component {
 
   componentDidMount() {
 
-  this.setState({...this.props.location.state})
-   
+    this.setState({ ...this.props.location.state })
+
   }
 
   renderIcon(key, img) {
@@ -38,9 +38,9 @@ export default class Hotel extends Component {
 
         <div id="hotel-main-content">
           <h1 className='formatText'>
-            {this.state.name} 
+            {this.state.name}
           </h1>
-          <p className='boldText'>Rating: 
+          <p className='boldText'>Rating:
             <img src={require("../../images/star.png")} />
             <img src={require("../../images/star.png")} />
             <img src={require("../../images/star.png")} />
@@ -59,7 +59,7 @@ export default class Hotel extends Component {
           {this.renderIcon(this.state.laundry, "laundry@2x.png")}
           {this.renderIcon(this.state.smoke_free, "smoke-free@2x.png")}
           {this.renderIcon(this.state.eco_friendly, "eco@2x.png")}
-          <img src={require('../../images/icons-assets/more@2x.png')} alt='more.png' className='more-icon'/>
+          <img src={require('../../images/icons-assets/more@2x.png')} alt='more.png' className='more-icon' />
         </div>
 
         <p className='formatText'>{this.state.description}</p>
@@ -68,7 +68,7 @@ export default class Hotel extends Component {
         <div className="hotel-added-components">
           <TripDetails />
           <RoomButton
-            component_props={this.state}/>
+            component_props={this.state} />
         </div>
       </div>
     );

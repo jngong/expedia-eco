@@ -1,7 +1,6 @@
 import React from "react";
 import "../../css/ConfirmationPage.css";
 
-
 const ConfirmationPage = props => {
 
   return (
@@ -11,11 +10,7 @@ const ConfirmationPage = props => {
         <h2 id="confirmation-page-header">Review and Book</h2>
       </div>
 
-
-
       <img className="Line-Copy-3" src={require('../../images/icons-assets/line-copy-3.png')} alt='line-copy-3.png' />
-
-
 
       <div className="main-content">
         <span>
@@ -32,9 +27,7 @@ const ConfirmationPage = props => {
         <p className="black-text">4 tickets: 2 adults, 2 children</p>
       </div>
 
-
       <img className="Line-Copy-3" src={require('../../images/icons-assets/line-copy-3.png')} alt='line-copy-3.png' />
-
 
       <div className="main-content">
         <span>
@@ -50,9 +43,7 @@ const ConfirmationPage = props => {
         <p className="black-text">Tue, Jun 2 - Mon, Jun 8</p>
       </div>
 
-
       <img className="Line-Copy-3" src={require('../../images/icons-assets/line-copy-3.png')} alt='line-copy-3.png' />
-
 
       <div className="main-content">
 
@@ -75,9 +66,7 @@ const ConfirmationPage = props => {
         </div>
       </div>
 
-
       <img className="Line-Copy-3" src={require('../../images/icons-assets/line-copy-3.png')} alt='line-copy-3.png' />
-
 
       <div id="review-and-book-summary">
 
@@ -91,21 +80,21 @@ const ConfirmationPage = props => {
           <span id="right-text-line-2">-$602.42</span>
         </div>
 
-        <hr/>
+        <hr />
 
         <div className="confirmation-detail">
           <span className="blue-text">Total due today</span>
           <span className="bold">$2,613.58</span>
         </div>
 
-        <hr/>
+        <hr />
 
         <div className="confirmation-detail">
           <span className="blue-text">Due at hotel</span>
           <span className="bold">$122.22</span>
         </div>
 
-        <hr/>
+        <hr />
 
         <div className="go-to-the-right bigger-text">
           Trip Total:<span className="bold">$2,735.80</span>

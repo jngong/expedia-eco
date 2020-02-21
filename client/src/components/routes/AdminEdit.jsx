@@ -40,7 +40,6 @@ class AdminEdit extends Component {
 
   handleChange = e => {
     const { value, name } = e.target;
-    console.log(name, value);
     this.setState(prevState => ({
       hotel: {
         ...prevState.hotel,
@@ -51,7 +50,6 @@ class AdminEdit extends Component {
 
   handleCheckboxChange = e => {
     const { checked, name } = e.target;
-    console.log(name, checked);
     this.setState(prevState => ({
       hotel: {
         ...prevState.hotel,
@@ -62,7 +60,6 @@ class AdminEdit extends Component {
 
   updateHotel = e => {
     e.preventDefault();
-    console.log(e);
     Axios({
       url: `${apiUrl}/hotels/${this.props.match.params.hotel_id}`,
       method: "PUT",
@@ -73,12 +70,11 @@ class AdminEdit extends Component {
   };
 
   render() {
-    console.log(this.props.match.params.hotel_id);
+
     if (this.state.isUpdated) {
-      console.log(this.state.isUpdated);
       return <Redirect to={`/`} />;
     }
-    console.log();
+    
     return (
       <div>
         <div>
