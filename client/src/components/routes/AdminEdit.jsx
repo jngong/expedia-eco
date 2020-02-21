@@ -3,7 +3,6 @@ import "../../css/AdminEdit.css";
 import AdminForm from "../shared/AdminForm";
 import Axios from "axios";
 import { Redirect } from "react-router-dom";
-import apiUrl from "../../apiConfig";
 
 class AdminEdit extends Component {
   constructor(props) {
@@ -30,7 +29,7 @@ class AdminEdit extends Component {
   async componentDidMount() {
     try {
       const response = await Axios(
-        `${apiUrl}/hotels/${this.props.match.params.hotel_id}`
+        `/hotels/${this.props.match.params.hotel_id}`
       );
       this.setState({ hotel: response.data.hotel });
     } catch (error) {
@@ -61,7 +60,7 @@ class AdminEdit extends Component {
   updateHotel = e => {
     e.preventDefault();
     Axios({
-      url: `${apiUrl}/hotels/${this.props.match.params.hotel_id}`,
+      url: `/hotels/${this.props.match.params.hotel_id}`,
       method: "PUT",
       data: this.state.hotel
     })
@@ -70,11 +69,10 @@ class AdminEdit extends Component {
   };
 
   render() {
-
     if (this.state.isUpdated) {
       return <Redirect to={`/`} />;
     }
-    
+
     return (
       <div>
         <div>

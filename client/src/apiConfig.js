@@ -2,7 +2,7 @@ let apiUrl
 
 const apiUrls = {
     production: 'https://expedia-flying-four.herokuapp.com',
-    deployment: 'http://localhost:3001'
+    deployment: ''
 }
 
 if (window.location.hostname === 'localhost') {

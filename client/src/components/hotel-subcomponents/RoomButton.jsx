@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import apiUrl from "../../apiConfig";
 import '../../css/Hotel.css'
 
 import { Redirect } from 'react-router-dom';
@@ -21,7 +20,7 @@ class RoomButton extends Component {
 
     async componentDidMount() {
         try {
-            const response = await axios(`${apiUrl}/hotels/3/rooms`)
+            const response = await axios(`/hotels/3/rooms`)
             this.setState({
                 rooms: response.data.rooms
             })

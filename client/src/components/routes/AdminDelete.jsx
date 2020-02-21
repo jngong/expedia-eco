@@ -1,6 +1,5 @@
 import React from "react";
 import { Component } from "react";
-import apiUrl from "../../apiConfig";
 import Axios from "axios";
 import { Redirect } from "react-router-dom";
 
@@ -17,7 +16,7 @@ class AdminDelete extends Component {
   async componentDidMount() {
     try {
       const response = await Axios(
-        `${apiUrl}/hotels/${this.props.match.params.hotel_id}`
+        `/hotels/${this.props.match.params.hotel_id}`
       );
       this.setState({ hotel: response.data.hotel });
     } catch (error) {
@@ -29,7 +28,7 @@ class AdminDelete extends Component {
     e.preventDefault();
 
     Axios({
-      url: `${apiUrl}/hotels/${this.props.match.params.hotel_id}`,
+      url: `/hotels/${this.props.match.params.hotel_id}`,
       method: "DELETE",
       data: this.state.isDeleted
     })
