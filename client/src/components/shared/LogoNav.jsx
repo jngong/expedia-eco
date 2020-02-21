@@ -9,11 +9,11 @@ const LogoNav = () => {
         <div className='navbar'>
             <div className='logo'>
                 <Link to="/">
-                <img
-                    src={Logo}
-                    alt='Expedia'
-                    width='109'
-                    height='31' />
+                    <img
+                        src={Logo}
+                        alt='Expedia'
+                        width='109'
+                        height='31' />
                 </Link>
             </div>
             <div className='nav-icons'>
