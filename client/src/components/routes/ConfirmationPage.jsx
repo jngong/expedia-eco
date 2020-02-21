@@ -1,10 +1,8 @@
 import React from "react";
 import "../../css/ConfirmationPage.css";
-import LogoNav from "../shared/LogoNav";
 
 
 const ConfirmationPage = props => {
-  console.log("What do I get?", props)
 
   return (
     <div>

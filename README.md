@@ -133,7 +133,7 @@ As a team, we decided to not split responsibilities front-end vs. back-end. We w
 | Hotel List        |      4hrs      |   5.5hrs    |
 | Search Form       |      3hrs      |    5hrs     |
 | Confirmation      |      2hrs      |   2x6hrs    |
-| App               |      3hrs      |    0hrs     |
+| App               |      3hrs      |    2hrs     |
 | Admin (Edit)      |      3hrs      |   2x4hrs    |
 | Admin (Create)    |      3hrs      |   2x4hrs    |
 | Admin Form        |      3hrs      |    4hrs     |
@@ -141,7 +141,7 @@ As a team, we decided to not split responsibilities front-end vs. back-end. We w
 | Backend debugging |      n/a       |    4hrs     |
 | React Router      |      n/a       |    3hrs     |
 | Styling           |      n/a       |   4x5hrs    |
-| Total             |     37hrs      |  100.5hrs   |
+| Total             |     37hrs      |  102.5hrs   |
 
 ## Additional Libraries
 
@@ -168,8 +168,6 @@ As a team, we decided to not split responsibilities front-end vs. back-end. We w
 
 ## Issues and Resolutions
 
-Use this section to list of all major issues encountered and their resolutions
-
 ### `PUT` and `DELETE` commands don't work
 
 **ISSUE**: PUT and DELETE routes return:
@@ -190,7 +188,9 @@ Use this section to list of all major issues encountered and their resolutions
 - attempted `queryInterface.removeConstraint("Hotels", "Rooms_hotel_id_fkey")` from https://stackoverflow.com/questions/29518786/remove-constraints-in-sequelize-migration
   no result
 
-## **RESOLUTION**: after many attempts, working after renaming files and variables to adjust singular/plural
+**RESOLUTION**: after many attempts, working after renaming files and variables to adjust singular/plural
+
+---
 
 ### search form `handleChange` losing focus
 
@@ -208,19 +208,21 @@ Suspect that it has something to do with the component re-rendering after every 
   https://reactkungfu.com/2015/09/react-js-loses-input-focus-on-typing/
 - This says that you can prevent it by NOT defining a component within a render, but I don't think we are doing that: https://labs.chiedo.com/post/always-define-components-outside-react-render-method/
 
-## **RESOLUTION**: Changed the way Route was defined for Home component so that other props were not also passed down, so the page stopped re-rendering, allowing us to update state.
+**RESOLUTION**: Changed the way Route was defined for Home component so that other props were not also passed down, so the page stopped re-rendering, allowing us to update state.
+
+---
 
 ### redirect to HotelList on form submit
 
 **ISSUE**: Originally was going to use "props.history.push" to move from Home component to HotelList component. However, could not do that because no props were being sent to Home from App.
 
-**RESOLUTION**: Therefore, had to move state from App to Home and leverage the "Redirect" method in react-router-dom in order to achieve the same result.
-
-Had lots of issues getting this to work because originally I had the conditional in the handleSubmit method instead of the render method by mistake.
-
 **Research Links**
 https://reacttraining.com/react-router/native/api/Redirect/to-object
 https://blog.bitsrc.io/must-know-concepts-of-react-router-fb9c8cc3c12
+
+**RESOLUTION**: Therefore, had to move state from App to Home and leverage the "Redirect" method in react-router-dom in order to achieve the same result.
+
+Had lots of issues getting this to work because originally I had the conditional in the handleSubmit method instead of the render method by mistake.
 
 ---
 
@@ -250,6 +252,6 @@ function reverse(string) {
 
 - changed root directory from `"/api"` to `"/"` per Steve's suggestion
 
-```
+**15. Feb**
 
-```
+- Express had couldn't intepret our `varchar` values, so we changed them to `string` instead.

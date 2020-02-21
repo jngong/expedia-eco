@@ -1,15 +1,13 @@
 import React from "react";
 import { Redirect } from "react-router-dom";
 import axios from "axios";
-import apiUrl from '../../apiConfig'
+import apiUrl from "../../apiConfig";
 
 import SearchOptionsNav from "../home-subcomponents/SearchOptionsNav";
 import SearchVacationPackagesNav from "../home-subcomponents/SearchVacationPackagesNav";
 import SearchForm from "../home-subcomponents/SearchForm";
 
-import "../../css/Home.css"
-
-// Change Log: Instead of App being our stateful component, changed Home to be a stateful component to allow it to return a Redirect upon Submit of the Search form.
+import "../../css/Home.css";
 
 class Home extends React.Component {
   constructor(props) {
@@ -39,7 +37,6 @@ class Home extends React.Component {
       this.setState({
         cities: response.data.cities
       });
-      console.log(response.data.cities);
     } catch (error) {
       console.error(error);
     }
@@ -76,7 +73,6 @@ class Home extends React.Component {
       city =>
         city.name.toLowerCase() === this.state.tripSearch.destCity.toLowerCase()
     );
-    console.log(cityMatch);
 
     if (cityMatch.length !== 0) {
       this.setState({
@@ -118,10 +114,13 @@ class Home extends React.Component {
         <p className="form-message">Book together and SAVE!</p>
         <div className="homepage-ads">
           <p>
-            Search over <span className="bold">a million flights, hotels, packages</span> and more
+            Search over{" "}
+            <span className="bold">a million flights, hotels, packages</span>{" "}
+            and more
           </p>
           <p>
-            <span className="bold">No Expedia cancellation fee</span> to change or cancel almost any hotel reservation
+            <span className="bold">No Expedia cancellation fee</span> to change
+            or cancel almost any hotel reservation
           </p>
         </div>
       </div>

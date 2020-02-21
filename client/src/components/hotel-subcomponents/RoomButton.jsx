@@ -18,7 +18,6 @@ class RoomButton extends Component {
         }
     }
 
-    //TODO: Hardcoding axios pull for rooms data for now via :hotel_id = 3. Change to props when connected with Hotel component.
     async componentDidMount() {
         try {
             const response = await axios(`http://localhost:3001/hotels/3/rooms`)
@@ -31,8 +30,6 @@ class RoomButton extends Component {
     }
   
     handleRoomSelect = (e) => {
-        console.log(this.state.rooms[0].hotelId, "Room Select")
-        console.log(this.props.component_props, "props")
         return (
 
             this.setState({

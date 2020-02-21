@@ -73,7 +73,6 @@ const SearchForm = (props) => {
                     <img src={UserIcon} alt="user icon" className="input-icon user"></img>
                     <div className="input-label">Travelers</div>
                     <input
-                        // className="full-width"
                         type="text"
                         value={props.tripSearch.travelers}
                         name="travelers"

@@ -20,7 +20,6 @@ export default class Hotel extends Component {
   }
 
   renderIcon(key, img) {
-    // console.log(key, img)
     return (
       key === true ? <img src=
         {require(`../../images/icons-assets/${img}`)} alt={`${img}`} className="icon" /> : ""
@@ -28,7 +27,6 @@ export default class Hotel extends Component {
   }
 
   render() {
-    console.log("props", this.props);
     return (
       <div>
         <div id="hotel-component-banner">
