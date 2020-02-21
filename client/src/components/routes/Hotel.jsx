@@ -41,13 +41,12 @@ export default class Hotel extends Component {
         <div id="hotel-main-content">
           <h1 className='formatText'>
             {this.state.name} 
+            <img src={require("../../images/star.png")} />
+            <img src={require("../../images/star.png")} />
+            <img src={require("../../images/star.png")} />
+            <img src={require("../../images/star.png")} />
           </h1>
-          <p className='boldText'>Rating: 
-            <img src={require("../../images/star.png")} />
-            <img src={require("../../images/star.png")} />
-            <img src={require("../../images/star.png")} />
-            <img src={require("../../images/star.png")} />
-          </p>
+          
           <p className='boldText'>{this.state.address}</p>
           <img src={require("../../images/hotel_room_image.jpg")} alt="hotel" className="main-hotel-image" />
           {/* Need to add the scroll arrows icons */}
