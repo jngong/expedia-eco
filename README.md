@@ -228,15 +228,16 @@ Had lots of issues getting this to work because originally I had the conditional
 
 ## Code Snippet
 
-Use this section to include a brief code snippet of functionality that you are proud of an a brief description
-
+```
+  renderIcon(key, img) {
+    return (
+      key === true ? <img src=
+        {require(`../../images/icons-assets/${img}`)} alt={`${img}`} className="icon" /> : ""
+    )
+  }
 ```
 
-function reverse(string) {
-// here is the code to reverse a string of text
-}
-
-```
+`renderIcon` is used in our `Hotel` component to render a variety of icons that represent features/amenities a hotel may have, such as a business center, free wifi, or laundry service. Each amenity is given a `true`/`false` value in our database, which is then called by axios and stored in state. The `renderIcon` function takes two arguments: `key` represents a state associated with a particular amenity (e.g., `this.state.wifi`) and `img` represents the filename of amenity's icon. If the value of `key` is `true`, an `img` tag referring to the proper icon will be placed in the code; otherwise, nothing will happen.
 
 ## Change Log
 
