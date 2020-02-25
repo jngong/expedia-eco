@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import axios from "axios";
 import { Redirect } from "react-router-dom";
 import AdminForm from "../shared/AdminForm";
-import apiUrl from "../../apiConfig";
 
 class Admin extends Component {
   constructor(props) {
@@ -50,7 +49,7 @@ class Admin extends Component {
     e.preventDefault();
 
     axios({
-      url: `${apiUrl}/hotels`,
+      url: `/hotels`,
       method: "POST",
       data: this.state.hotel
     })
