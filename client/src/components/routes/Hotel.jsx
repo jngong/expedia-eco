@@ -49,7 +49,7 @@ export default class Hotel extends Component {
           <p className='boldText'>{this.state.address}</p>
           <img src={require("../../images/hotel_room_image.jpg")} alt="hotel" className="main-hotel-image" />
           {/* Need to add the scroll arrows icons */}
-          <p className='bold'>Very Good! {this.state.rating}</p>
+          <p className='boldText'>Very Good! {this.state.rating}</p>
           <p className='boldText seeMoreText'>View all 1,769 Expedia Verified Reviews</p>
         </div>
 

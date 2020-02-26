@@ -1,7 +1,7 @@
 .nav-icons {
     display: flex;
     align-items: center;
-    color: #003262;
+    color: var(--expedia-blue)
   }
   
   .navbar {
@@ -15,4 +15,8 @@
   .fas {
     padding: 0 10px;
     font-size: 1.2rem;
+  }
+
+  .fa-bars {
+    color: var(--expedia-blue)
   }

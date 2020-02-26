@@ -19,6 +19,11 @@
   /* padding: 0.5rem; */
 }
 
+body {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
 a {
   color: var(--subtext-color);
   text-decoration: none;

@@ -130,7 +130,7 @@
 .x-icon {
     position: relative;
     top: 30px;
-    left: 360px;
+    left: 90%;
     /* color: var(--subtext-color); */
     object-fit: contain;
     width: 12px;
