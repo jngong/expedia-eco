@@ -40,11 +40,11 @@
     align-items: center;
 }
 
-.bold {
+/* .bold {
     font-weight: bolder;
     font-size: 15px;
-    margin-left: 5px;
-}
+    margin-left: 5px; */
+/* } */
 
 .boldText {
     font-weight: bold;
