@@ -1,7 +1,7 @@
 let apiUrl
 
 const apiUrls = {
-    production: 'https://expedia-clone.herokuapp.com',
+    production: 'https://expedia-clone.herokuapp.com/api',
     deployment: ''
 }
 

@@ -4,36 +4,36 @@ const router = Router();
 
 /* ---------- GET ---------- */
 // ROOT
-router.get("/", (req, res) => res.send("This is root!"));
+router.get("/api", (req, res) => res.send("This is root!"));
 
 // CITY NAMES
-router.get("/cities", controllers.getAllCities);
+router.get("/api/cities", controllers.getAllCities);
 
 // HOTELS IN A CITY
-router.get("/cities/:cityId/hotels", controllers.getAllHotelsByCity);
+router.get("/api/cities/:cityId/hotels", controllers.getAllHotelsByCity);
 
 // ALL HOTELS
-router.get("/hotels", controllers.getAllHotels);
+router.get("/api/hotels", controllers.getAllHotels);
 
 // HOTEL DETAILS
-router.get("/hotels/:hotelId", controllers.getHotelDetails);
+router.get("/api/hotels/:hotelId", controllers.getHotelDetails);
 
 // ROOMS IN A HOTEL
-router.get("/hotels/:hotelId/rooms", controllers.getAllRoomsByHotel);
+router.get("/api/hotels/:hotelId/rooms", controllers.getAllRoomsByHotel);
 
 // ROOM DETAILS
-router.get("/hotels/:hotelId/rooms/:room_id", controllers.getRoomDetails);
+router.get("/api/hotels/:hotelId/rooms/:room_id", controllers.getRoomDetails);
 
 /* ---------- POST ---------- */
 // NEW HOTEL
-router.post("/hotels", controllers.createHotel);
+router.post("/api/hotels", controllers.createHotel);
 
 /* ---------- PUT ---------- */
 // UPDATE HOTEL
-router.put("/hotels/:hotelId", controllers.updateHotel);
+router.put("/api/hotels/:hotelId", controllers.updateHotel);
 
 /* ---------- DELETE ---------- */
 // DELETE HOTEL
-router.delete("/hotels/:hotelId", controllers.deleteHotel);
+router.delete("/api/hotels/:hotelId", controllers.deleteHotel);
 
 module.exports = router;
