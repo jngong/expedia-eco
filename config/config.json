@@ -12,7 +12,7 @@
     "operatorsAliases": false
   },
   "production": {
-    "use_env_variable": "DATABASE_URL",
+    "database": "expedia_production",
     "dialect": "postgres",
     "dialectOptions": {
       "ssl": true }
