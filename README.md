@@ -1,6 +1,6 @@
 # Project Overview
 
-![Flying Four](https://res.cloudinary.com/db0kbxvhr/image/upload/c_scale,w_532/v1581716915/flying-four_sa1li3.jpg)
+![Flying Four](https://res.cloudinary.com/db0kbxvhr/image/upload/c_scale,w_530/v1581716915/Project%203%20-%20Expedia/flying-four_sa1li3.jpg)
 
 ## Project Description
 
@@ -33,7 +33,7 @@ As a team, we decided to not split responsibilities front-end vs. back-end. We w
 
 ## ERD Diagram
 
-![ERD](https://res.cloudinary.com/db0kbxvhr/image/upload/v1581715284/erd-flying-four-p3_pt4zvn.png)
+![ERD](https://res.cloudinary.com/db0kbxvhr/image/upload/v1581715284/Project%203%20-%20Expedia/erd-flying-four-p3_pt4zvn.png)
 
 ## Endpoints
 
@@ -99,9 +99,7 @@ As a team, we decided to not split responsibilities front-end vs. back-end. We w
 
 ## React Component Hierarchy
 
-[Component Hierarchy on Whimsical](https://whimsical.com/GekeXdAdXyDUdWo7NWzE7B)
-
-![Component Hierarchy](https://res.cloudinary.com/db0kbxvhr/image/upload/c_scale,h_600/v1581881153/component-hierarchy-expedia_ssospk.png)
+![Component Hierarchy](https://res.cloudinary.com/db0kbxvhr/image/upload/c_scale,w_800/v1581881153/Project%203%20-%20Expedia/component-hierarchy-expedia_ssospk.png)
 
 ## Components
 
@@ -119,7 +117,7 @@ As a team, we decided to not split responsibilities front-end vs. back-end. We w
 
 ## Priority Matrix
 
-![Priority Matrix](https://res.cloudinary.com/db0kbxvhr/image/upload/v1581716225/priority-matrix-flying-four-p3_qt2gbm.png)
+![Priority Matrix](https://res.cloudinary.com/db0kbxvhr/image/upload/v1581716225/Project%203%20-%20Expedia/priority-matrix-flying-four-p3_qt2gbm.png)
 
 ## Timeframes
 
