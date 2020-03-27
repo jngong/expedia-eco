@@ -14,7 +14,7 @@ class HotelButton extends Component {
   // fetch hotel info from  /cities/:cityId/hotels endpoint and set it into state
   getHotelData = async () => {
     try {
-      const res = await axios.get(`/hotels/${this.props.id}`);
+      const res = await axios.get(`/api/hotels/${this.props.id}`);
       this.setState({ destCity: this.props.destCity, ...res.data.hotel });
     } catch (error) {
       console.log(error);
@@ -25,7 +25,7 @@ class HotelButton extends Component {
   getRoomData = async () => {
     try {
       const resRoom = await axios.get(
-        `/hotels/${this.props.id}/rooms`
+        `/api/hotels/${this.props.id}/rooms`
       );
       this.setState({ rooms: resRoom.data.rooms });
     } catch (error) {

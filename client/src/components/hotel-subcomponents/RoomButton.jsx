@@ -20,7 +20,7 @@ class RoomButton extends Component {
 
     async componentDidMount() {
         try {
-            const response = await axios(`/hotels/3/rooms`)
+            const response = await axios(`/api/hotels/3/rooms`)
             this.setState({
                 rooms: response.data.rooms
             })

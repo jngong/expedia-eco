@@ -49,7 +49,7 @@ class Admin extends Component {
     e.preventDefault();
 
     axios({
-      url: `/hotels`,
+      url: `/api/hotels`,
       method: "POST",
       data: this.state.hotel
     })

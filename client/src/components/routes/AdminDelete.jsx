@@ -16,7 +16,7 @@ class AdminDelete extends Component {
   async componentDidMount() {
     try {
       const response = await Axios(
-        `/hotels/${this.props.match.params.hotel_id}`
+        `/api/hotels/${this.props.match.params.hotel_id}`
       );
       this.setState({ hotel: response.data.hotel });
     } catch (error) {
@@ -28,7 +28,7 @@ class AdminDelete extends Component {
     e.preventDefault();
 
     Axios({
-      url: `/hotels/${this.props.match.params.hotel_id}`,
+      url: `/api/hotels/${this.props.match.params.hotel_id}`,
       method: "DELETE",
       data: this.state.isDeleted
     })

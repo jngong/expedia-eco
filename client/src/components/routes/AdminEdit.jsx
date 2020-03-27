@@ -29,7 +29,7 @@ class AdminEdit extends Component {
   async componentDidMount() {
     try {
       const response = await Axios(
-        `/hotels/${this.props.match.params.hotel_id}`
+        `/api/hotels/${this.props.match.params.hotel_id}`
       );
       this.setState({ hotel: response.data.hotel });
     } catch (error) {
@@ -60,7 +60,7 @@ class AdminEdit extends Component {
   updateHotel = e => {
     e.preventDefault();
     Axios({
-      url: `/hotels/${this.props.match.params.hotel_id}`,
+      url: `/api/hotels/${this.props.match.params.hotel_id}`,
       method: "PUT",
       data: this.state.hotel
     })

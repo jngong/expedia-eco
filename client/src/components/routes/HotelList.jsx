@@ -28,7 +28,7 @@ class HotelList extends Component {
   getSearchResults = async () => {
     try {
       const res = await axios.get(
-        `/cities/${this.props.location.state.cityId}/hotels`
+        `/api/cities/${this.props.location.state.cityId}/hotels`
       );
       this.setState({ hotels: res.data.hotels });
     } catch (error) {
