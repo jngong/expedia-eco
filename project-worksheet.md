@@ -1,18 +1,18 @@
-# Eco-Expedia
+# Project Overview
 
-Deployed site: https://expedia-clone.herokuapp.com/ 
+![Flying Four](https://res.cloudinary.com/db0kbxvhr/image/upload/c_scale,w_530/v1581716915/Project%203%20-%20Expedia/flying-four_sa1li3.jpg)
 
-Development Team Members: Jennifer Gong, Disney Harley, Rhol Hohenkirk, Jeffrey Lan
+## Project Description
 
-We built out a new feature for Expedia, which allows users to search for a bundled Flight, Hotel and Car vacation package with the option to search for an eco-friendly hotel. The search form will include a checkbox option to include only eco-friendly options. The hotel search results list will include a tree icon that indicates it is eco-friendly.
+Introducing the Flying Four: Disney, Jeff, Jenn, and Ro. We are building out a new feature for Expedia, which allows users to search for a bundled Flight, Hotel and Car vacation package with the option to search for an eco-friendly hotel. The search form will include a checkbox option to include only eco-friendly options. The hotel search results list will include a tree icon that indicates it is eco-friendly.
 
-As a team, we decided to not split responsibilities front-end vs. back-end. We divided our work into mini-sprints where we will complete back-end together as a group first, then moved onto front-end. Jenn held the role of the scrum master to keep the group on deadline and Jeff was team / git leader.
+As a team, we decided to not split responsibilities front-end vs. back-end. We will divide our work into mini-sprints where we will complete back-end together as a group first, then move onto front-end. Jenn will be the scrum master to keep the group on deadline and Jeff will be the git tsar.
 
 ## Wireframes
 
-Collaborated with a team of UX researchers and designers who provided these [Mockups](https://projects.invisionapp.com/share/MBVIJQ9VUYN#/screens/400362146) for us to build from.
+[wireframes from UX](https://projects.invisionapp.com/share/MBVIJQ9VUYN#/screens/400362146)
 
-## MVP Goals
+## MVP
 
 - User will be able to click on “Bundle & Save” icon and “Flight + Hotel + Car” button to start search (only active links)
 - User can search for packages with a form - departure city, destination city, departure date, return date, number of travelers, checkbox for “I want to only see eco-friendly hotels”
@@ -22,9 +22,14 @@ Collaborated with a team of UX researchers and designers who provided these [Moc
 - At the end, user can click a button to book and will be shown a simple confirmation screen
 - Link to “List A Property” will provide admin access to create, update and delete Hotels
 
-## React Component Hierarchy
+## Post-MVP
 
-![Component Hierarchy](https://res.cloudinary.com/db0kbxvhr/image/upload/c_scale,w_800/v1581881153/Project%203%20-%20Expedia/component-hierarchy-expedia_ssospk.png)
+- Additional functionality to get other packages (i.e. “Flight + Hotel” or “Hotel Only”) with additional routes
+- Add React components and routes for departure flight options, return flight options and car options
+- Add Create and Update functionality for our Rooms model
+- Add models to database for Flights and Cars
+- Add model for Users and Trips to save booked trips
+- Build out second form in the user flow to add traveler details and book a trip
 
 ## ERD Diagram
 
@@ -62,7 +67,81 @@ Collaborated with a team of UX researchers and designers who provided these [Moc
 - `DELETE /hotels/:hotel`  
   remove a hotel from the DB
 
-## Libraries Used
+## Sample JSON from `GET /hotels/:hotel`
+
+```
+[
+ {
+   "id": 1,
+   "name": "Beck's Motor Lodge",
+   "address": "2222 Market St, San Francisco, CA 94114",
+   "city_id": 3,
+   "rating": 4,
+   "img_url": "https://thisisnotarealurl.com/images/fi2J6gP1.jpg",
+   "description": "Newly renovated rooms! Located in the heart of the Castro, Beck's Motor Lodge is surrounded by charming tree lined streets, unique restaurants and lively nightlife. We have a private sundeck where you will enjoy lovely views of the city. Public transportation via the historic streetcar is available outside your door.",
+   "wifi":true,
+   "business":false,
+   "laundry":false,
+   "smoke_free":true,
+   "eco_friendly": true
+   "rooms": [
+             {
+               "id": 5,
+               "hotel_id": 2,
+               "room_number": 416,
+               "availability": true,
+               "list_price": "$124.95",
+               "current_price": "$112.49",
+               "beds": "2 QUEEN",
+               "sleeps": 4
+             },
+```
+
+## React Component Hierarchy
+
+![Component Hierarchy](https://res.cloudinary.com/db0kbxvhr/image/upload/c_scale,w_800/v1581881153/Project%203%20-%20Expedia/component-hierarchy-expedia_ssospk.png)
+
+## Components
+
+| Component          | Description                                                                                                                     |
+| ------------------ | :------------------------------------------------------------------------------------------------------------------------------ |
+| App                | This component will render the Home, Navbars and Main Routes. It will be a class component that uses state to store hotel info. |
+| Home               | This component is where users will be directed when they first enter the page                                                   |
+| Layout             | This component is a shared component that will contain our LogoNav and render on every route                                    |
+| LogoNav            | This component will house a nav bar exposing the expedia logo.                                                                  |
+| SearchForm         | This component will allow the user to place in the required information to query their search results                           |
+| SearchNavVacations | This component will allow users to query their searches as well with one click of a button.                                     |
+| SearchNavOptions   | This component will also allow users another way to query their search.                                                         |
+| HotelList          | This is a class component that will set the state.                                                                              |
+| AdminForm          | This will be for our crud                                                                                                       |
+
+## Priority Matrix
+
+![Priority Matrix](https://res.cloudinary.com/db0kbxvhr/image/upload/v1581716225/Project%203%20-%20Expedia/priority-matrix-flying-four-p3_qt2gbm.png)
+
+## Timeframes
+
+| Component         | Estimated Time | Actual Time |
+| ----------------- | :------------: | :---------: |
+| Layout            |      3hrs      |   2.5hrs    |
+| ExpediaLogo       |      2hrs      |   2.5hrs    |
+| Hotel Button      |      2hrs      |    7hrs     |
+| Room Button       |      2hrs      |    5hrs     |
+| Hotel             |      4hrs      |    2hrs     |
+| Hotel List        |      4hrs      |   5.5hrs    |
+| Search Form       |      3hrs      |    5hrs     |
+| Confirmation      |      2hrs      |   2x6hrs    |
+| App               |      3hrs      |    2hrs     |
+| Admin (Edit)      |      3hrs      |   2x4hrs    |
+| Admin (Create)    |      3hrs      |   2x4hrs    |
+| Admin Form        |      3hrs      |    4hrs     |
+| Backend Setup     |      5hrs      |   4x3hrs    |
+| Backend debugging |      n/a       |    4hrs     |
+| React Router      |      n/a       |    3hrs     |
+| Styling           |      n/a       |   4x5hrs    |
+| Total             |     37hrs      |  102.5hrs   |
+
+## Additional Libraries
 
 **Front-End**
 
@@ -78,6 +157,12 @@ Collaborated with a team of UX researchers and designers who provided these [Moc
 - [Body Parser](https://github.com/expressjs/body-parser) to parse html into json for CRUD functionality
 - [Nodemon](https://www.npmjs.com/package/nodemon) as a dev-dependency to continuously run our development server
 - [Sequelize-CLI](https://sequelize-guides.netlify.com/) to help us create our database
+
+## Expected Issues
+
+- Coding certain components may be more complex than anticipated - teamwork! Divide and conquer!
+- Expedia is a large and fairly complex site - adjust MVP, discuss leaving off extra functionality with UX
+- One of us may get caught up in a less important function or stuck on a complex one - regular check-ins throughout the day
 
 ## Issues and Resolutions
 
@@ -169,12 +254,3 @@ Had lots of issues getting this to work because originally I had the conditional
 **15. Feb**
 
 - Express had couldn't intepret our `varchar` values, so we changed them to `string` instead.
-
-## Post-MVP Goals
-
-- Additional functionality to get other packages (i.e. “Flight + Hotel” or “Hotel Only”) with additional routes
-- Add React components and routes for departure flight options, return flight options and car options
-- Add Create and Update functionality for our Rooms model
-- Add models to database for Flights and Cars
-- Add model for Users and Trips to save booked trips
-- Build out second form in the user flow to add traveler details and book a trip
